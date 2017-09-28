@@ -60,19 +60,53 @@
 		
 	<div>
        <form>
+           Descripción: <br>
+           Este texto describe el funcionamiento de cómo se debe solicitar un álbum.
+           En primer lugar, el nombre y apellidos son obligatorios para el envío postal y 
+           personalización del álbum.
+           Las tarifas dependen del número de páginas, de la resolución y del color de la portada.
+           El título del álbum tiene un máximo de 200 carácteres y es obligatorio.
+           El texto adicional será una dedicatoria o una descripción del álbum.
+           El correo que se debe poner es el del destinatario para posibles notificaciones.
+           En impresión a color seleccione la casilla si desea que se imprima a color o dejela
+           deseleccionada para imprimir el álbum en blanco y negro.<br>
+           Tarifas:<br>
+
            Nombre:
-           <input type="text" name="nombre"><br>
-           Título del álbum:
-           <input type="text" name="album"><br>
-           Texto adicional:
-           <input type="text" name="adicional"><br>
+           <input type="text" name="nombre" maxlength="200" required>
+           Apellidos:
+           <input type="text" name="apellidos" maxlength="200" required><br>
+           Título del álbum:<br>
+           <input type="text" name="album" maxlength="200" required><br>
+           Texto adicional:<br>
+           <textarea rows="3" cols="30" name="textadic" maxlength="4000"></textarea><br>
+           Correo electrónico:
+           <input type="email" name="email" required placeholder="Introduce una dirección válida" maxlength="200"><br>
+           Dirección postal:<br>
+           Calle
+           <input type="text" name="calle">
+           Número
+           <input type="number" name="numero">
+           Puerta
+           <input type="number" name="puerta"><br>
+           Ciudad
+           <input type="text" name="ciudad">
+           Provincia
+           <input type="text" name="provincia"><br>
+           Código postal
+           <input type="text" name="cpostal"><br>
            Color de portada:
            <input type="color" name="favcolor"><br>
            Número de copias:
-           <input type="number" name="copias" min="0"><br>
-       </form>
-       <form style="display: inline" action="albumSolicitado.html" method="get">
-            <button>Solicitar</button>
+           <input type="number" name="copias" min="1" value="1" required><br>
+           Resolución de fotos:<br>
+           <input id="slider1" type="range" min="150" max="900" step="150" />DPI<br>
+           Álbum a escoger:<br>
+           Fecha de entrega:<br>
+           <input type="date" name="fecentrega"><br>
+           <input type="checkbox" name="your-group" value="unit-in-group" />Impresión a color<br>
+       
+            <input type="submit" value="Confirmar">
         </form>
     </div>
 
