@@ -72,41 +72,81 @@
            deseleccionada para imprimir el álbum en blanco y negro.<br>
            Tarifas:<br>
 
+           <table style="width:30%" border="1px" >
+                <tr>
+                  <th>Concepto</th>
+                  <th>Tarifa</th> 
+                </tr>
+                <tr>
+                  <td>< 5 Páginas</td>
+                  <td>0.10 € por página</td> 
+                </tr>
+                <tr>
+                  <td>Entre 5 y 10 páginas</td>
+                  <td>0.08 € por página</td> 
+                </tr>
+                <tr>
+                    <td>> 11 páginas</td>
+                    <td>0.07 € por página</td> 
+                  </tr>
+              <tr>
+                    <td>Blanco y Negro</td>
+                    <td>0 €</td> 
+                  </tr>
+                  <tr>
+                        <td>Color</td>
+                        <td>0.05 € por foto</td> 
+                      </tr>
+                      <tr>
+                            <td>Resolución > 300 DPI</td>
+                            <td>0.02 € por foto</td> 
+                          </tr>
+              </table>
+              <br>
+
            Nombre:
-           <input type="text" name="nombre" maxlength="200" required>
+           <input type="text" name="nombre" maxlength="200" required placeholder="Enter your Name">*
            Apellidos:
-           <input type="text" name="apellidos" maxlength="200" required><br>
+           <input type="text" name="apellidos" maxlength="200" required placeholder="Enter your surname">*<br>
            Título del álbum:<br>
-           <input type="text" name="album" maxlength="200" required><br>
+           <input type="text" name="album" maxlength="200" required placeholder="200 carácteres" >*<br>
            Texto adicional:<br>
-           <textarea rows="3" cols="30" name="textadic" maxlength="4000"></textarea><br>
+           <textarea rows="3" cols="30" name="textadic" maxlength="4000" placeholder="Enter your text here"></textarea><br>
            Correo electrónico:
-           <input type="email" name="email" required placeholder="Introduce una dirección válida" maxlength="200"><br>
-           Dirección postal:<br>
-           Calle
-           <input type="text" name="calle">
-           Número
-           <input type="number" name="numero">
-           Puerta
-           <input type="number" name="puerta"><br>
-           Ciudad
-           <input type="text" name="ciudad">
-           Provincia
-           <input type="text" name="provincia"><br>
-           Código postal
-           <input type="text" name="cpostal"><br>
+           <input type="email" name="email" required placeholder="Enter your e-mail" maxlength="200">*<br>
+           Dirección postal:*<br>
+           <input type="text" name="calle" placeholder="Calle" required>
+           <input type="number" name="numero" placeholder="Número" required> 
+           <input type="number" name="puerta" placeholder="Puerta" required><br>
+           <input type="text" name="ciudad" placeholder="Ciudad" required>
+           <input type="text" name="provincia" placeholder="Provincia" required>
+           <input type="text" name="cpostal" placeholder="Cod.Postal" required><br>
            Color de portada:
            <input type="color" name="favcolor"><br>
            Número de copias:
-           <input type="number" name="copias" min="1" value="1" required><br>
-           Resolución de fotos:<br>
-           <input id="slider1" type="range" min="150" max="900" step="150" />DPI<br>
-           Álbum a escoger:<br>
-           Fecha de entrega:<br>
+           <input type="number" name="copias" min="1" value="1" required>*<br>
+           Resolución de fotos:
+           <select name="dpi">
+                <option value="1">150</option> 
+                <option value="2">300</option> 
+                <option value="3">450</option>
+                <option value="4">600</option>
+                <option value="5">750</option>
+                <option value="6">900</option>
+            </select> DPI<br>
+           Álbum a escoger:
+            <select name="Álbumes">
+                <option value="1">Mis álbumes</option> 
+                <option value="2">Álbum X</option> 
+                <option value="3">Álmbum Y</option>
+            </select>*<br>
+           Fecha de recepción:<br>
            <input type="date" name="fecentrega"><br>
-           <input type="checkbox" name="your-group" value="unit-in-group" />Impresión a color<br>
-       
-            <input type="submit" value="Confirmar">
+           <label>
+           <input type="checkbox" name="your-group" value="unit-in-group" />Impresión a color<br><br>
+            </label>
+            <input type="submit" value="Enviar"><br><br>
+            * Campos obligatorios
         </form>
     </div>
 
