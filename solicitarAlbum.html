@@ -1,156 +1,148 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-	<meta charset="utf-8">
-	<title>PI - Pictures & Images</title>
-	<meta name="generator" content="Bloc de notas" /> 
-	<meta name="author" content="Carlos y Marcos" /> 
-	<meta name="keywords" content="HTML5, web" /> 
-	<meta name="description" content="Practica DAW" /> 
-</head>
-<body>
-		<header id="main-header">
-                
-                <nav>
-                    <table>
-                        <tr>
-                        <td>
-                            <a id="logo" href="index.html">
-                                    Logo PI
-                            </a> <!-- / #logo-header -->
-                        </td>
-                        <td> 
-                            <form style="display: inline" action="formBusqueda.html" method="get">
-                                <button>Buscar</button></form>
-                        </td>
-                        <td>
-                            <form action="/action_page.php">
-                                
-                                  <img src="img_avatar2.png" alt="Avatar" class="avatar">
-                                
-                              
-                                
-                                  <label><b>Username</b></label>
-                                  <input type="text" placeholder="Enter Username" name="uname" required>
-                              
-                                  <label><b>Password</b></label>
-                                  <input type="password" placeholder="Enter Password" name="psw" required>
-                              
-                                  <button type="submit">Login</button>
-                                  <input type="checkbox" checked="checked"> Remember me
-                                
-                              
-                                
-                                  <button type="button" class="cancelbtn">Cancel</button>
-                                  <span class="psw">Forgot <a href="#">password?</a></span>
-                                
-                              </form>
-                        </td>
-                        <td>
-                            <form style="display: inline" action="nuevoReg.html" method="get">
-                                <button>Registro</button>
-                            </form>
-                        </td>
-                    </tr>
-                    </table>
-                </nav><!-- / nav -->
-         
-            </header><!-- / #main-header -->    
-    	
-		
-	<div>
-       <form>
-           Descripción: <br>
-           Este texto describe el funcionamiento de cómo se debe solicitar un álbum.
-           En primer lugar, el nombre y apellidos son obligatorios para el envío postal y 
-           personalización del álbum.
-           Las tarifas dependen del número de páginas, de la resolución y del color de la portada.
-           El título del álbum tiene un máximo de 200 carácteres y es obligatorio.
-           El texto adicional será una dedicatoria o una descripción del álbum.
-           El correo que se debe poner es el del destinatario para posibles notificaciones.
-           En impresión a color seleccione la casilla si desea que se imprima a color o dejela
-           deseleccionada para imprimir el álbum en blanco y negro.<br>
-           Tarifas:<br>
 
-           <table style="width:30%" border="1px" >
+<head>
+    <meta charset="utf-8">
+    <title>PI - Pictures & Images</title>
+    <meta name="generator" content="Bloc de notas" />
+    <meta name="author" content="Carlos y Marcos" />
+    <meta name="keywords" content="HTML5, web" />
+    <meta name="description" content="Practica DAW" />
+</head>
+
+<body>
+    <header id="main-header">
+
+        <nav>
+            <table>
                 <tr>
-                  <th>Concepto</th>
-                  <th>Tarifa</th> 
+                    <td>
+                        <a id="logo" href="index.html">
+                                    Logo PI
+                            </a>
+                        <!-- / #logo-header -->
+                    </td>
+                    <td>
+                        <form style="display: inline" action="formBusqueda.html" method="get">
+                            <button>Buscar</button></form>
+                    </td>
+                    <td>
+                        <form action="/action_page.php">
+
+                            <img src="img_avatar2.png" alt="Avatar" class="avatar">
+
+
+
+                            <label><b>Username</b></label>
+                            <input type="text" placeholder="Enter Username" name="uname" required>
+
+                            <label><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw" required>
+
+                            <button type="submit">Login</button>
+                            <input type="checkbox" checked="checked"> Remember me
+
+
+
+                            <button type="button" class="cancelbtn">Cancel</button>
+                            <span class="psw">Forgot <a href="#">password?</a></span>
+
+                        </form>
+                    </td>
+                    <td>
+                        <form style="display: inline" action="nuevoReg.html" method="get">
+                            <button>Registro</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </nav>
+        <!-- / nav -->
+
+    </header>
+    <!-- / #main-header -->
+
+
+    <div>
+        <form action="albumSolicitado.html" method="POST">
+            Descripción: <br> Este texto describe el funcionamiento de cómo se debe solicitar un álbum. En primer lugar,
+            el nombre y apellidos son obligatorios para el envío postal y personalización del álbum. Las tarifas dependen
+            del número de páginas, de la resolución y del color de la portada. El título del álbum tiene un máximo de 200
+            carácteres y es obligatorio. El texto adicional será una dedicatoria o una descripción del álbum. El correo que
+            se debe poner es el del destinatario para posibles notificaciones. En impresión a color seleccione la casilla
+            si desea que se imprima a color o dejela deseleccionada para imprimir el álbum en blanco y negro.<br> Tarifas:
+            <br>
+
+            <table style="width:30%" border="1px">
+                <tr>
+                    <th>Concepto</th>
+                    <th>Tarifa</th>
                 </tr>
                 <tr>
-                  <td>< 5 Páginas</td>
-                  <td>0.10 € por página</td> 
+                    <td>
+                        < 5 Páginas</td>
+                            <td>0.10 € por página</td>
                 </tr>
                 <tr>
-                  <td>Entre 5 y 10 páginas</td>
-                  <td>0.08 € por página</td> 
+                    <td>Entre 5 y 10 páginas</td>
+                    <td>0.08 € por página</td>
                 </tr>
                 <tr>
                     <td>> 11 páginas</td>
-                    <td>0.07 € por página</td> 
-                  </tr>
-              <tr>
+                    <td>0.07 € por página</td>
+                </tr>
+                <tr>
                     <td>Blanco y Negro</td>
-                    <td>0 €</td> 
-                  </tr>
-                  <tr>
-                        <td>Color</td>
-                        <td>0.05 € por foto</td> 
-                      </tr>
-                      <tr>
-                            <td>Resolución > 300 DPI</td>
-                            <td>0.02 € por foto</td> 
-                          </tr>
-              </table>
-              <br>
-
-           Nombre:
-           <input type="text" name="nombre" maxlength="200" required placeholder="Enter your Name">*
-           Apellidos:
-           <input type="text" name="apellidos" maxlength="200" required placeholder="Enter your surname">*<br>
-           Título del álbum:<br>
-           <input type="text" name="album" maxlength="200" required placeholder="200 carácteres" >*<br>
-           Texto adicional:<br>
-           <textarea rows="3" cols="30" name="textadic" maxlength="4000" placeholder="Enter your text here"></textarea><br>
-           Correo electrónico:
-           <input type="email" name="email" required placeholder="Enter your e-mail" maxlength="200">*<br>
-           Dirección postal:*<br>
-           <input type="text" name="calle" placeholder="Calle" required>
-           <input type="number" name="numero" placeholder="Número" required> 
-           <input type="number" name="puerta" placeholder="Puerta" required><br>
-           <input type="text" name="ciudad" placeholder="Ciudad" required>
-           <input type="text" name="provincia" placeholder="Provincia" required>
-           <input type="text" name="cpostal" placeholder="Cod.Postal" required><br>
-           Color de portada:
-           <input type="color" name="favcolor"><br>
-           Número de copias:
-           <input type="number" name="copias" min="1" value="1" required>*<br>
-           Resolución de fotos:
-           <select name="dpi">
+                    <td>0 €</td>
+                </tr>
+                <tr>
+                    <td>Color</td>
+                    <td>0.05 € por foto</td>
+                </tr>
+                <tr>
+                    <td>Resolución > 300 DPI</td>
+                    <td>0.02 € por foto</td>
+                </tr>
+            </table>
+            <br> Nombre:
+            <input type="text" name="nombre" maxlength="200" required placeholder="Enter your Name">* Apellidos:
+            <input type="text" name="apellidos" maxlength="200" required placeholder="Enter your surname">*<br> Título del
+            álbum:<br>
+            <input type="text" name="album" maxlength="200" required placeholder="200 carácteres">*<br> Texto adicional:<br>
+            <textarea rows="3" cols="30" name="textadic" maxlength="4000" placeholder="Enter your text here"></textarea><br>            Correo electrónico:
+            <input type="email" name="email" required placeholder="Enter your e-mail" maxlength="200">*<br> Dirección postal:*<br>
+            <input type="text" name="calle" placeholder="Calle" required>
+            <input type="number" name="numero" placeholder="Número" required>
+            <input type="number" name="puerta" placeholder="Puerta" required><br>
+            <input type="text" name="ciudad" placeholder="Ciudad" required>
+            <input type="text" name="provincia" placeholder="Provincia" required>
+            <input type="number" name="cpostal" placeholder="Cod.Postal" required><br> Color de portada:
+            <input type="color" name="favcolor"><br> Número de copias:
+            <input type="number" name="copias" min="1" value="1" required>*<br> Resolución de fotos:
+            <select name="dpi">
                 <option value="1">150</option> 
                 <option value="2">300</option> 
                 <option value="3">450</option>
                 <option value="4">600</option>
                 <option value="5">750</option>
                 <option value="6">900</option>
-            </select> DPI<br>
-           Álbum a escoger:
+            </select> DPI<br> Álbum a escoger:
             <select name="Álbumes">
                 <option value="1">Mis álbumes</option> 
                 <option value="2">Álbum X</option> 
                 <option value="3">Álmbum Y</option>
-            </select>*<br>
-           Fecha de recepción:<br>
-           <input type="date" name="fecentrega"><br>
-           <label>
+            </select>*<br> Fecha de recepción:<br>
+            <input type="date" name="fecentrega"><br>
+            <label>
            <input type="checkbox" name="your-group" value="unit-in-group" />Impresión a color<br><br>
             </label>
-            <form action="albumSolicitado.html" method="POST">
+            
                 <input type="submit" value="Enviar"><br><br>
-        </form>
+            </form>
             * Campos obligatorios
-        </form>
+        
     </div>
 
 </body>
+
 </html>

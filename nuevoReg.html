@@ -1,113 +1,116 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="utf-8">
-        <meta name="generator" content="Bloc de notas" /> 
-        <meta name="author" content="Carlos y Marcos" /> 
-        <meta name="keywords" content="HTML5, web" /> 
-        <meta name="description" content="Practica DAW" /> 
-        <title>PI - Pictures & Images</title>
-    </head>
 
-    <body>
-            <header id="main-header">
-                    
-                    <nav>
-                        <table>
-                            <tr>
-                            <td>
-                                <a id="logo" href="index.html">
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Bloc de notas" />
+    <meta name="author" content="Carlos y Marcos" />
+    <meta name="keywords" content="HTML5, web" />
+    <meta name="description" content="Practica DAW" />
+    <title>PI - Pictures & Images</title>
+</head>
+
+<body>
+    <header id="main-header">
+
+        <nav>
+            <table>
+                <tr>
+                    <td>
+                        <a id="logo" href="index.html">
                                         Logo PI
-                                </a> <!-- / #logo-header -->
-                            </td>
-                            <td> 
-                                <form style="display: inline" action="formBusqueda.html" method="get">
-                                    <button>Buscar</button></form>
-                            </td>
-                            <td>
-                                <form action="/action_page.php">
-                                    
-                                      <img src="img_avatar2.png" alt="Avatar" class="avatar">
-                                    
-                                  
-                                    
-                                      <label><b>Username</b></label>
-                                      <input type="text" placeholder="Enter Username" name="uname" required>
-                                  
-                                      <label><b>Password</b></label>
-                                      <input type="password" placeholder="Enter Password" name="psw" required>
-                                  
-                                      <button type="submit">Login</button>
-                                      <input type="checkbox" checked="checked"> Remember me
-                                    
-                                  
-                                    
-                                      <button type="button" class="cancelbtn">Cancel</button>
-                                      <span class="psw">Forgot <a href="#">password?</a></span>
-                                    
-                                  </form>
-                            </td>
-                            <td>
-                                <form style="display: inline" action="nuevoReg.html" method="get">
-                                    <button>Registro</button>
-                                </form>
-                            </td>
-                        </tr>
-                        </table>
-                    </nav><!-- / nav -->
-             
-                </header><!-- / #main-header -->    
-            
-            
-        <form>
-            <fieldset>
-                <!--nombre de usuario-->
-                Usuario<br>
-                <input type="text" name="usuario"><br>
-                <!--contraseña-->
-                Contraseña<br>
-                <input type="password" name="contrasena"><br>
-                <!--repetir contraseña-->
-                Repetir contraseña<br>
-                <input type="password" name="contrasena2"><br>
-                <!--dirección de email-->
-                Email<br>
-                <input type="email" name="email"><br>
-                <!--Sexo-->
-                Sexo<br>
-                <input type="radio" name="sexo" id="male" value="hombre">
-                <label for="male">Male</label><br>
-                <input type="radio" name="sexo" id="female" value="mujer">
-                <label for="female">Female</label><br>
-                <!--fecha de nacimiento-->
-                Fecha de nacimiento<br>
-                <input type="date" name="fecnacimiento"><br>
-                <!--ciudad-->
-                Ciudad<br>
-                <input type="text" name="ciudad"><br>
-                <!--país de residencia-->
-                País de residencia<br>
-                <input type="text" name="paisresi"><br>
-                <!--foto-->
-                Foto<br>
-                
-                
-                <div class="col-sm-8 img-upload-section">
-                        <input name="image3" type="file" accept="image/*" id="menu_images"/>
-                        <img id="menu_image" alt="Imagen de perfil" src="/" />
-                        <input type="submit" value="Upload" />
-                </div> 
+                                </a>
+                        <!-- / #logo-header -->
+                    </td>
+                    <td>
+                        <form style="display: inline" action="formBusqueda.html" method="get">
+                            <button>Buscar</button></form>
+                    </td>
+                    <td>
+                        <form action="/action_page.php">
 
-                <form action="http://www.google.es" method="get">
-                        <input type="submit" value="Enviar"><br><br>
-                </form>
+                            <img src="img_avatar2.png" alt="Avatar" class="avatar">
 
-            </fieldset>
-        </form>
 
-        <footer class="footer_side">
-            PI - Pictures & Images ® Contacto 2017
-        </footer>
 
-    </body>
+                            <label><b>Username</b></label>
+                            <input type="text" placeholder="Enter Username" name="uname" required>
+
+                            <label><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw" required>
+
+                            <button type="submit">Login</button>
+                            <input type="checkbox" checked="checked"> Remember me
+
+
+
+                            <button type="button" class="cancelbtn">Cancel</button>
+                            <span class="psw">Forgot <a href="#">password?</a></span>
+
+                        </form>
+                    </td>
+                    <td>
+                        <form style="display: inline" action="nuevoReg.html" method="get">
+                            <button>Registro</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </nav>
+        <!-- / nav -->
+
+    </header>
+    <!-- / #main-header -->
+
+
+    <form action="usuarioReg.html" method="POST">
+        <fieldset>
+            <!--nombre de usuario-->
+            Usuario<br>
+            <input type="text" name="usuario"><br>
+            <!--contraseña-->
+            Contraseña<br>
+            <input type="password" name="contrasena"><br>
+            <!--repetir contraseña-->
+            Repetir contraseña<br>
+            <input type="password" name="contrasena2"><br>
+            <!--dirección de email-->
+            Email<br>
+            <input type="email" name="email"><br>
+            <!--Sexo-->
+            Sexo<br>
+            <input type="radio" name="sexo" id="male" value="hombre">
+            <label for="male">Male</label><br>
+            <input type="radio" name="sexo" id="female" value="mujer">
+            <label for="female">Female</label><br>
+            <!--fecha de nacimiento-->
+            Fecha de nacimiento<br>
+            <input type="date" name="fecnacimiento"><br>
+            <!--ciudad-->
+            Ciudad<br>
+            <input type="text" name="ciudad"><br>
+            <!--país de residencia-->
+            País de residencia<br>
+            <input type="text" name="paisresi"><br>
+            <!--foto-->
+            Foto<br>
+
+
+            <div class="col-sm-8 img-upload-section">
+                <input name="image3" type="file" accept="image/*" id="menu_images" />
+                <img id="menu_image" alt="Imagen de perfil" src="/" />
+                <input type="submit" value="Upload" />
+            </div>
+
+            <input type="submit" value="Enviar"><br><br>
+
+        </fieldset>
+    </form>
+
+    <footer class="footer_side">
+        PI - Pictures & Images ® Contacto 2017
+    </footer>
+
+</body>
+
 </html>
