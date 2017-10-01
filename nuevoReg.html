@@ -67,16 +67,16 @@
         <fieldset>
             <!--nombre de usuario-->
             Usuario<br>
-            <input type="text" name="usuario"><br>
+            <input type="text" name="usuario" required>*<br>
             <!--contraseña-->
             Contraseña<br>
-            <input type="password" name="contrasena"><br>
+            <input type="password" name="contrasena" required>*<br>
             <!--repetir contraseña-->
             Repetir contraseña<br>
-            <input type="password" name="contrasena2"><br>
+            <input type="password" name="contrasena2" required>*<br>
             <!--dirección de email-->
             Email<br>
-            <input type="email" name="email"><br>
+            <input type="email" name="email" required placeholder="Enter your e-mail">*<br>
             <!--Sexo-->
             Sexo<br>
             <input type="radio" name="sexo" id="male" value="hombre">
@@ -100,9 +100,11 @@
                 <input name="image3" type="file" accept="image/*" id="menu_images" />
                 <img id="menu_image" alt="Imagen de perfil" src="/" />
                 <input type="submit" value="Upload" />
-            </div>
+            </div><br>
 
             <input type="submit" value="Enviar"><br><br>
+
+            * Campos obligatorios
 
         </fieldset>
     </form>
