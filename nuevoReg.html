@@ -17,32 +17,34 @@
             <table>
                 <tr>
                     <td>
-                        <a id="logo" href="index.html">
-                                        Logo PI
-                                </a>
+                        <a id="logo" href="index.html">Logo PI</a>
                         <!-- / #logo-header -->
                     </td>
                     <td>
                         <form style="display: inline" action="formBusqueda.html" method="get">
-                            <button>Buscar</button></form>
+                            <label>Búsqueda
+                                <input type="text" placeholder="Busca fotos">
+                            </label>
+                            <input type="Submit" value="Buscar">
+                        </form>
                     </td>
                     <td>
                         <form action="/action_page.php">
 
                             <img src="img_avatar2.png" alt="Avatar" class="avatar">
 
+                            <label><b>Username</b>
+                                <input type="text" placeholder="Enter Username" name="uname" required>                                
+                            </label>
 
+                            <label><b>Password</b>
+                                <input type="password" placeholder="Enter Password" name="psw" required>                                
+                            </label>
 
-                            <label><b>Username</b></label>
-                            <input type="text" placeholder="Enter Username" name="uname" required>
-
-                            <label><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="psw" required>
-
-                            <button type="submit">Login</button>
-                            <input type="checkbox" checked="checked"> Remember me
-
-
+                            <input type="submit" value="Login">
+                            <label>Remember me
+                                    <input type="checkbox" checked="checked" name="remember">                                    
+                            </label>
 
                             <button type="button" class="cancelbtn">Cancel</button>
                             <span class="psw">Forgot <a href="#">password?</a></span>
@@ -50,8 +52,8 @@
                         </form>
                     </td>
                     <td>
-                        <form style="display: inline" action="nuevoReg.html" method="get">
-                            <button>Registro</button>
+                        <form action="nuevoReg.html">
+                            <input type="Submit" value="Registro">
                         </form>
                     </td>
                 </tr>
@@ -66,32 +68,44 @@
     <form action="usuarioReg.html" method="POST">
         <fieldset>
             <!--nombre de usuario-->
-            <label for="Usuario">Usuario</label>
-            <input type="text" name="usuario" required>*<br>
+            <label>Usuario
+                <input type="text" name="usuario" required>*<br>
+            </label>
             <!--contraseña-->
-            <label for="password">Contraseña</label> 
-            <input type="password" name="contrasena" required>*<br>
+            <label>Contraseña
+                <input type="password" name="contrasena" required>*<br>
+            </label>
+            
             <!--repetir contraseña-->
-            <label for="password">Repetir contraseña</label>
-            <input type="password" name="contrasena2" required>*<br>
+            <label>Repetir contraseña
+                <input type="password" name="contrasena2" required>*<br>
+            </label>
+            
             <!--dirección de email-->
-            <label for="email" >E-mail</label>
-            <input type="email" name="email" required placeholder="Enter your e-mail">*<br>
+            <label>E-mail
+                <input type="email" name="email" required placeholder="Enter your e-mail">*<br>
+            </label>
+            
             <!--Sexo-->
-            <p>Sexo</p>
+            Sexo<br>
             <input type="radio" name="sexo" id="male" value="hombre">
-            <label for="male">Male</label><br>
+                <label for="male">Hombre</label><br>
             <input type="radio" name="sexo" id="female" value="mujer">
-            <label for="female">Female</label><br>
+                <label for="female">Mujer</label><br>
             <!--fecha de nacimiento-->
-            <label for="fecnacimiento">Fecha de nacimiento</label>
-            <input type="date" name="fecnacimiento"><br>
+            <label>Fecha de nacimiento
+                <input type="date" name="fecnacimiento"><br>
+            </label>
             <!--ciudad-->
-            <label for="ciudad">Ciudad</label>
-            <input type="text" name="ciudad"><br>
+            <label>Ciudad
+                <input type="text" name="ciudad"><br>
+            </label>
+            
             <!--país de residencia-->
-            <label for="paisresi">País de residencia</label>
-            <input type="text" name="paisresi"><br>
+            <label>País de residencia
+                    <input type="text" name="paisresi"><br>
+            </label>
+            
             <!--foto-->
             Foto<br>
 
@@ -102,9 +116,7 @@
                 <input type="submit" value="Upload" />
             </div><br>
 
-            <input type="submit" value="Enviar"><br><br>
-
-            * Campos obligatorios
+            <input type="submit" value="Enviar"><br><br> * Campos obligatorios
 
         </fieldset>
     </form>

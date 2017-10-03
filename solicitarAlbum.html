@@ -17,14 +17,44 @@
             <table>
                 <tr>
                     <td>
-                        <a id="logo" href="index.html">
-                                    Logo PI
-                            </a>
+                        <a id="logo" href="index.html">Logo PI</a>
                         <!-- / #logo-header -->
                     </td>
                     <td>
                         <form style="display: inline" action="formBusqueda.html" method="get">
-                            <button>Buscar</button></form>
+                            <label>Búsqueda
+                                                <input type="text" placeholder="Busca fotos">
+                                            </label>
+                            <input type="Submit" value="Buscar">
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/action_page.php">
+
+                            <img src="img_avatar2.png" alt="Avatar" class="avatar">
+
+                            <label><b>Username</b>
+                                <input type="text" placeholder="Enter Username" name="uname" required>                                
+                            </label>
+
+                            <label><b>Password</b>
+                                <input type="password" placeholder="Enter Password" name="psw" required>                                
+                            </label>
+
+                            <input type="submit" value="Login">
+                            <label>Remember me
+                                    <input type="checkbox" checked="checked" name="remember">                                    
+                            </label>
+
+                            <button type="button" class="cancelbtn">Cancel</button>
+                            <span class="psw">Forgot <a href="#">password?</a></span>
+
+                        </form>
+                    </td>
+                    <td>
+                        <form action="nuevoReg.html" method="post">
+                            <input type="Submit" value="Registro">
+                        </form>
                     </td>
                 </tr>
             </table>
@@ -52,7 +82,7 @@
                 </tr>
                 <tr>
                     <td>&lt; 5 Páginas</td>
-                            <td>0.10 € por página</td>
+                    <td>0.10 € por página</td>
                 </tr>
                 <tr>
                     <td>Entre 5 y 10 páginas</td>
@@ -75,34 +105,46 @@
                     <td>0.02 € por foto</td>
                 </tr>
             </table>
-            <br> 
-            <label for="nombre">Nombre</label>
-            <input type="text" name="nombre" maxlength="200" required placeholder="Enter your Name">* 
-            <label for="apellidos">Apellidos</label>
-            <input type="text" name="apellidos" maxlength="200" required placeholder="Enter your surname">*<br> 
-            <label for="album">Título delálbum</label>
-            <input type="text" name="album" maxlength="200" required placeholder="200 carácteres">*<br>
-            <label for="textadic">Texto adicional</label>
-            <textarea rows="3" cols="30" name="textadic" maxlength="4000" placeholder="Enter your text here"></textarea><br>
-            <label for="email">Correo electrónico:</label>
-            <input type="email" name="email" required placeholder="Enter your e-mail" maxlength="200">*<br> 
-            Dirección postal:*<br>
-            <label for="calle">Calle</label>
-            <input type="text" name="calle" placeholder="Calle" required>
-            <label for="numero">Número</label>
-            <input type="number" name="numero" placeholder="Número" required>
-            <label for="puerta">Puerta</label>
-            <input type="number" name="puerta" placeholder="Puerta" required><br>
-            <label for="ciudad">Ciudad</label>
-            <input type="text" name="ciudad" placeholder="Ciudad" required>
-            <label for="provincia">Provincia</label>
-            <input type="text" name="provincia" placeholder="Provincia" required>
-            <label for="cpostal">Código Postal</label>
-            <input type="number" name="cpostal" placeholder="Cod.Postal" required><br> 
-            <label for="favcolor">Color de portada</label>
-            <input type="color" name="favcolor"><br> 
-            <label for="copias">Número de copias</label>
-            <input type="number" name="copias" min="1" value="1" required>*<br> Resolución de fotos:
+            <br>
+            <label>Nombre
+                <input type="text" name="nombre" maxlength="200" required placeholder="Enter your Name">*
+            </label>
+            <label>Apellidos
+                <input type="text" name="apellidos" maxlength="200" required placeholder="Enter your surname">*<br>
+            </label>
+            <label>Título delálbum
+                <input type="text" name="album" maxlength="200" required placeholder="200 carácteres">*<br>
+            </label>
+            <label>Texto adicional
+                <textarea rows="3" cols="30" name="textadic" maxlength="4000" placeholder="Enter your text here"></textarea><br>
+            </label>
+            <label>Correo electrónico:
+                <input type="email" name="email" required placeholder="Enter your e-mail" maxlength="200">*<br> Dirección postal:*<br>
+            </label>
+            <label>Calle
+                <input type="text" name="calle" placeholder="Calle" required>
+            </label>
+            <label>Número
+                <input type="number" name="numero" placeholder="Número" required>
+            </label>
+            <label>Puerta
+                <input type="number" name="puerta" placeholder="Puerta" required><br>
+            </label>
+            <label>Ciudad
+                <input type="text" name="ciudad" placeholder="Ciudad" required>
+            </label>
+            <label>Provincia
+                <input type="text" name="provincia" placeholder="Provincia" required>
+            </label>
+            <label>Código Postal
+                <input type="number" name="cpostal" placeholder="Cod.Postal" required><br>
+            </label>
+            <label>Color de portada
+                <input type="color" name="favcolor"><br>
+            </label>
+            <label>Número de copias
+                <input type="number" name="copias" min="1" value="1" required>*<br> Resolución de fotos:
+            </label>
             <select name="dpi">
                 <option value="1">150</option> 
                 <option value="2">300</option> 
@@ -115,22 +157,25 @@
                 <option value="1">Mis álbumes</option> 
                 <option value="2">Álbum X</option> 
                 <option value="3">Álmbum Y</option>
-            </select>*<br> Fecha de recepción:<br>
-            <input type="date" name="fecentrega"><br>
-            <label>
-           <input type="checkbox" name="your-group" value="unit-in-group" />Impresión a color<br><br>
+            </select>*<br>
+            <label> Fecha de recepción:<br>
+                <input type="date" name="fecentrega"><br>
             </label>
             
-                <input type="submit" value="Enviar"><br><br>
-            </form>
-            * Campos obligatorios
-            
-            <br><br><br><br>
-            
-            <footer class="footer_side">
-                PI - Pictures & Images ® Contacto 2017
-            </footer>
-        
+            <label>
+                <input type="checkbox" name="your-group" value="unit-in-group" />Impresión a color<br><br>
+            </label>
+
+            <input type="submit" value="Enviar"><br><br>
+        </form>
+        * Campos obligatorios
+
+        <br><br><br><br>
+
+        <footer class="footer_side">
+            PI - Pictures & Images ® Contacto 2017
+        </footer>
+
     </div>
 
 </body>

@@ -1,61 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-	<meta charset="utf-8">
-	<title>PI - Pictures & Images</title>
-	<meta name="generator" content="Bloc de notas" /> 
-	<meta name="author" content="Carlos y Marcos" /> 
-	<meta name="keywords" content="HTML5, web" /> 
-	<meta name="description" content="Practica DAW" /> 
+    <meta charset="utf-8">
+    <title>PI - Pictures & Images</title>
+    <meta name="generator" content="Bloc de notas" />
+    <meta name="author" content="Carlos y Marcos" />
+    <meta name="keywords" content="HTML5, web" />
+    <meta name="description" content="Practica DAW" />
 </head>
+
 <body>
-		<header id="main-header">
-                
-                <nav>
-                    <table>
-                        <tr>
-                        <td>
-                            <a id="logo" href="index.html">
-                                    Logo PI
-                            </a> <!-- / #logo-header -->
-                        </td>
-                        <td> 
-                            <form style="display: inline" action="formBusqueda.html" method="get">
-                                <button>Buscar</button></form>
-                        </td>
-                    </tr>
-                    </table>
-                </nav><!-- / nav -->
-         
-            </header><!-- / #main-header -->    
-    	
-		
-	<div>
-       <form>
-           <h2>Se ha registrado la solicitud del álbum satisfactoriamente</h2> <br>
-           Nombre:
-           <br>
-           Título del álbum:
-           <br>
-           Texto adicional:
-           <br>
-           Color de portada:
-           <br>
-           Número de copias:
-           <br>
-           El coste es de X.<br>
-       </form>
-       <br>
+    <header id="main-header">
 
-       <a href="usuarioReg.html">Volver al perfil</a>
+        <nav>
+            <table>
+                <tr>
+                    <td>
+                        <a id="logo" href="index.html">Logo PI</a>
+                        <!-- / #logo-header -->
+                    </td>
+                    <td>
+                        <form style="display: inline" action="formBusqueda.html" method="get">
+                            <label>Búsqueda
+                                                <input type="text" placeholder="Busca fotos">
+                                            </label>
+                            <input type="Submit" value="Buscar">
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/action_page.php">
 
-       <br><br><br><br>
+                            <img src="img_avatar2.png" alt="Avatar" class="avatar">
 
-       <footer class="footer_side">
-        PI - Pictures & Images ® Contacto 2017
-    </footer>
-      
+                            <label><b>Username</b>
+                                                <input type="text" placeholder="Enter Username" name="uname" required>                                
+                                            </label>
+
+                            <label><b>Password</b>
+                                                <input type="password" placeholder="Enter Password" name="psw" required>                                
+                                            </label>
+
+                            <input type="submit" value="Login">
+                            <label>Remember me
+                                                    <input type="checkbox" checked="checked" name="remember">                                    
+                                            </label>
+
+                            <button type="button" class="cancelbtn">Cancel</button>
+                            <span class="psw">Forgot <a href="#">password?</a></span>
+
+                        </form>
+                    </td>
+                    <td>
+                        <form action="nuevoReg.html">
+                            <input type="Submit" value="Registro">
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </nav>
+        <!-- / nav -->
+
+    </header>
+    <!-- / #main-header -->
+
+
+    <div>
+        <form>
+            <h2>Se ha registrado la solicitud del álbum satisfactoriamente</h2> <br> Nombre:
+            <br> Título del álbum:
+            <br> Texto adicional:
+            <br> Color de portada:
+            <br> Número de copias:
+            <br> El coste es de X.<br>
+        </form>
+        <br>
+
+        <a href="usuarioReg.html">Volver al perfil</a>
+
+        <br><br><br><br>
+
+        <footer class="footer_side">
+            PI - Pictures & Images ® Contacto 2017
+        </footer>
+
     </div>
 
 </body>
+
 </html>

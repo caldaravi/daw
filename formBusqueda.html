@@ -1,75 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="generator" content="Bloc de notas" /> 
-	<meta name="author" content="Carlos y Marcos" /> 
-	<meta name="keywords" content="HTML5, web" /> 
-    <meta name="description" content="Practica DAW" /> 
+    <meta charset="utf-8">
+    <meta name="generator" content="Bloc de notas" />
+    <meta name="author" content="Carlos y Marcos" />
+    <meta name="keywords" content="HTML5, web" />
+    <meta name="description" content="Practica DAW" />
     <title>PI - Pictures & Images</title>
 </head>
+
 <body>
-        <header id="main-header">
-                
-                <nav>
-                    <table>
-                        <tr>
-                        <td>
-                            <a id="logo" href="index.html">
-                                    Logo PI
-                            </a> <!-- / #logo-header -->
-                        </td>
-                        <td> 
-                            <form style="display: inline" action="formBusqueda.html" method="get">
-                                <button>Buscar</button></form>
-                        </td>
-                        <td>
-                            <form action="/action_page.php">
-                                
-                                  <img src="img_avatar2.png" alt="Avatar" class="avatar">
-                                
-                              
-                                
-                                  <label><b>Username</b></label>
-                                  <input type="text" placeholder="Enter Username" name="uname" required>
-                              
-                                  <label><b>Password</b></label>
-                                  <input type="password" placeholder="Enter Password" name="psw" required>
-                              
-                                  <button type="submit">Login</button>
-                                  <input type="checkbox" checked="checked"> Remember me
-                                
-                              
-                                
-                                  <button type="button" class="cancelbtn">Cancel</button>
-                                  <span class="psw">Forgot <a href="#">password?</a></span>
-                                
-                              </form>
-                        </td>
-                        <td>
-                            <form style="display: inline" action="nuevoReg.html" method="get">
-                                <button>Registro</button>
-                            </form>
-                        </td>
-                    </tr>
-                    </table>
-                </nav><!-- / nav -->
-         
-            </header><!-- / #main-header -->    
-    	
-	<form>
-        Título:<br>
-        <input type="text" name="titulo">
-        <br>
-        Fecha:<br>
-        <input type="text" name="fecha">
-        <br>
-        País:<br>
-        <input type="text" name="pais">
-    </form>
+    <header id="main-header">
+
+        <nav>
+            <table>
+                <tr>
+                    <td>
+                        <a id="logo" href="index.html">Logo PI</a>
+                        <!-- / #logo-header -->
+                    </td>
+                    <td>
+                        <form style="display: inline" action="formBusqueda.html" method="get">
+                            <label>Búsqueda
+                                <input type="text" placeholder="Busca fotos">
+                            </label>
+                            <input type="Submit" value="Buscar">
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/action_page.php">
+
+                            <img src="img_avatar2.png" alt="Avatar" class="avatar">
+
+                            <label><b>Username</b>
+                                <input type="text" placeholder="Enter Username" name="uname" required>                                
+                            </label>
+                            
+                            <label><b>Password</b>
+                                <input type="password" placeholder="Enter Password" name="psw" required>                                
+                            </label>
+                            
+                            <input type="submit" value="Login">
+                            <label>Remember me
+                                    <input type="checkbox" checked="checked" name="remember">                                    
+                            </label>
+          
+                            <button type="button" class="cancelbtn">Cancel</button>
+                            <span class="psw">Forgot <a href="#">password?</a></span>
+
+                        </form>
+                    </td>
+                    <td>
+                        <form action="nuevoReg.html">
+                            <input type="Submit" value="Registro">
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </nav>
+        <!-- / nav -->
+
+    </header>
+    <!-- / #main-header -->
 
     <form action="resBusqueda.html" method="get">
-        <button>Buscar</button>
+        
+        <label>Título:<br>
+            <input type="text" name="titulo">
+        </label>
+        <br> 
+        
+        <label>Fecha:<br>
+            <input type="text" name="fecha">
+        </label>
+        <br>
+        
+        <label>País:<br>
+            <input type="text" name="pais">
+        </label>
+        
+        <input type="submit" value="Buscar">
     </form>
 
     <footer class="footer_side">
@@ -77,4 +88,5 @@
     </footer>
 
 </body>
+
 </html>
