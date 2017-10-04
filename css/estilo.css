@@ -23,6 +23,20 @@ práctica. No debes utilizar las media queries (el atributo media de HTML y la r
 
 /*:focus { border: 2px solid border-style #385D8A;}*/
 
-@font-face {
-    src: 
+
+
+#main-header{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 5%;
+}
+
+#logo{
+    margin-left: -50%;
+}
+
+main{
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-top: 40px;
 }
