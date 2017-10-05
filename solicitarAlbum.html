@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -8,7 +8,6 @@
     <meta name="keywords" content="HTML5, web" />
     <meta name="description" content="Practica DAW" />
     <title>PI - Pictures & Images</title>
-    <link rel = "stylesheet" type = "text/css" href = "/css/estilo.css" />
 </head>
 
 <body>
@@ -22,40 +21,13 @@
                         <!-- / #logo-header -->
                     </td>
                     <td>
-                        <form style="display: inline" action="formBusqueda.html" method="get">
-                            <label>Búsqueda
-                                                <input type="text" placeholder="Busca fotos">
-                                            </label>
-                            <input type="Submit" value="Buscar">
-                        </form>
-                    </td>
-                    <td>
-                        <form action="/action_page.php">
-
-                            <img src="img_avatar2.png" alt="Avatar" class="avatar">
-
-                            <label><b>Username</b>
-                                <input type="text" placeholder="Enter Username" name="uname" required>                                
-                            </label>
-
-                            <label><b>Password</b>
-                                <input type="password" placeholder="Enter Password" name="psw" required>                                
-                            </label>
-
-                            <input type="submit" value="Login">
-                            <label>Remember me
-                                    <input type="checkbox" checked="checked" name="remember">                                    
-                            </label>
-
-                            <button type="button" class="cancelbtn">Cancel</button>
-                            <span class="psw">Forgot <a href="#">password?</a></span>
-
-                        </form>
-                    </td>
-                    <td>
-                        <form action="nuevoReg.html" method="post">
-                            <input type="Submit" value="Registro">
-                        </form>
+                    <form style="display: inline" action="formBusqueda.html" method="get">
+                        <label>
+                            Búsqueda
+                            <input type="text" placeholder="Busca fotos">
+                        </label>
+                        <input type="Submit" value="Buscar">
+                    </form>
                     </td>
                 </tr>
             </table>
@@ -75,7 +47,6 @@
             se debe poner es el del destinatario para posibles notificaciones. En impresión a color seleccione la casilla
             si desea que se imprima a color o dejela deseleccionada para imprimir el álbum en blanco y negro.<br> Tarifas:
             <br>
-
             <table style="width:30%">
                 <tr>
                     <th>Concepto</th>
@@ -107,71 +78,88 @@
                 </tr>
             </table>
             <br>
-            <label>Nombre
+            <label>
+                Nombre
                 <input type="text" name="nombre" maxlength="200" required placeholder="Enter your Name">*
             </label>
-            <label>Apellidos
+            <label>
+                Apellidos
                 <input type="text" name="apellidos" maxlength="200" required placeholder="Enter your surname">*<br>
             </label>
-            <label>Título delálbum
+            <label>
+                Título delálbum
                 <input type="text" name="album" maxlength="200" required placeholder="200 carácteres">*<br>
             </label>
-            <label>Texto adicional
+            <label>
+                Texto adicional
                 <textarea rows="3" cols="30" name="textadic" maxlength="4000" placeholder="Enter your text here"></textarea><br>
             </label>
-            <label>Correo electrónico:
-                <input type="email" name="email" required placeholder="Enter your e-mail" maxlength="200">*<br> Dirección postal:*<br>
+            <label>
+                Correo electrónico:
+                <input type="email" name="email" required placeholder="Enter your e-mail" maxlength="200">*<br>
             </label>
-            <label>Calle
-                <input type="text" name="calle" placeholder="Calle" required>
-            </label>
-            <label>Número
-                <input type="number" name="numero" placeholder="Número" required>
-            </label>
-            <label>Puerta
-                <input type="number" name="puerta" placeholder="Puerta" required><br>
-            </label>
-            <label>Ciudad
-                <input type="text" name="ciudad" placeholder="Ciudad" required>
-            </label>
-            <label>Provincia
-                <input type="text" name="provincia" placeholder="Provincia" required>
-            </label>
-            <label>Código Postal
-                <input type="number" name="cpostal" placeholder="Cod.Postal" required><br>
-            </label>
-            <label>Color de portada
+            <fieldset>
+            <legend>Dirección postal*</legend>
+                <label>
+                    Calle
+                    <input type="text" name="calle" placeholder="Calle" required>
+                </label>
+                <label>
+                    Número
+                    <input type="number" name="numero" placeholder="Número" required>
+                </label>
+                <label>
+                    Puerta
+                    <input type="number" name="puerta" placeholder="Puerta" required><br>
+                </label>
+                <label>
+                    Ciudad
+                    <input type="text" name="ciudad" placeholder="Ciudad" required>
+                </label>
+                <label>
+                    Provincia
+                    <input type="text" name="provincia" placeholder="Provincia" required>
+                </label>
+                <label>
+                    Código Postal
+                    <input type="number" name="cpostal" placeholder="Cod.Postal" required><br>
+                </label>
+            </fieldset>
+            <label>
+                Color de portada
                 <input type="color" name="favcolor"><br>
             </label>
-            <label>Número de copias
-                <input type="number" name="copias" min="1" value="1" required>*<br> 
-            </label>
-            <label>Resolución de fotos
-            <select name="dpi">
-                <option value="1">150</option> 
-                <option value="2">300</option> 
-                <option value="3">450</option>
-                <option value="4">600</option>
-                <option value="5">750</option>
-                <option value="6">900</option>
-            </select> DPI<br> 
-            </label>            
             <label>
-                    Álbum a escoger
-            <select name="Álbumes">
-                <option value="1">Mis álbumes</option> 
-                <option value="2">Álbum X</option> 
-                <option value="3">Álmbum Y</option>
-            </select>
+                Número de copias
+                <input type="number" name="copias" min="1" value="1" required>*<br>
+            </label>
+            <label>
+                Resolución de fotos
+                <select name="dpi">
+                    <option value="1">150</option>
+                    <option value="2">300</option>
+                    <option value="3">450</option>
+                    <option value="4">600</option>
+                    <option value="5">750</option>
+                    <option value="6">900</option>
+                </select> DPI<br>
+            </label>
+            <label>
+                Álbum a escoger
+                <select name="Álbumes">
+                    <option value="1">Mis álbumes</option>
+                    <option value="2">Álbum X</option>
+                    <option value="3">Álmbum Y</option>
+                </select>
             </label>*<br>
-            <label> Fecha de recepción:<br>
+            <label>
+                Fecha de recepción:<br>
                 <input type="date" name="fecentrega"><br>
             </label>
-            
+
             <label>
                 <input type="checkbox" name="your-group" value="unit-in-group" />Impresión a color<br><br>
             </label>
-
             <input type="submit" value="Enviar"><br><br>
         </form>
         * Campos obligatorios

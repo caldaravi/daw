@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="utf-8">
@@ -7,7 +7,6 @@
 	<meta name="keywords" content="HTML5, web" /> 
 	<meta name="description" content="Practica DAW" /> 
 	<title>PI - Pictures & Images</title>
-	<link rel = "stylesheet" type = "text/css" href = "/css/estilo.css" />
 </head>
 <body>
 		<header id="main-header">
@@ -22,7 +21,12 @@
                         </td>
                         <td> 
                             <form style="display: inline" action="formBusqueda.html" method="get">
-                                <button>Buscar</button></form>
+                                <label>
+                                    Búsqueda
+                                    <input type="text" placeholder="Busca fotos">
+                                </label>
+                                <input type="Submit" value="Buscar">
+                            </form>
                         </td>
                         <td>
                             <form action="usuarioReg.html">
@@ -51,9 +55,7 @@
                               </form>
                         </td>
                         <td>
-                            <form style="display: inline" action="nuevoReg.html" method="get">
-                                <button>Registro</button>
-                            </form>
+								<a href="nuevoReg.html">Registro</a>
                         </td>
                     </tr>
                     </table>
