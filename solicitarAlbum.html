@@ -78,6 +78,8 @@
                 </tr>
             </table>
             <br>
+            * Campos obligatorios
+            <br>
             <label>
                 Nombre
                 <input type="text" name="nombre" maxlength="200" required placeholder="Enter your Name">*
@@ -106,11 +108,11 @@
                 </label>
                 <label>
                     Número
-                    <input type="number" name="numero" placeholder="Número" required>
+                    <input type="text" name="numero" placeholder="Número" required>
                 </label>
                 <label>
                     Puerta
-                    <input type="number" name="puerta" placeholder="Puerta" required><br>
+                    <input type="text" name="puerta" placeholder="Puerta" required><br>
                 </label>
                 <label>
                     Ciudad
@@ -135,14 +137,7 @@
             </label>
             <label>
                 Resolución de fotos
-                <select name="dpi">
-                    <option value="1">150</option>
-                    <option value="2">300</option>
-                    <option value="3">450</option>
-                    <option value="4">600</option>
-                    <option value="5">750</option>
-                    <option value="6">900</option>
-                </select> DPI<br>
+                <input type="number" name="resfoto" min="150" max="900" step="150" value="150"><br>
             </label>
             <label>
                 Álbum a escoger
@@ -162,7 +157,6 @@
             </label>
             <input type="submit" value="Enviar"><br><br>
         </form>
-        * Campos obligatorios
 
         <br><br><br><br>
 
