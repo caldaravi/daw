@@ -24,15 +24,69 @@ práctica. No debes utilizar las media queries (el atributo media de HTML y la r
 /*:focus { border: 2px solid border-style #385D8A;}*/
 
 
+a {
+    text-decoration: none;
+}
 
-#main-header{
+.no-style {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.right {
+    float: right;
+    text-align: right;
+    
+}
+
+.horizontal li {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+.horizontal a {
+    margin: 0;
+    color: #ffffff;
+    background-color: #98bf21;
+    text-align: center;
+    padding: 4px;
+}
+
+.horizontal a:hover, .horizontal a:active {
+    background-color: #7a991A;
+}
+
+.imagenes{
+    float: left;
+}
+
+#psw {
+    margin-top: 220%;
+    font-size: 60%;
+    background-size: 120%;
+}
+
+.header{
     margin-top: 10px;
     margin-bottom: 20px;
     margin-left: 5%;
+    display: inline;
 }
 
+.footer {
+    position: absolute;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+  }
+
 #logo{
-    margin-left: -50%;
+    margin-left: 10px;
 }
 
 main{

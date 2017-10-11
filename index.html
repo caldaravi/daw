@@ -6,121 +6,122 @@
 	<meta name="author" content="Carlos y Marcos" /> 
 	<meta name="keywords" content="HTML5, web" /> 
 	<meta name="description" content="Practica DAW" /> 
+
 	<title>PI - Pictures & Images</title>
+
 	<link rel = "stylesheet" type = "text/css" href = "css/estilo.css" />
 </head>
 <body>
-		<header id="main-header">
-                
-                <nav>
-                    <table>
-                        <tr>
-                        <td>
-                            <a id="logo" href="index.html">Logo PI</a> <!-- / #logo-header -->
-                        </td>
-                        <td> 
-                            <form style="display: inline" action="formBusqueda.html" method="get">
-								<label>Búsqueda
-													<input type="text" placeholder="Busca fotos">
-												</label>
-								<input type="Submit" value="Buscar">
-							</form>
-                        </td>
-                        <td>
-                            <form action="usuarioReg.html">
-                                
-                                  <img src="img_avatar2.png" alt="Avatar" class="avatar">
-                                
-                              
-                                
-                                  <label><b>Username</b></label>
-                                  <input type="text" placeholder="Enter Username" name="uname" required>
-                              
-                                  <label><b>Password</b></label>
-								  <input type="password" placeholder="Enter Password" name="psw" required>
-								  
-								
-								  <input type="submit" value="Login">
-								
-								
-                                  <input type="checkbox" checked="checked"> Remember me
-                                
-                              
-                                
-                                  <button type="button" class="cancelbtn">Cancel</button>
-                                  <span class="psw">Forgot <a href="#">password?</a></span>
-                                
-                              </form>
-                        </td>
-                        <td>
-								<a href="nuevoReg.html">Registro</a>
-                        </td>
-                    </tr>
-                    </table>
-                </nav><!-- / nav -->
-         
-            </header><!-- / #main-header -->    
+	<!-- CABECERA -->
+		<header id="header">
+             <ul class="horizontal no-style">
+				<li> <!-- / #logo-header -->
+					<a id="logo" href="index.html">Logo PI</a> 
+				</li>
+				<li>
+					<a href="nuevoReg.html">Registro</a>
+				</li>
+				<li>
+					<a href="contacto.html">Contacto</a>
+				</li>
+				<li>
+					<form class="right" action="formBusqueda.html" method="get">
+						<label>
+							<input type="text" placeholder="Busca fotos">
+						</label>
+							<input type="Submit" value="Buscar">
+					</form>
+				</li>
+				<li>
+					<form class="right" style action="usuarioReg.html">
+						<label><b>Usuario</b></label>
+							<input type="text" placeholder="Usuario" name="uname" required>
+						<label><b>Contraseña</b></label>
+							<input type="password" placeholder="Contraseña" name="pass" required>
+							<input type="submit" value="Login">
+							<input type="checkbox" checked="checked"> Recordar								
+						<a id="psw" class="exception" href="solicitudPass.html">Contraseña olvidada?</a>
+					</form>
+				</li>	
+			</ul>
+		</header>
+	<!-- FIN CABECERA -->    
     	
 		
 	<main>
-		<h2>Una mirada lo dice todo</h2>
-		<a href="infIMG.html">
-			<img src="images/portrait.jpeg" alt="Imagen" style="width:250px;height:328px;">
-		</a>
-		<p>
-			29/09/2017
-		</p>
+	<!-- GALERIA DE IMAGENES -->
+		<ul class="imagenes no-style">
+			<li>
+				<h2>Una mirada lo dice todo</h2>
+				<a href="infIMG.html">
+					<img src="images/portrait.jpeg" alt="Imagen" style="width:250px;height:328px;">
+				</a>
+				<p>
+					29/09/2017
+				</p>
 
-		<p>
-			Afganistán
-		</p>
-			<h2>Kite for life</h2>
-			<a href="infIMG.html">
-				<img src="images/kite.jpg" alt="Imagen" style="width:304px;height:228px;">
-			</a>
-			<p>
-				17/06/2017
-			</p>
-			<p>
-				España
-			</p>
+				<p>
+					Afganistán
+				</p>
+			</li>
+			<li>
+				<h2>Kite for life</h2>
+				<a href="infIMG.html">
+					<img src="images/kite.jpg" alt="Imagen" style="width:304px;height:228px;">
+				</a>
+				<p>
+					17/06/2017
+				</p>
+				<p>
+					España
+				</p>
+			</li>
+			<li>
+				<h2>BOOM</h2>
+				<a href="infIMG.html">
+					<img src="images/volcan.jpg" alt="Imagen" style="width:304px;height:228px;">
+				</a>
+				<p>
+					08/04/2017
+				</p>
+				<p>
+					Perú
+				</p>
+			</li>
+			<li>
+				<h2>Good views</h2>
+				<a href="infIMG.html">
+					<img src="images/caribe.jpg" alt="Imagen" style="width:304px;height:228px;">
+				</a>
+				<p>
+					12/02/2017
+				</p>
+				<p>
+					Rio Janeiro
+				</p>
+			</li>
+			<li>
+				<h2>Life style</h2>
+				<a href="infIMG.html">
+					<img src="images/surf.jpg" alt="Imagen" style="width:304px;height:228px;">
+				</a>	
+				<p>
+					03/01/2017
+				</p>
+				<p>
+					Bali
+				</p>
+			</li>
+		</ul>
+		<!-- FIN GALERIA -->
+	</main>
+	
 
-			<h2>BOOM</h2>
-			<a href="infIMG.html">
-				<img src="images/volcan.jpg" alt="Imagen" style="width:304px;height:228px;">
-			</a>
-			<p>
-				08/04/2017
-			</p>
-			<p>
-				Perú
-			</p>
-
-			<h2>Good views</h2>
-			<a href="infIMG.html">
-				<img src="images/caribe.jpg" alt="Imagen" style="width:304px;height:228px;">
-			</a>
-			<p>
-				12/02/2017
-			</p>
-			<p>
-				Rio Janeiro
-			</p>
-			
-			<h2>Life style</h2>
-			<a href="infIMG.html">
-				<img src="images/surf.jpg" alt="Imagen" style="width:304px;height:228px;">
-			</a>	
-			<p>
-				03/01/2017
-			</p>
-			<p>
-				Bali
-			</p>
-			<footer class="footer_side">
-				PI - Pictures & Images ® Contacto 2017
-			</footer>
-		</main>
+	<!-- PÍE DE PÁGINA -->
+		<footer class="footer">
+			PI - Pictures & Images ® 2017
+		</footer>
+	<!-- FIN PÍE -->
 
 </body>
 </html>

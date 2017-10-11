@@ -12,30 +12,26 @@
 </head>
 
 <body>
-    <header id="main-header">
-
-        <nav>
-            <table>
-                <tr>
-                    <td>
-                        <a id="logo" href="index.html">Logo PI</a>
-                        <!-- / #logo-header -->
-                    </td>
-                    <td>
-                        <form style="display: inline" action="formBusqueda.html" method="get">
-                            <label>Búsqueda
-                                                <input type="text" placeholder="Busca fotos">
-                                            </label>
-                            <input type="Submit" value="Buscar">
-                        </form>
-                    </td>
-                </tr>
-            </table>
-        </nav>
-        <!-- / nav -->
-
-    </header>
-    <!-- / #main-header -->
+	<!-- CABECERA -->
+    <header id="header">
+            <ul class="horizontal no-style">
+               <li> <!-- / #logo-header -->
+                   <a id="logo" href="index.html">Logo PI</a> 
+               </li>
+               <li>
+                   <a href="contacto.html">Contacto</a>
+               </li>
+               <li>
+                   <form class="right" action="formBusqueda.html" method="get">
+                       <label>
+                           <input type="text" placeholder="Busca fotos">
+                       </label>
+                           <input type="Submit" value="Buscar">
+                   </form>
+               </li>
+           </ul>
+       </header>
+   <!-- FIN CABECERA -->    
 
 
     <main>
@@ -52,13 +48,11 @@
         <a href="usuarioReg.html">Volver al perfil</a>
 
         <br><br><br><br>
-
-        <footer class="footer_side">
-            PI - Pictures & Images ® Contacto 2017
-        </footer>
-
     </main>
-
+	<!-- PÍE DE PÁGINA -->
+    <footer class="footer">
+		PI - Pictures & Images ® 2017
+	</footer>
+	<!-- FIN PÍE -->
 </body>
-
 </html>

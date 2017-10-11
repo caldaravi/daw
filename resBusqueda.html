@@ -12,77 +12,63 @@
 </head>
 
 <body>
-    <header id="main-header">
+	<!-- CABECERA -->
+    <header id="header">
+            <ul class="horizontal no-style">
+               <li> <!-- / #logo-header -->
+                   <a id="logo" href="index.html">Logo PI</a> 
+               </li>
+               <li>
+                   <a href="nuevoReg.html">Registro</a>
+               </li>
+               <li>
+                   <a href="contacto.html">Contacto</a>
+               </li>
+               <li>
+                   <form class="right" action="formBusqueda.html" method="get">
+                       <label>
+                           <input type="text" placeholder="Busca fotos">
+                       </label>
+                           <input type="Submit" value="Buscar">
+                   </form>
+               </li>
+               <li>
+                   <form class="right" style action="usuarioReg.html">
+                       <label><b>Usuario</b></label>
+                           <input type="text" placeholder="Usuario" name="uname" required>
+                       <label><b>Contraseña</b></label>
+                           <input type="password" placeholder="Contraseña" name="pass" required>
+                           <input type="submit" value="Login">
+                           <input type="checkbox" checked="checked"> Recordar								
+                       <a id="psw" class="exception" href="solicitudPass.html">Contraseña olvidada?</a>
+                   </form>
+               </li>	
+           </ul>
+       </header>
+   <!-- FIN CABECERA -->    
 
-        <nav>
-            <table>
-                <tr>
-                    <td>
-                        <a id="logo" href="index.html">Logo PI</a>
-                        <!-- / #logo-header -->
-                    </td>
-                    <td>
-                        <form style="display: inline" action="formBusqueda.html" method="get">
-                            <label>Búsqueda
-                                                <input type="text" placeholder="Busca fotos">
-                                            </label>
-                            <input type="Submit" value="Buscar">
-                        </form>
-                    </td>
-                    <td>
-                        <form action="usuarioReg.html">
+    <main>
+        <p>
+            Mostrando 1 resultado
+        </p>
 
-                            <img src="img_avatar2.png" alt="Avatar" class="avatar">
+        <h2>Título Imagen 1</h2>
+        <a href="infIMG.html">
+            <img src="pic.jpg" alt="Imagen" style="width:304px;height:228px;">
+        </a>
+        <p>
+            Fecha
+        </p>
+        <p>
+            País
+        </p>
+    </main>
 
-                            <label><b>Username</b>
-                                                <input type="text" placeholder="Enter Username" name="uname" required>                                
-                                            </label>
-
-                            <label><b>Password</b>
-                                                <input type="password" placeholder="Enter Password" name="psw" required>                                
-                                            </label>
-
-                            <input type="submit" value="Login">
-                            <label>Remember me
-                                                    <input type="checkbox" checked="checked" name="remember">                                    
-                                            </label>
-
-                            <button type="button" class="cancelbtn">Cancel</button>
-                            <span class="psw">Forgot <a href="#">password?</a></span>
-
-                        </form>
-                    </td>
-                    <td>
-                            <a href="nuevoReg.html">Registro</a>
-                    </td>
-                </tr>
-            </table>
-        </nav>
-        <!-- / nav -->
-
-    </header>
-    <!-- / #main-header -->
-
-<main>
-    <p>
-        Mostrando 1 resultado
-    </p>
-
-    <h2>Título Imagen 1</h2>
-    <a href="infIMG.html">
-        <img src="pic.jpg" alt="Imagen" style="width:304px;height:228px;">
-    </a>
-    <p>
-        Fecha
-    </p>
-    <p>
-        País
-    </p>
-</main>
-
-    <footer class="footer_side">
-        PI - Pictures & Images ® Contacto 2017
-    </footer>
+	<!-- PÍE DE PÁGINA -->
+    <footer class="footer">
+		PI - Pictures & Images ® 2017
+	</footer>
+	<!-- FIN PÍE -->
 
 </body>
 
