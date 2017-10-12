@@ -1,49 +1,4 @@
-<<<<<<< HEAD
 /* Ordenado por abecedario */
-=======
-/*
-font: para definir las propiedades del texto.
-background: para definir las propiedades del fondo de un elemento.
-border: para definir las propiedades del borde de un elemento.
-margin: para definir la distancia que debe existir entre un elemento y los elementos que lo rodean.
-padding: para definir la distancia que debe existir entre el borde de un elemento y su contenido.
-
-Además, define al menos un par clases para definir el estilo particular de algunos elementos, 
-como por ejemplo, .anuncio para aplicarlo a un párrafo que define un anuncio o .conBorde para 
-aplicarlo a aquellos elementos que tienen que aparecer con un borde.
-En esta práctica debes realizar la maquetación (layout) de la página. 
-Según el Diccionario de la Lengua Española31 de la Real Academia Española, maquetar 
-es “Hacer la maqueta de una publicación que se va a imprimir”. Si buscamos maqueta, 
-obtenemos varias acepciones y una de ellas dice “Boceto previo de la composición de un texto 
-que se va a publicar, usado para determinar sus características definitivas”.
-En el desarrollo de las páginas web, se entiende por maquetación a la acción de distribuir o 
-posicionar los distintos elementos que queremos que aparezcan en una página web. En especial, 
-haz una correcta maquetación de los controles de los formularios para que aparezcan alineados.
-Intenta que el diseño sea fluido (evita trabajar con tamaños fijos) para que se adapte 
-correctamente a distintas resoluciones de pantalla. Sin embargo, en esta práctica no debes 
-realizar un diseño adaptativo (responsive design) de la página, eso lo harás en la siguiente 
-práctica. No debes utilizar las media queries (el atributo media de HTML y la regla @media de CSS).*/
-
-/*:focus { border: 2px solid border-style #385D8A;}*/
-
-#form_busqueda{
-    display: flex;
-    justify-content: space-between;
-}
-#form_login{
-    display: flex;
-    justify-content: space-between;
-}
-#login_btns{
-    display: flex;
-    justify-content: space-between;
-}
-#logo{
-    display: flex;
-    justify-content: left;
-}
-
->>>>>>> e88e56001d6a9d09e9413b38c537096ec245d62e
 
 a {
     text-decoration: none;
@@ -107,23 +62,8 @@ a {
     padding: 0;
 }
 
-<<<<<<< HEAD
 .imagenes{
     float: left;
-=======
-#psw {
-    margin-top: 220%;
-    font-size: 60%;
-    background-size: 120%;
-}
-
-header{
-    border: dotted black 2px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
->>>>>>> e88e56001d6a9d09e9413b38c537096ec245d62e
 }
 
 #logo{ /* el tamaño del logo al 5% va bastante bien pero el menu se descuadra*/
