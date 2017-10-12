@@ -8,79 +8,65 @@
     <meta name="keywords" content="HTML5, web" />
     <meta name="description" content="Practica DAW" />
     <title>PI - Pictures & Images</title>
-    <link rel = "stylesheet" type = "text/css" href = "css/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="css/estilo.css" />
 </head>
 
 <body>
-	<!-- CABECERA -->
+    <!-- CABECERA DISTINTA-->
     <header>
-            <ul class="no-style">
-               <div class="alignLeft classLogo">
-                   <li> <!-- / #logo-header -->
-                       <a id="aLogo" href="index.html">
-                           <img id="logo" src="images/logo.png" alt="logo"> 
-                       </a>
-                   </li>
-               </div>
-               <div class="menu horizontal">
-                   <div>
-                       <li>
-                           <a href="nuevoReg.html">Registro</a>
-                       </li>
-                       <li>
-                           <a href="contacto.html">Contacto</a>
-                       </li>
-                   </div>
-                   <div class="alignCenter">
-                       <li>
-                           <form action="formBusqueda.html" method="get">
-                               <label>
-                                   <input type="text" placeholder="Busca fotos">
-                               </label>
-                                   <input type="Submit" value="Buscar">
-                           </form>
-                       </li>
-                   </div>
-                   <div class="alignRight horizontal">
-                       <li>
-                           <form style action="usuarioReg.html">
-                               <label><b>Usuario</b></label>
-                                   <input type="text" placeholder="Usuario" name="uname" required>
-                               <label><b>Contraseña</b></label>
-                                   <input type="password" placeholder="Contraseña" name="pass" required>
-                                   <input type="submit" value="Login">
-                                   <input type="checkbox" checked="checked"> Recordar								
-                               <a id="psw" class="exception" href="solicitudPass.html">Contraseña olvidada?</a>
-                           </form>
-                       </li>	
-                   </div>
-               </div>
-           </ul>
-       </header>
-   <!-- FIN CABECERA -->   
+            <ul class="no-style" style="display:flex;justify-content:flex-start">
+    
+                <li >
+                    <a href="index.html">
+                        <img id="logo" src="images/logo.png" alt="logo">
+                    </a>
+                </li>
+    
+                <li style="margin-left:10px">
+                    <a href="contacto.html">Contacto</a>
+                </li>
+    
+                <li style="margin-left:10px">
+                    <form action="formBusqueda.html" method="get">
+                        <label>
+                            <input type="text" placeholder="Busca fotos">
+                        </label>
+                        <input type="Submit" value="Buscar">
+                    </form>
+                </li>
+    
+            </ul>
+        </header>
+        <!-- FIN CABECERA -->  
 
 
     <main>
         <div class="card">
-        <form>
-            <h2>Se ha registrado la solicitud del álbum satisfactoriamente</h2> <br> Nombre:
-            <br> Título del álbum:
-            <br> Texto adicional:
-            <br> Color de portada:
-            <br> Número de copias:
-            <br> El coste es de X.<br>
-        </form>
-        <br>
+            <form>
+                <h2>Se ha registrado la solicitud del álbum satisfactoriamente</h2>
+                <br> Nombre:
+                <br> Título del álbum:
+                <br> Texto adicional:
+                <br> Color de portada:
+                <br> Número de copias:
+                <br> El coste es de X.
+                <br>
+            </form>
+            <br>
 
-        <a href="usuarioReg.html">Volver al perfil</a>
+            <a href="usuarioReg.html">Volver al perfil</a>
 
-        <br><br><br><br>
-    </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
     </main>
-	<!-- PÍE DE PÁGINA -->
+    <!-- PÍE DE PÁGINA -->
     <footer class="footer">
-		PI - Pictures & Images ® 2017
-	</footer>
-	<!-- FIN PÍE -->
+        PI - Pictures & Images ® 2017
+    </footer>
+    <!-- FIN PÍE -->
 </body>
+
 </html>
