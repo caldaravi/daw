@@ -10,49 +10,60 @@
 	<link rel = "stylesheet" type = "text/css" href = "css/estilo.css" />
 </head>
 	<!-- CABECERA -->
-	<header id="header">
-			<ul class="horizontal no-style">
-			   <li> <!-- / #logo-header -->
-					<a href="index.html">
-						<img src="images/logo.png" alt="logo" id="logo"> 
-					</a>
-			   </li>
-			   <li>
-				   <a href="nuevoReg.html">Registro</a>
-			   </li>
-			   <li>
-				   <a href="contacto.html">Contacto</a>
-			   </li>
-			   <li>
-				   <form class="right" action="formBusqueda.html" method="get">
-					   <label>
-						   <input type="text" placeholder="Busca fotos">
-					   </label>
-						   <input type="Submit" value="Buscar">
-				   </form>
-			   </li>
-			   <li>
-				   <form class="right" style action="usuarioReg.html">
-					   <label><b>Usuario</b></label>
-						   <input type="text" placeholder="Usuario" name="uname" required>
-					   <label><b>Contraseña</b></label>
-						   <input type="password" placeholder="Contraseña" name="pass" required>
-						   <input type="submit" value="Login">
-						   <input type="checkbox" checked="checked"> Recordar								
-					   <a id="psw" class="exception" href="solicitudPass.html">Contraseña olvidada?</a>
-				   </form>
-			   </li>	
+	<header>
+			<ul class="no-style">
+			   <div class="alignLeft classLogo">
+				   <li> <!-- / #logo-header -->
+					   <a id="aLogo" href="index.html">
+						   <img id="logo" src="images/logo.png" alt="logo"> 
+					   </a>
+				   </li>
+			   </div>
+			   <div class="menu horizontal">
+				   <div>
+					   <li>
+						   <a href="nuevoReg.html">Registro</a>
+					   </li>
+					   <li>
+						   <a href="contacto.html">Contacto</a>
+					   </li>
+				   </div>
+				   <div class="alignCenter">
+					   <li>
+						   <form action="formBusqueda.html" method="get">
+							   <label>
+								   <input type="text" placeholder="Busca fotos">
+							   </label>
+								   <input type="Submit" value="Buscar">
+						   </form>
+					   </li>
+				   </div>
+				   <div class="alignRight horizontal">
+					   <li>
+						   <form style action="usuarioReg.html">
+							   <label><b>Usuario</b></label>
+								   <input type="text" placeholder="Usuario" name="uname" required>
+							   <label><b>Contraseña</b></label>
+								   <input type="password" placeholder="Contraseña" name="pass" required>
+								   <input type="submit" value="Login">
+								   <input type="checkbox" checked="checked"> Recordar								
+							   <a id="psw" class="exception" href="solicitudPass.html">Contraseña olvidada?</a>
+						   </form>
+					   </li>	
+				   </div>
+			   </div>
 		   </ul>
 	   </header>
    <!-- FIN CABECERA -->    
     	
 		
 	<main>
-		<form>
+		<form class="card">
 			<label>Introduce el correo electrónico con el que te registraste y te envíaremos un e-mail para restaurar la contraseña.<br>
-				E-mail 
+				<br>E-mail 
 					<input type="email" name="email" required placeholder="Introduce tu e-mail">
 			</label>
+			
 			<input type="submit" value="Enviar">
 		</form>
 	</main>

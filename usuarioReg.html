@@ -13,34 +13,45 @@
 
 <body>
 	<!-- CABECERA -->
-    <header id="header">
-            <ul class="horizontal no-style">
-               <li> <!-- / #logo-header -->
-                    <a href="index.html">
-						<img src="images/logo.png" alt="logo" id="logo"> 
-					</a>
-               </li>
-               <li>
-                   <a href="contacto.html">Contacto</a>
-               </li>
-               <li>
-                   <form class="right" action="formBusqueda.html" method="get">
-                       <label>
-                           <input type="text" placeholder="Busca fotos">
-                       </label>
-                           <input type="Submit" value="Buscar">
-                   </form>
-               </li>
+    <header>
+            <ul class="no-style">
+               <div class="alignLeft classLogo">
+                   <li> <!-- / #logo-header -->
+                       <a id="aLogo" href="index.html">
+                           <img id="logo" src="images/logo.png" alt="logo"> 
+                       </a>
+                   </li>
+               </div>
+               <div class="menu horizontal">
+                   <div>
+                       <li>
+                           <a href="contacto.html">Contacto</a>
+                       </li>
+                   </div>
+                   <div class="alignCenter">
+                       <li>
+                           <form action="formBusqueda.html" method="get">
+                               <label>
+                                   <input type="text" placeholder="Busca fotos">
+                               </label>
+                                   <input type="Submit" value="Buscar">
+                           </form>
+                       </li>
+                   </div>
+                   
+               </div>
            </ul>
        </header>
-   <!-- FIN CABECERA -->    
+   <!-- FIN CABECERA -->      
 
 <main>
-    <h1>Perfil</h1><br> Nombre:
-    <br> Apellidos:
-    <br> Mis álbumes:<br> Crear álbum<br>
-    <a href="solicitarAlbum.html">Solicitar álbum</a><br><br>
-    <a href="index.html"> Salir</a><br><br><br><br>
+    <div class="card">
+        <h1>Perfil</h1><br> Nombre: Antonio 
+        <br> Apellidos: Pepito García
+        <br> Mis álbumes:<br> Crear álbum<br>
+        <a href="solicitarAlbum.html">Solicitar álbum</a><br><br>
+        <a href="index.html"> Salir</a><br><br><br><br>
+    </div>
 </main>
 
 	<!-- PÍE DE PÁGINA -->
