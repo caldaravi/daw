@@ -23,6 +23,23 @@ práctica. No debes utilizar las media queries (el atributo media de HTML y la r
 
 /*:focus { border: 2px solid border-style #385D8A;}*/
 
+#form_busqueda{
+    display: flex;
+    justify-content: space-between;
+}
+#form_login{
+    display: flex;
+    justify-content: space-between;
+}
+#login_btns{
+    display: flex;
+    justify-content: space-between;
+}
+#logo{
+    display: flex;
+    justify-content: left;
+}
+
 
 a {
     text-decoration: none;
@@ -67,11 +84,12 @@ a {
     background-size: 120%;
 }
 
-.header{
-    margin-top: 10px;
-    margin-bottom: 20px;
-    margin-left: 5%;
-    display: inline;
+header{
+    border: dotted black 2px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .footer {
