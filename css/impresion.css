@@ -1,0 +1,125 @@
+/* Ordenado por abecedario */
+
+a {
+    text-decoration: underline;
+}
+
+.alignCenter {
+    margin-left: 35%;
+    margin: 0px;
+}
+
+.alignLeft {
+    float: left;
+}
+
+.alignRight {
+    float: right;
+}
+
+body{
+    background-color: #ffffff;
+}
+
+.card{
+    background-color: #ffffff;
+    margin-top: 20px;
+    padding: 20px;
+  }
+  
+.footer {
+    background-color: #efefef;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    position: absolute;
+    position: fixed;
+    right: 0;
+    text-align: center;
+  }
+
+ .foto{
+    background-color: #D3D3D3;
+    
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    list-style-position:inside;
+    border: 20px solid black;
+
+ }
+
+ .galeria {
+    list-style-type: none;
+    margin-top: 3%;
+ }
+
+header{
+    padding-top: 20px;
+    width: 100%;
+    height: 50px;
+    background-color: #C0C0C0;
+}
+
+header ul{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+header ul li + li a {
+    background-color: #C0C0C0;
+    color: #ffffff;
+    margin: 0;
+    padding: 4px;
+    text-align: center;
+}
+
+.horizontal a:hover, .horizontal a:active {
+    background-color: #C0C0C0;
+}
+
+.horizontal li {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+#logo{ /* el tamaño del logo al 5% va bastante bien pero el menu se descuadra*/
+    height: 70px;
+    margin-left: 10px;
+    width: 70px;
+    background-color: #878787;
+}
+
+
+main{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    
+    justify-content: center;
+}
+
+.menu {
+    margin-left: 7%;
+}
+
+.no-style {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#psw {
+    font-size: 50%; /*este no hace nada*/
+}
+
