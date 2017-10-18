@@ -1,3 +1,13 @@
+
+/*LAS FOTOS están desplazadas por el float left, se apilan a la derecha del header creo*/
+
+/*La distribucion del header lo estaba haciendo con las clases #formbusq y #formreg, 
+las propiedades que llevan son para que el formreg vaya a la derecha y el formbusq al centro.
+
+header ul li, ajustando el porcentaje que hay se centran más o menos, pero hay que hacerlo responsive*/
+.b{
+    border: 1px dotted black;
+}
 /* Ordenado por abecedario */
 
 a {
@@ -40,7 +50,8 @@ body{
 
  .foto{
     background-color: #d8d7af;
-    
+    float: left;
+    margin: 10px;
     width: 400px;
     display: flex;
     flex-direction: column;
@@ -51,30 +62,53 @@ body{
 
  }
 
+#formbusq{
+    overflow: hidden;
+}
+
+#formreg{
+    float:right;
+}
+
  .galeria {
+    /*float: left;*/
     list-style-type: none;
     margin-top: 3%;
  }
 
 header{
-    padding-top: 20px;
+    /*padding-top: 20px;*/
     width: 100%;
     height: 50px;
     background-color: #98aa00;
-}
 
+}
 header ul{
-    display: flex;
-    align-content: center;
-    justify-content: space-between;
+    width: 100%;
 }
-
 header ul li + li a {
+    background: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    color: #757575;
+    cursor: default;
+    width: 90px;
+    padding: 0 16px;
+    height:23px;
+    /*
     background-color: #98bf21;
     color: #ffffff;
-    margin: 0;
-    padding: 4px;
-    text-align: center;
+    margin: 4px;
+    margin-top: 10px;
+    /*padding: 4px;
+    text-align: center;*/
+}
+header ul li{
+    width: 20%;
+    float: left;
+}
+
+header ul li > form[action="usuarioReg.html"]{
+    margin-top: -4px;
 }
 
 .horizontal a:hover, .horizontal a:active {
@@ -90,6 +124,36 @@ header ul li + li a {
 .imagenes{
     float: left;
 }*/
+input{
+    border: none;
+    
+    height: 19px;
+    border:1px solid #eaeaea;
+    outline:none;
+}
+input[type="submit"] {
+    background: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    color: #757575;
+    cursor: default;
+    width: 90px;
+    padding: 0 16px;
+    height:23px;
+}
+input[type="submit"]:hover {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background: #f8f8f8;
+    border: 1px solid #c6c6c6;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    color: #222;
+}
+input:hover{
+    border-color: #a0a0a0 #b9b9b9 #b9b9b9 #b9b9b9;
+}
+input:focus{
+    border-color:#4d90fe;
+}
+
 
 #logo{ /* el tamaño del logo al 5% va bastante bien pero el menu se descuadra*/
     height: 70px;
@@ -112,15 +176,14 @@ main{
     
     justify-content: center;
 }
-
+/*
 .menu {
     margin-left: 7%;
-}
+}*/
 
 .no-style {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+   
 }
 
 #psw {
