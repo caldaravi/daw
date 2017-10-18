@@ -52,6 +52,7 @@ body{
  }
 
  .galeria {
+    /*float: left;*/
     list-style-type: none;
     margin-top: 3%;
  }
@@ -70,11 +71,23 @@ header ul{
 }
 
 header ul li + li a {
+    background: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    color: #757575;
+    cursor: default;
+    width: 90px;
+    padding: 0 16px;
+    height:23px;
+    /*
     background-color: #98bf21;
     color: #ffffff;
-    margin: 0;
-    padding: 4px;
-    text-align: center;
+    margin: 4px;
+    margin-top: 10px;
+    /*padding: 4px;
+    text-align: center;*/
+}
+header ul li form[action="formBusqueda.html"]+li{
+    margin-top: -5px;
 }
 
 .horizontal a:hover, .horizontal a:active {
@@ -90,6 +103,35 @@ header ul li + li a {
 .imagenes{
     float: left;
 }*/
+input{
+    border: none;
+    
+    height: 19px;
+    border:1px solid #eaeaea;
+    outline:none;
+}
+input[type="submit"] {
+    background: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    color: #757575;
+    cursor: default;
+    width: 90px;
+    padding: 0 16px;
+    height:23px;
+}
+input[type="submit"]:hover {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background: #f8f8f8;
+    border: 1px solid #c6c6c6;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    color: #222;
+}
+input:hover{
+    border-color: #a0a0a0 #b9b9b9 #b9b9b9 #b9b9b9;
+}
+input:focus{
+    border-color:#4d90fe;
+}
 
 #logo{ /* el tamaño del logo al 5% va bastante bien pero el menu se descuadra*/
     height: 70px;
