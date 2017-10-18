@@ -13,8 +13,8 @@
 </head>
 <body>
 	<!-- CABECERA -->
-    <header>
-			<ul class="no-style">
+    <header class="">
+			<ul class="no-style b">
 	
 				<li >
 					<!-- / #logo-header -->
@@ -26,11 +26,8 @@
 				<li>
 					<a href="nuevoReg.html">Registro</a>
 				</li>
-				<li>
-					<a href="contacto.html">Contacto</a>
-				</li>
 	
-				<li>
+				<li id="formbusq">
 					<form action="formBusqueda.html" method="get">
 						<label>
 							<input type="text" placeholder="Busca fotos">
@@ -39,8 +36,8 @@
 					</form>
 				</li>
 	
-				<li style="border: 1px dotted black">
-					<form  action="usuarioReg.html" style="border: 1px dotted black">
+				<li id="formreg">
+					<form  action="usuarioReg.html">
 						<label>
 							<b>Usuario</b>
 							<input type="text" placeholder="Usuario" name="uname" required>
@@ -134,7 +131,9 @@
 
 	<!-- PÍE DE PÁGINA -->
 		<footer class="footer">
+			
 			PI - Pictures & Images ® 2017
+			<a href="contacto.html">Contacto</a>
 		</footer>
 	<!-- FIN PÍE -->
 
