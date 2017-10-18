@@ -17,13 +17,9 @@ a {
     float: right;
 }
 
-
-
 body{
     background-color: #c1bea8;
 }
-
-
 
 .card{
     background-color: #d8d7af;
@@ -44,10 +40,21 @@ body{
 
  .foto{
     background-color: #d8d7af;
-    margin-top: 20px;
-    padding: 20px;
+    
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    list-style-position:inside;
+    border: 20px solid white;
 
-    margin-bottom: 60px;
+ }
+
+ .galeria {
+    /*float: left;*/
+    list-style-type: none;
+    margin-top: 3%;
  }
 
 header{
@@ -80,10 +87,10 @@ header ul li + li a {
     margin: 0;
     padding: 0;
 }
-
+/*
 .imagenes{
     float: left;
-}
+}*/
 
 #logo{ /* el tamaño del logo al 5% va bastante bien pero el menu se descuadra*/
     height: 70px;
