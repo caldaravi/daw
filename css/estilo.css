@@ -1,22 +1,12 @@
-
-/*LAS FOTOS están desplazadas por el float left, se apilan a la derecha del header creo*/
-
-/*La distribucion del header lo estaba haciendo con las clases #formbusq y #formreg, 
-las propiedades que llevan son para que el formreg vaya a la derecha y el formbusq al centro.
-
-header ul li, ajustando el porcentaje que hay se centran más o menos, pero hay que hacerlo responsive*/
-.b{
-    border: 1px dotted black;
-}
-/* Ordenado por abecedario */
+/* CSS Ordenador por abecedario */
 
 a {
     text-decoration: none;
 }
 
 .alignCenter {
-    margin-left: 35%;
     margin: 0px;
+    margin-left: 35%;
 }
 
 .alignLeft {
@@ -29,6 +19,18 @@ a {
 
 body{
     background-color: #c1bea8;
+}
+
+#buscarLi{
+    margin-left: 35%;
+    overflow: hidden;
+    position: absolute;
+    width: 20%;
+    
+}
+#botonRegId {
+    height: 23px;
+    width: 45%;
 }
 
 .card{
@@ -49,62 +51,56 @@ body{
   }
 
  .foto{
-    background-color: #d8d7af;
-    float: left;
-    margin: 10px;
-    width: 400px;
-    display: flex;
-    flex-direction: column;
     align-content: center;
     align-items: center;
-    list-style-position:inside;
+    background-color: #d8d7af;
     border: 20px solid white;
-
+    display: flex;
+    flex-direction: column;
+    float: left;
+    list-style-position:inside;
+    margin: 10px;
+    width: 400px;
  }
 
-#formbusq{
-    overflow: hidden;
-}
-
-#formreg{
+#formregLi{
     float:right;
+    margin-right: -6%;
+    margin-top: -1%;
+    width: 40%;
 }
-
- .galeria {
-    /*float: left;*/
+#formregLiLogged{
+    visibility: hidden;
+}
+.galeria {
     list-style-type: none;
     margin-top: 3%;
  }
-
 header{
-    /*padding-top: 20px;*/
-    width: 100%;
-    height: 50px;
     background-color: #98aa00;
-
+    height: 75px;
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 100%;
 }
+
 header ul{
+    padding: 2%;
     width: 100%;
 }
 header ul li + li a {
-    background: #f2f2f2;
-    border: 1px solid #f2f2f2;
-    color: #757575;
-    cursor: default;
-    width: 90px;
-    padding: 0 16px;
-    height:23px;
-    /*
-    background-color: #98bf21;
-    color: #ffffff;
-    margin: 4px;
-    margin-top: 10px;
-    /*padding: 4px;
-    text-align: center;*/
+    align-content: center;
+    background: #98be22;
+    border: 1px solid #000000;
+    color: #000000;
+    display: flex;
+    padding: 0 8px;
+    padding-bottom: 2px;
+    padding-top: 2px;
 }
 header ul li{
-    width: 20%;
     float: left;
+    width: 30%;
 }
 
 header ul li > form[action="usuarioReg.html"]{
@@ -120,28 +116,21 @@ header ul li > form[action="usuarioReg.html"]{
     margin: 0;
     padding: 0;
 }
-/*
-.imagenes{
-    float: left;
-}*/
 input{
-    border: none;
-    
-    height: 19px;
-    border:1px solid #eaeaea;
-    outline:none;
+    height: 15px;
+    font-size: xx-small;
+    outline: none;
 }
 input[type="submit"] {
     background: #f2f2f2;
     border: 1px solid #f2f2f2;
     color: #757575;
     cursor: default;
+    height:23px;
     width: 90px;
     padding: 0 16px;
-    height:23px;
 }
 input[type="submit"]:hover {
-    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
     background: #f8f8f8;
     border: 1px solid #c6c6c6;
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
@@ -154,44 +143,59 @@ input:focus{
     border-color:#4d90fe;
 }
 
+#login {
+    margin-left: 12%;
+    margin-top: 2.5%;
+}
 
 #logo{ /* el tamaño del logo al 5% va bastante bien pero el menu se descuadra*/
+    background-color: #98bf21;
     height: 70px;
     margin-left: 10px;
     width: 70px;
-    background-color: #98bf21;
 }
-
-
+#logoLi {
+    width: 10%;
+}
 main{
-    padding: 0;
-    margin: 0;
     list-style: none;
-    
+    margin: 0;
     display: -webkit-box;
+    display: -webkit-flex;
     display: -moz-box;
     display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    
+    display: initial;
     justify-content: center;
+    padding: 0;
 }
-/*
-.menu {
-    margin-left: 7%;
-}*/
-
 .no-style {
     list-style-type: none;
    
 }
-
 #psw {
-    font-size: 50%; /*este no hace nada*/
+    background-color: transparent;
+    border: 0px;
+    color: #4b2b89;
+    display: flex;
+    float: right;
+    font-size: x-small;
+    margin-right: 30%;
+    margin-top: 2%;
+    text-decoration: underline;
+    width: 10%;
 }
-/*
-header ul li{
-    float: left;
+
+#recordar {
+    font-size: x-small;
+    margin-left: 6%;
+    width: 1.5%;
 }
-*/
+
+#regLi {
+    height: 23px;
+    width: 15%;
+}
+#regLiLogged {
+    visibility: hidden;
+}
 

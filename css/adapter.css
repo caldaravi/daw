@@ -1,7 +1,7 @@
 /* CSS Ordenador por abecedario */
 
 a {
-    color: #666666;
+    text-decoration: underline;
 }
 
 .alignCenter {
@@ -16,9 +16,8 @@ a {
 .alignRight {
     float: right;
 }
-
 body{
-    background-color: #D3D3D3;
+    background-color: #c1bea8;
 }
 
 #buscarLi{
@@ -29,8 +28,8 @@ body{
     
 }
 #botonRegId {
-    height: 23px;
-    width: 45%;
+    height: 45px;
+    width: 62%;
 }
 
 .card{
@@ -42,6 +41,7 @@ body{
 .footer {
     background-color: #efefef;
     bottom: 0;
+    font-size: 200%;
     left: 0;
     padding: 1rem;
     position: absolute;
@@ -53,7 +53,7 @@ body{
  .foto{
     align-content: center;
     align-items: center;
-    background-color: #C0C0C0;
+    background-color: #d8d7af;
     border: 20px solid white;
     display: flex;
     flex-direction: column;
@@ -77,8 +77,9 @@ body{
     margin-top: 3%;
  }
 header{
-    background-color: #C0C0C0;
-    height: 75px;
+    background-color: #98aa00;
+    font-size: 200%;
+    height: 150px;
     margin-left: 2%;
     margin-right: 2%;
     width: 100%;
@@ -90,7 +91,7 @@ header ul{
 }
 header ul li + li a {
     align-content: center;
-    background: #AFAFAF;
+    background: #2994eb;
     border: 1px solid #000000;
     color: #000000;
     display: flex;
@@ -108,7 +109,7 @@ header ul li > form[action="usuarioReg.html"]{
 }
 
 .horizontal a:hover, .horizontal a:active {
-    background-color: #666666;
+    background-color: #7a991A;
 }
 
 .horizontal li {
@@ -116,22 +117,31 @@ header ul li > form[action="usuarioReg.html"]{
     margin: 0;
     padding: 0;
 }
-img {
-    filter: grayscale(100%);
-}
 input{
-    height: 15px;
-    font-size: xx-small;
+    font-size: x-large;
+    height: 25%;
     outline: none;
+    text-decoration: underline;
 }
 input[type="submit"] {
     background: #f2f2f2;
     border: 1px solid #f2f2f2;
     color: #757575;
     cursor: default;
-    height:23px;
-    width: 90px;
+    height:45px;
+    width: 100px;
     padding: 0 16px;
+}
+input[type="checkbox"] {
+    -moz-transform: scale(4); /* FF */
+    -ms-transform: scale(4); /* IE */
+    -o-transform: scale(4); /* Opera */
+    -webkit-transform: scale(4); /* Safari and Chrome */
+  }
+}
+input[type="password"] {
+    height:5px;
+    width: 8px;
 }
 input[type="submit"]:hover {
     background: #f8f8f8;
@@ -143,19 +153,19 @@ input:hover{
     border-color: #a0a0a0 #b9b9b9 #b9b9b9 #b9b9b9;
 }
 input:focus{
-    border-color:#666666;
+    border-color:#4d90fe;
 }
 
 #login {
     margin-left: 12%;
     margin-top: 2.5%;
 }
-
 #logo{ /* el tamaño del logo al 5% va bastante bien pero el menu se descuadra*/
-    background-color: #AFAFAF;
-    height: 70px;
+    background-color: #2994eb;
+    height: 100px;
     margin-left: 10px;
-    width: 70px;
+    margin-top: 30%;
+    width: 100px;
 }
 #logoLi {
     width: 10%;
@@ -168,6 +178,7 @@ main{
     display: -moz-box;
     display: -ms-flexbox;
     display: initial;
+    font-size: 200%;
     justify-content: center;
     padding: 0;
 }
@@ -175,13 +186,14 @@ main{
     list-style-type: none;
    
 }
+
 #psw {
     background-color: transparent;
     border: 0px;
-    color: #666666;
+    color: #4b2b89;
     display: flex;
     float: right;
-    font-size: x-small;
+    font-size: x-large;
     margin-right: 30%;
     margin-top: 2%;
     text-decoration: underline;
@@ -189,15 +201,17 @@ main{
 }
 
 #recordar {
-    font-size: x-small;
+    font-size: x-large;
     margin-left: 6%;
     width: 1.5%;
 }
 
 #regLi {
     height: 23px;
-    width: 15%;
+    width: 210px;
+    
 }
 #regLiLogged {
     visibility: hidden;
 }
+

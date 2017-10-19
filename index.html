@@ -9,26 +9,28 @@
 
 	<title>PI - Pictures & Images</title>
 
-	<!--<link rel = "stylesheet" type = "text/css" href = "css/estilo.css" media="print" />-->
-	<link rel = "stylesheet" type = "text/css" href = "css/impresion.css"/>
+	<!-- <link rel = "stylesheet" type = "text/css" href = "css/estilo.css" media="screen" /> -->
+	<!-- <link rel = "stylesheet" type = "text/css" href = "css/impresion.css" media="print" /> -->
+	<link rel = "stylesheet" type = "text/css" href = "css/adapter.css"  />
+	<!-- <link rel = "stylesheet" type = "text/css" href = "css/responsive.css" media="responsive" /> -->
 </head>
 <body>
 	<!-- CABECERA -->
-    <header class="">
+    <header class="b">
 			<ul class="no-style b">
 	
-				<li >
+				<li class="b" id="logoLi">
 					<!-- / #logo-header -->
 					<a href="index.html">
 						<img id="logo" src="images/logo.png" alt="logo">
 					</a>
 				</li>
 	
-				<li>
-					<a href="nuevoReg.html">Registro</a>
+				<li class="b" id="regLi">
+					<a id="botonRegId" href="nuevoReg.html">Regístrate</a>
 				</li>
 	
-				<li id="formbusq">
+				<li class="b" id="buscarLi">
 					<form action="formBusqueda.html" method="get">
 						<label>
 							<input type="text" placeholder="Busca fotos">
@@ -37,7 +39,7 @@
 					</form>
 				</li>
 	
-				<li id="formreg">
+				<li class="b" id="formregLi">
 					<form  action="usuarioReg.html">
 						<label>
 							<b>Usuario</b>
@@ -47,10 +49,11 @@
 						<label>
 							<b>Contraseña</b>
 							<input type="password" placeholder="Contraseña" name="pass" required>
+						</label><br>
+						<input id="login" type="submit" value="Login">
+						<label>
+							<input id="recordar" type="checkbox" checked="checked"> Recordar
 						</label>
-						
-						<input type="submit" value="Login">
-						<input type="checkbox" checked="checked"> Recordar
 						<a id="psw" class="exception" href="solicitudPass.html">Contraseña olvidada?</a>
 					</form>
 				</li>
@@ -123,8 +126,8 @@
 					Bali
 				</p>
 			</li>
-			<br><br>
 		</ul>
+		
 		
 		<!-- FIN GALERIA -->
 	</main>
