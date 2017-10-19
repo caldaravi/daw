@@ -9,9 +9,9 @@
 
 	<title>PI - Pictures & Images</title>
 
-	<!-- <link rel = "stylesheet" type = "text/css" href = "css/estilo.css" media="screen" /> -->
+	 <link rel = "stylesheet" type = "text/css" href = "css/estilo.css" media="screen" /> 
 	<!-- <link rel = "stylesheet" type = "text/css" href = "css/impresion.css" media="print" /> -->
-	<link rel = "stylesheet" type = "text/css" href = "css/adapter.css"  />
+	<!-- <link rel = "stylesheet" type = "text/css" href = "css/adapter.css"  /> -->
 	<!-- <link rel = "stylesheet" type = "text/css" href = "css/responsive.css" media="responsive" /> -->
 </head>
 <body>
@@ -49,13 +49,23 @@
 						<label>
 							<b>Contraseña</b>
 							<input type="password" placeholder="Contraseña" name="pass" required>
-						</label><br>
-						<input id="login" type="submit" value="Login">
-						<label>
-							<input id="recordar" type="checkbox" checked="checked"> Recordar
 						</label>
-						<a id="psw" class="exception" href="solicitudPass.html">Contraseña olvidada?</a>
+						<div id="div_infologin">
+							<input id="login" type="submit" value="Login">
+							<label>
+								<input type="checkbox" checked="checked"> Recordar
+							</label>
+							<a id="psw" href="solicitudPass.html">Contraseña olvidada?</a>
+						</div>
+
+						
 					</form>
+					
+				</li>
+				<li id="loginicon">
+						<a>
+								<img id="loginimg" src="https://image.flaticon.com/icons/png/512/64/64572.png" alt="login icon">
+						</a>
 				</li>
 			</ul>
 		</header>

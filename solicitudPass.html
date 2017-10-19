@@ -11,49 +11,59 @@
 </head>
 	<!-- CABECERA -->
     <header class="b">
-		<ul class="no-style b">
+			<ul class="no-style b">
+	
+				<li class="b" id="logoLi">
+					<!-- / #logo-header -->
+					<a href="index.html">
+						<img id="logo" src="images/logo.png" alt="logo">
+					</a>
+				</li>
+	
+				<li class="b" id="regLi">
+					<a id="botonRegId" href="nuevoReg.html">Regístrate</a>
+				</li>
+	
+				<li class="b" id="buscarLi">
+					<form action="formBusqueda.html" method="get">
+						<label>
+							<input type="text" placeholder="Busca fotos">
+						</label>
+						<input type="Submit" value="Buscar">
+					</form>
+				</li>
+	
+				<li class="b" id="formregLi">
+					<form  action="usuarioReg.html">
+						<label>
+							<b>Usuario</b>
+							<input type="text" placeholder="Usuario" name="uname" required>
+						</label>
+						
+						<label>
+							<b>Contraseña</b>
+							<input type="password" placeholder="Contraseña" name="pass" required>
+						</label>
+						<div id="div_infologin">
+							<input id="login" type="submit" value="Login">
+							<label>
+								<input type="checkbox" checked="checked"> Recordar
+							</label>
+							<a id="psw" href="solicitudPass.html">Contraseña olvidada?</a>
+						</div>
 
-			<li class="b" id="logoLi">
-				<!-- / #logo-header -->
-				<a href="index.html">
-					<img id="logo" src="images/logo.png" alt="logo">
-				</a>
-			</li>
-
-			<li class="b" id="regLi">
-				<a id="botonRegId" href="nuevoReg.html">Regístrate</a>
-			</li>
-
-			<li class="b" id="buscarLi">
-				<form action="formBusqueda.html" method="get">
-					<label>
-						<input type="text" placeholder="Busca fotos">
-					</label>
-					<input type="Submit" value="Buscar">
-				</form>
-			</li>
-
-			<li class="b" id="formregLi">
-				<form  action="usuarioReg.html">
-					<label>
-						<b>Usuario</b>
-						<input type="text" placeholder="Usuario" name="uname" required>
-					</label>
+						
+					</form>
 					
-					<label>
-						<b>Contraseña</b>
-						<input type="password" placeholder="Contraseña" name="pass" required>
-					</label><br>
-					<input id="login" type="submit" value="Login">
-					<label>
-						<input id="recordar" type="checkbox" checked="checked"> Recordar
-					</label>
-					<a id="psw" class="exception" href="solicitudPass.html">Contraseña olvidada?</a>
-				</form>
-			</li>
-		</ul>
-	</header>
-	<!-- FIN CABECERA -->   
+				</li>
+				<li id="loginicon">
+						<a>
+								<img id="loginimg" src="https://image.flaticon.com/icons/png/512/64/64572.png" alt="login icon">
+						</a>
+				</li>
+			</ul>
+		</header>
+		<!-- FIN CABECERA -->   
     	
 		
 	<main>

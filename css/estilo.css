@@ -65,13 +65,22 @@ body{
 
 #formregLi{
     float:right;
-    margin-right: -6%;
+    margin-left: 5%;
     margin-top: -1%;
     width: 40%;
 }
 #formregLiLogged{
     visibility: hidden;
 }
+
+form[action="usuarioReg.html"]{
+float: right;
+
+}
+
+form[action="usuarioReg.html"] label +label +label{
+    float: left;
+    }
 .galeria {
     list-style-type: none;
     margin-top: 3%;
@@ -79,14 +88,12 @@ body{
 header{
     background-color: #98aa00;
     height: 75px;
-    margin-left: 2%;
     margin-right: 2%;
     width: 100%;
 }
 
 header ul{
     padding: 2%;
-    width: 100%;
 }
 header ul li + li a {
     align-content: center;
@@ -136,6 +143,7 @@ input[type="submit"]:hover {
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
     color: #222;
 }
+
 input:hover{
     border-color: #a0a0a0 #b9b9b9 #b9b9b9 #b9b9b9;
 }
@@ -143,8 +151,16 @@ input:focus{
     border-color:#4d90fe;
 }
 
+
+#div_infologin{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
 #login {
-    margin-left: 12%;
+    margin-left: 4px;
     margin-top: 2.5%;
 }
 
@@ -157,6 +173,12 @@ input:focus{
 #logoLi {
     width: 10%;
 }
+
+#loginicon{
+    visibility: hidden;
+    display: none;
+}
+
 main{
     list-style: none;
     margin: 0;
@@ -176,13 +198,8 @@ main{
     background-color: transparent;
     border: 0px;
     color: #4b2b89;
-    display: flex;
-    float: right;
     font-size: x-small;
-    margin-right: 30%;
-    margin-top: 2%;
     text-decoration: underline;
-    width: 10%;
 }
 
 #recordar {
@@ -193,9 +210,81 @@ main{
 
 #regLi {
     height: 23px;
-    width: 15%;
+    width: 135px;
 }
 #regLiLogged {
     visibility: hidden;
 }
 
+
+@media screen and (max-width: 1030px) {
+    
+    #buscarLi{
+        position: absolute;
+        overflow: hidden;
+        width: 300px;
+        margin-left: 30%;
+    }
+
+    form[action="usuarioReg.html"]{
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+    }
+    .galeria{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header{
+        height: 100px;
+    }
+
+    input[name="uname"]{
+        margin-left: 25px;
+    }
+
+    #loginicon{
+        visibility: hidden;
+        display: none;
+    }
+
+    #regLi{
+        margin-left: 5%;
+    }
+
+}
+
+@media screen and (max-width: 770px){
+    #formregLi{
+        visibility: hidden;
+        display:none;
+
+    }
+    .galeria{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #loginicon{
+        display: block;
+        margin-left: 80%;
+        visibility: visible;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+    }
+    #loginimg{
+        visibility: visible;
+        width: 40px;
+        height: 40px;
+    }
+    
+    #loginicon a{
+        border: none;
+        background-color: transparent;
+    }
+
+    
+}
