@@ -158,6 +158,12 @@ input:focus{
 li form label {
     float: left;
 }
+
+#loginicon{
+    display: none;
+    visibility: hidden;
+}
+
 #login {
     margin-left: 12%;
     margin-top: 2.5%;
