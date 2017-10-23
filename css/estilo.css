@@ -35,8 +35,12 @@ body{
 
 .card{
     background-color: #d8d7af;
-    margin-top: 30px;
     padding: 20px;
+    width: 30%;
+    box-sizing: border-box;
+    margin: 25px auto;
+    margin-bottom: 70px;
+
   }
   
 .center{
@@ -64,7 +68,7 @@ footer {
     flex-direction: column;
     float: left;
     list-style-position:inside;
-    margin: 10px;
+    margin: 5px;
     width: 360px;
  }
 
@@ -85,13 +89,11 @@ footer {
 
 
 
-form[action="usuarioReg.html"] label +label +label{
-    float: left;
-    }
+
 .galeria {
     list-style-type: none;
-    margin-top: 3%;
-    margin-bottom: 70px;
+
+    
  }
 header{
     background-color: #98aa00;
@@ -168,8 +170,8 @@ input:focus{
     border-color:#4d90fe;
 }
 
-input[type="radio"]{
-float:left;
+input[value="Enviar"]{
+    margin-top: 10px;
 }
 
 #div_infologin{
