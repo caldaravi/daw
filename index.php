@@ -1,25 +1,7 @@
-﻿<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="utf-8">
-	<meta name="generator" content="Bloc de notas" /> 
-	<meta name="author" content="Carlos y Marcos" /> 
-	<meta name="keywords" content="HTML5, web" /> 
-	<meta name="description" content="Esta es la pagina creada para las practicas de la asignatura de DAW" /> 
-
-	<title>PI - Pictures & Images</title>
-
-	<link rel = "stylesheet" type = "text/css" href = "css/estilo.css" media="screen" />
-	<link rel = "stylesheet" type = "text/css" href = "css/impresion.css" media="print"/> 
-	<link rel = "stylesheet" type = "text/css" href = "css/adapter.css" title="Estilo accesible" media="adapter"/> 
-	<link rel = "stylesheet" type = "text/css" href = "css/responsive.css" media="handheld" />
-</head>
-<body>
-	<!-- CABECERA -->
-    	<?php include("includes/header.html"); ?>
-	<!-- FIN CABECERA -->   
-    	
-		
+﻿<!-- CABECERA -->
+	<?php require("includes/header.html"); ?>
+<!-- FIN CABECERA -->   
+    			
 	<main>
 	<!-- GALERIA DE IMAGENES -->
 		<ul class="galeria">
@@ -90,10 +72,6 @@
 		<!-- FIN GALERIA -->
 	</main>
 	
-
-	<!-- PÍE DE PÁGINA -->
-		<?php include("includes/footer.html"); ?>
-	<!-- FIN PÍE -->
-
-</body>
-</html>
+<!-- PÍE DE PÁGINA -->
+	<?php require("includes/footer.html"); ?>
+<!-- FIN PÍE -->

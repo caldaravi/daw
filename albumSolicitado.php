@@ -1,21 +1,6 @@
-﻿<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="generator" content="Bloc de notas" />
-    <meta name="author" content="Carlos y Marcos" />
-    <meta name="keywords" content="HTML5, web" />
-    <meta name="description" content="Practica DAW" />
-    <title>PI - Pictures & Images</title>
-    <link rel="stylesheet" type="text/css" href="css/estilo.css" />
-</head>
-
-    <body>
-    <!-- CABECERA -->
-        <?php include("includes/header.html"); ?>
-    <!-- FIN CABECERA -->   
-
+﻿<!-- CABECERA -->
+    <?php require("includes/header.html"); ?>
+<!-- FIN CABECERA -->   
 
     <main>
         <div class="card">
@@ -39,9 +24,7 @@
             <br>
         </div>
     </main>
-    <!-- PÍE DE PÁGINA -->
-		<?php include("includes/footer.html"); ?>
-    <!-- FIN PÍE -->
-</body>
 
-</html>
+<!-- PÍE DE PÁGINA -->
+    <?php require("includes/footer.html"); ?>
+<!-- FIN PÍE -->
