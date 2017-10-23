@@ -77,6 +77,10 @@ footer {
     height:228px;
 }
 
+.foto:last-child{
+    margin-bottom: 80px;
+}
+
 #formregLi{
     float:right;
     margin-left: 5%;
@@ -92,8 +96,8 @@ footer {
 
 .galeria {
     list-style-type: none;
-
-    
+    margin-top: 30px;
+    height: 100%;
  }
 header{
     background-color: #98aa00;
@@ -129,7 +133,7 @@ header ul li{
     width: 30%;
 }
 
-header ul li > form[action="usuarioReg.html"]{
+header ul li > form[action="usuarioReg.php"]{
     margin-top: -4px;
 }
 
@@ -248,12 +252,18 @@ main{
         margin-left: 30%;
     }
 
-    form[action="usuarioReg.html"]{
+    form[action="usuarioReg.php"]{
         display: flex;
         flex-direction: column;
-        align-content: flex-start;
+        align-content: center;
+    }
+
+    #formRegLi{
+        width: 300px;
     }
     .galeria{
+        margin-top: 30px;
+        margin-bottom: 50px;
         display: flex;
         flex-direction: column;
         align-items: center;
