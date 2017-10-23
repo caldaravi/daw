@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title><?php echo $page_title; ?></title>
+        <meta http-equiv="description" content="<?php echo $page_description; ?>" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    </head>
+    <body>
+
+        <header class="b">
+            <ul class="no-style b">
+        
+                <li class="b" id="logoLi">
+                    <!-- / #logo-header -->
+                    <a href="index.php">
+                        <img id="logo" src="images/logo.png" alt="logo">
+                    </a>
+                </li>
+        
+                <li class="b" id="regLiLogged">
+                    <a id="botonRegId" href="nuevoReg.php">Regístrate</a>
+                </li>
+        
+                <li class="b" id="buscarLi">
+                    <form action="formBusqueda.php" method="get">
+                        <label>
+                            <input type="text" placeholder="Busca fotos">
+                        </label>
+                        <input type="Submit" value="Buscar">
+                    </form>
+                </li>
+        
+                <li class="b" id="formregLiLogged">
+                    <form  action="usuarioReg.php">
+                        <label>
+                            <b>Usuario</b>
+                            <input type="text" placeholder="Usuario" name="uname" required>
+                        </label>
+                        
+                        <label>
+                            <b>Contraseña</b>
+                            <input type="password" placeholder="Contraseña" name="pass" required>
+                        </label><br>
+                        <input id="login" type="submit" value="Login">
+                        <label>
+                            <input id="recordar" type="checkbox" checked="checked"> Recordar
+                        </label>
+                        <a id="psw" class="exception" href="solicitudPass.php">Contraseña olvidada?</a>
+                    </form>
+                </li>
+            </ul>
+        </header>
+
+	</body>
+</html>

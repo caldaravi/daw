@@ -25,7 +25,7 @@
 		<ul class="galeria">
 			<li class="foto">
 				<h2>Buenas vistas</h2>
-				<a href="infIMG.html">
+				<a href="infIMG.php">
 					<img src="images/mountain.jpg" alt="Imagen">
 				</a>
 				<p>
@@ -38,7 +38,7 @@
 			</li>
 			<li class="foto">
 				<h2>Kite for life</h2>
-				<a href="infIMG.html">
+				<a href="infIMG.php">
 					<img src="images/kite.jpg" alt="Imagen">
 				</a>
 				<p>
@@ -50,7 +50,7 @@
 			</li>
 			<li class="foto">
 				<h2>BOOM</h2>
-				<a href="infIMG.html">
+				<a href="infIMG.php">
 					<img src="images/volcan.jpg" alt="Imagen">
 				</a>
 				<p>
@@ -62,7 +62,7 @@
 			</li>
 			<li class="foto">
 				<h2>Good views</h2>
-				<a href="infIMG.html">
+				<a href="infIMG.php">
 					<img src="images/caribe.jpg" alt="Imagen">
 				</a>
 				<p>
@@ -74,7 +74,7 @@
 			</li>
 			<li class="foto">
 				<h2>Life style</h2>
-				<a href="infIMG.html">
+				<a href="infIMG.php">
 					<img src="images/surf.jpg" alt="Imagen">
 				</a>	
 				<p>
