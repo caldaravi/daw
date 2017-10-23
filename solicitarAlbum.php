@@ -13,54 +13,12 @@
 
 <body>
 <!-- CABECERA -->
-<header class="b">
-    <ul class="no-style b">
-
-        <li class="b" id="logoLi">
-            <!-- / #logo-header -->
-            <a href="index.html">
-                <img id="logo" src="images/logo.png" alt="logo">
-            </a>
-        </li>
-
-        <li class="b" id="regLiLogged">
-            <a id="botonRegId" href="nuevoReg.html">Regístrate</a>
-        </li>
-
-        <li class="b" id="buscarLi">
-            <form action="formBusqueda.html" method="get">
-                <label>
-                    <input type="text" placeholder="Busca fotos">
-                </label>
-                <input type="Submit" value="Buscar">
-            </form>
-        </li>
-
-        <li class="b" id="formregLiLogged">
-            <form  action="usuarioReg.html">
-                <label>
-                    <b>Usuario</b>
-                    <input type="text" placeholder="Usuario" name="uname" required>
-                </label>
-                
-                <label>
-                    <b>Contraseña</b>
-                    <input type="password" placeholder="Contraseña" name="pass" required>
-                </label><br>
-                <input id="login" type="submit" value="Login">
-                <label>
-                    <input id="recordar" type="checkbox" checked="checked"> Recordar
-                </label>
-                <a id="psw" class="exception" href="solicitudPass.html">Contraseña olvidada?</a>
-            </form>
-        </li>
-    </ul>
-</header>
+    <?php include("includes/headerLogged.html"); ?>
 <!-- FIN CABECERA -->       
     <main>
 
     
-        <form class="card" action="albumSolicitado.html" method="POST">
+        <form class="card" action="albumSolicitado.php" method="POST">
             Descripción: <br> 
             <p class="anuncio"> 
                 Este texto describe el funcionamiento de cómo se debe solicitar un álbum. En primer lugar,
@@ -186,10 +144,7 @@
     </main>
 
 	<!-- PÍE DE PÁGINA -->
-    <footer class="footer">
-        PI - Pictures & Images ® 2017
-        <a href="contacto.html">Contacto</a>
-	</footer>
+        <?php include("includes/footer.html"); ?>
 	<!-- FIN PÍE -->
 
 </body>
