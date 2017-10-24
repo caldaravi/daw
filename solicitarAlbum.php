@@ -158,7 +158,7 @@ require("includes/controlAcceso.php");
             </p>
             <p>
             <label>
-                <input type="checkbox" name="your-group" value="unit-in-group" />Impresión a color
+                <input type="checkbox" name="impColor" value="unit-in-group" />Impresión a color
             </label>
             </p>
             <input type="submit" value="Enviar">

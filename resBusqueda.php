@@ -13,7 +13,12 @@ require("includes/controlAcceso.php");
     <main class="center">
         <div class="card">
         <p>
-            Mostrando 1 resultado
+            Mostrando resultados para
+            <?php 
+            if(isset($_GET['titulo'])){ echo ' el título ' . $_GET['titulo'];} 
+            if(isset($_GET['fecha'])){ echo ' con la fecha ' . $_GET['fecha'];}
+            if(isset($_GET['pais'])){ echo ' y el país ' . $_GET['pais'];} 
+            ?>
         </p>
 
         <h2>Título Imagen 1</h2>
