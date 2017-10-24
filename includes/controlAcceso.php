@@ -38,12 +38,12 @@ else
 function display_login_form()
 {
 	echo '<form action="' . isset($self) . '" method="post">' .
-			 '<label for="username">username</label>' .
-			 '<input type="text" name="username" id="username">' .
-			 '<label for="password">password</label>' .
-			 '<input type="password" name="password" id="password">' .
-			 '<input type="submit" name="submit" value="submit">' .
-		 '</form>';
+			'<label for="username">username</label>' .
+			'<input type="text" name="username" id="username">' .
+			'<label for="password">password</label>' .
+			'<input type="password" name="password" id="password">' .
+			'<input type="submit" name="submit" value="submit">' .
+		    '</form>';
 }
 function logged_in_msg()
 {

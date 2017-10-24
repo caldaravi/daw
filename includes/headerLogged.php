@@ -55,7 +55,7 @@
                             <b>Contraseña</b>
                             <input type="password" placeholder="Contraseña" name="pass" required>
                         </label><br>
-                        <input id="login" type="submit" value="Login">
+                        <input id="btnLogin" type="submit" value="Login">
                         <label>
                             <input id="recordar" type="checkbox" checked="checked"> Recordar
                         </label>
@@ -66,9 +66,26 @@
         </header>
 <!--USER LOGOUT-->
 <?php 
+
 if(isset($_GET['logout']))
 {
     unset($_SESSION['login']);
     header("location: index.php");
+}
+/*<!--USER LOGIN-->*/
+if (isset($_POST['btnLogin']))
+{
+	if (($_POST['username'] == $username1 || $_POST['username'] == $username2 || $_POST['username'] == $username1) && 
+    $_POST['password'] == $password){
+		//IF USERNAME AND PASSWORD ARE CORRECT SET THE LOGIN SESSION
+		$_SESSION["login"] = $hash;
+		header("Location: $_SERVER[PHP_SELF]");
+	}
+	else
+	{
+		// DISPLAY FORM WITH ERROR
+		display_login_form();
+		display_error_msg();
+	}
 }
 ?>

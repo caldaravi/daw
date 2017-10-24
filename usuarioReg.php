@@ -14,11 +14,13 @@ require("includes/controlAcceso.php");
 
 <main>
     <div class="card">
-        <h1>Perfil</h1><br> Nombre: Antonio 
-        <br> Apellidos: Pepito García
-        <br> Mis álbumes:<br> Crear álbum<br>
-        <a href="solicitarAlbum.php">Solicitar álbum</a><br><br>
-        <a href="index.php"> Salir</a><br><br><br><br>
+        <h1>Perfil</h1>
+        <p>Nombre: Antonio </p>
+        <p>Apellidos: Pepito García</p>
+        <p>Mis álbumes</p>
+        <p><a href="crearAlbum.php">Crear álbum</a></p>
+        <p><a href="solicitarAlbum.php">Solicitar álbum</a></p>
+        <p><a href="index.php"> Salir</a></p>
     </div>
 </main>
 
