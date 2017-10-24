@@ -12,19 +12,19 @@ require("includes/controlAcceso.php");
 ?>
 <!-- FIN CABECERA -->     
 
-    <main class="center">   
+    <main>   
         <div id="infofoto">
         
             <h2>Buenas vistas</h2>
                 <img src="images/mountain.jpg" alt="Imagen" style="margin-bottom: 10px;">
             <table>
                 <tr>
-                    <td>Fecha</td>
-                    <td>País</td>
+                    <td>Fecha <?php echo $_GET["fecha"]?></td>
+                    <td>País <?php echo $_GET["pais"]?></td>
                 </tr>
                 <tr>
-                    <td>Álbum</td>
-                    <td>Usuario</td>
+                    <td>Álbum <?php echo "desconocido"//$_GET["album"]?></td>
+                    <td>Usuario <?php echo $_GET["usuario"]?></td>
                 </tr>
             </table>
         </div>

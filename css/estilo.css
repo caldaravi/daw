@@ -171,8 +171,8 @@ header ul li > form[action="usuarioReg.php"]{
 #infofoto{
     display: flex;
     flex-direction: column;
-    align-content: center;
-    justify-content: center;
+    align-items: center;
+    justify-items: center;
 
     background-color: #d8d7af;
     padding: 20px;
@@ -304,9 +304,6 @@ main{
     .galeria{
         margin-top: 30px;
         margin-bottom: 50px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 
     header{

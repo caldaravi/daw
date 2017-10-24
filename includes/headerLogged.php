@@ -39,9 +39,9 @@
                     </form>
                 </li>
 
-                
-                    <a href="UsuarioReg.php" class="iconosCabecera"> <img id="userIcon" src="images/user.png" width="40px" > </a>
-                    <a href="?logout=true" class="iconosCabecera"> <img id="logoutIcon" src="images/logout.png" width="40px" > </a>
+                <a href="?logout=true" class="iconosCabecera"> <img id="logoutIcon" src="images/logout.png" width="40px" style="float:right"> </a>
+                    <a href="UsuarioReg.php" class="iconosCabecera"> <img id="userIcon" src="images/user.png" style="width: 40px; height: 40px;float: right;"> </a>
+                 
                 
         
                 <li class="b" id="formregLiLogged">

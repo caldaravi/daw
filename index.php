@@ -14,65 +14,101 @@ require("includes/controlAcceso.php");
 	<!-- GALERIA DE IMAGENES -->
 		<ul class="galeria">
 			<li class="foto">
-				<h2>Buenas vistas</h2>
-				<a href="infIMG.php">
+				<?php 
+				$titulo1="Buenas vistas";
+				$fecha1="29/09/2017";
+				$pais1="Afganistan";
+				$usuario1="Pepe";
+				
+				echo '<h2>' . $titulo1 . '</h2>
+				<a href="infIMG.php?fecha='.$fecha1.'&pais='.$pais1.'&titulo='.$titulo1.'&usuario='.$usuario1.'">
 					<img src="images/mountain.jpg" alt="Imagen">
 				</a>
 				<p>
-					29/09/2017
+					'. $fecha1 .'
 				</p>
-
 				<p>
-					Afganistán
-				</p>
+					' . $pais1 . '
+				</p>'
+				?>
 			</li>
 			<li class="foto">
-				<h2>Kite for life</h2>
-				<a href="infIMG.php">
+			<?php 
+				$titulo2="Kite for life";
+				$fecha2="17/06/2017";
+				$pais2="España";
+				$usuario2="Alberto";
+				
+				echo '<h2>' . $titulo2 . '</h2>
+				<a href="infIMG.php?fecha='.$fecha2.'&pais='.$pais2.'&titulo='.$titulo2.'&usuario='.$usuario2.'">
 					<img src="images/kite.jpg" alt="Imagen">
 				</a>
 				<p>
-					17/06/2017
+					'. $fecha2 .'
 				</p>
 				<p>
-					España
-				</p>
+					' . $pais2 . '
+				</p>'
+				?>
 			</li>
 			<li class="foto">
-				<h2>BOOM</h2>
-				<a href="infIMG.php">
+			<?php 
+				$titulo3="BOOM";
+				$fecha3="08/04/2017";
+				$pais3="Perú";
+				$usuario3="Paco";
+				
+				echo '<h2>' . $titulo3 . '</h2>
+				<a href="infIMG.php?fecha='.$fecha3.'&pais='.$pais3.'&titulo='.$titulo3.'&usuario='.$usuario3.'">
 					<img src="images/volcan.jpg" alt="Imagen">
 				</a>
 				<p>
-					08/04/2017
+					'. $fecha3 .'
 				</p>
 				<p>
-					Perú
-				</p>
+					' . $pais3 . '
+				</p>'
+				?>
 			</li>
 			<li class="foto">
-				<h2>Good views</h2>
-				<a href="infIMG.php">
+
+			<?php 
+				$titulo4="Good views";
+				$fecha4="12/02/2017";
+				$pais4="Rio Janeiro";
+				$usuario4="Alberto";
+				
+				echo '<h2>' . $titulo4 . '</h2>
+				<a href="infIMG.php?fecha='.$fecha4.'&pais='.$pais4.'&titulo='.$titulo4.'&usuario='.$usuario4.'">
 					<img src="images/caribe.jpg" alt="Imagen">
 				</a>
 				<p>
-					12/02/2017
+					'. $fecha4 .'
 				</p>
 				<p>
-					Rio Janeiro
-				</p>
+					' . $pais4 . '
+				</p>'
+				?>
 			</li>
 			<li class="foto">
-				<h2>Life style</h2>
-				<a href="infIMG.php">
-					<img src="images/surf.jpg" alt="Imagen">
-				</a>	
+
+			<?php 
+				$titulo5="Life style";
+				$fecha5="03/01/2017";
+				$pais5="Bali";
+				$usuario5="Andres";
+				
+				echo '<h2>' . $titulo5 . '</h2>
+				<a href="infIMG.php?fecha='.$fecha5.'&pais='.$pais5.'&titulo='.$titulo5.'&usuario='.$usuario5.'">
+					<img src="images/kite.jpg" alt="Imagen">
+				</a>
 				<p>
-					03/01/2017
+					'. $fecha5 .'
 				</p>
 				<p>
-					Bali
-				</p>
+					' . $pais5 . '
+				</p>'
+				?>
 			</li>
 		</ul>
 		
