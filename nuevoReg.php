@@ -3,7 +3,7 @@
 <!-- FIN CABECERA -->   
 
     <main>
-        <form class="card" action="usuarioReg.php" method="POST">
+        <form class="card" action="respuestaNuevoReg.php" method="POST">
                 <p>* Campos obligatorios</p>
                 <!--nombre de usuario-->
                 <p><label>Usuario

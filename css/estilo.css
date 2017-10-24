@@ -17,6 +17,26 @@ a {
     float: right;
 }
 
+a.btn {
+    align-content: center;
+    background: #98be22;
+    border: 1px solid #000000;
+    color: #000000;
+    padding: 0 8px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+a.btn:hover{
+    align-content: center;
+    background: #2e813c;
+    border: 1px solid #000000;
+    color: #000000;
+    padding: 0 8px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
 body{
     background-color: #c1bea8;
 }
@@ -36,13 +56,18 @@ body{
 .card{
     background-color: #d8d7af;
     padding: 20px;
-    width: 30%;
+    width: 50%;
     box-sizing: border-box;
     margin: 25px auto;
     margin-bottom: 70px;
 
   }
+
+  .album{
+      width: 50%;
+  }
   
+
 .center{
       display: flex;
       align-content: center;
@@ -151,7 +176,7 @@ input{
     font-size: xx-small;
     outline: none;
 }
-input[type="submit"] {
+input[type="submit"]{
     background: #f2f2f2;
     border: 1px solid #f2f2f2;
     color: #757575;
@@ -160,7 +185,7 @@ input[type="submit"] {
     width: 90px;
     padding: 0 16px;
 }
-input[type="submit"]:hover {
+input[type="submit"]:hover{
     background: #f8f8f8;
     border: 1px solid #c6c6c6;
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
