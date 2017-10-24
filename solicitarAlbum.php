@@ -12,7 +12,7 @@ require("includes/controlAcceso.php");
 
     <main>
         <form class="card" action="albumSolicitado.php" method="POST">
-            Descripción: <br> 
+            Descripción: 
             <p class="anuncio"> 
                 Este texto describe el funcionamiento de cómo se debe solicitar un álbum. En primer lugar,
                 el nombre y apellidos son obligatorios para el envío postal y personalización del álbum. Las tarifas dependen
@@ -21,9 +21,8 @@ require("includes/controlAcceso.php");
                 se debe poner es el del destinatario para posibles notificaciones. En impresión a color seleccione la casilla
                 si desea que se imprima a color o dejela deseleccionada para imprimir el álbum en blanco y negro.
             </p>
-            Tarifas:
-            <br>
-            <table style="width:30%">
+            <p>Tarifas:</p>
+            <table style="margin: auto">
                 <tr>
                     <th>Concepto</th>
                     <th>Tarifa</th>
@@ -53,68 +52,95 @@ require("includes/controlAcceso.php");
                     <td>0.02 € por foto</td>
                 </tr>
             </table>
-            <br>
+            
             * Campos obligatorios
-            <br>
+            <p>
             <label>
                 Nombre
                 <input type="text" name="nombre" maxlength="200" required placeholder="Enter your Name">*
             </label>
+            </p>
+            <p>
             <label>
                 Apellidos
-                <input type="text" name="apellidos" maxlength="200" required placeholder="Enter your surname">*<br>
+                <input type="text" name="apellidos" maxlength="200" required placeholder="Enter your surname">*
             </label>
+            </p>
+            <p>
             <label>
                 Título delálbum
-                <input type="text" name="album" maxlength="200" required placeholder="200 carácteres">*<br>
+                <input type="text" name="album" maxlength="200" required placeholder="200 carácteres">*
             </label>
+            </p>
+            <p>
             <label>
                 Texto adicional
-                <textarea rows="3" cols="30" name="textadic" maxlength="4000" placeholder="Enter your text here"></textarea><br>
+                <textarea rows="3" cols="30" name="textadic" maxlength="4000" placeholder="Enter your text here"></textarea>
             </label>
+            </p>
+            <p>
             <label>
                 Correo electrónico:
-                <input type="email" name="email" required placeholder="Enter your e-mail" maxlength="200">*<br>
+                <input type="email" name="email" required placeholder="Enter your e-mail" maxlength="200">*
             </label>
+            </p>
             <fieldset>
             <legend>Dirección postal*</legend>
-                <label>
+            <p>    
+            <label>
                     Calle
                     <input type="text" name="calle" placeholder="Calle" required>
                 </label>
+                </p>
+                <p>
                 <label>
                     Número
                     <input type="text" name="numero" placeholder="Número" required>
                 </label>
+                </p>
+                <p>
                 <label>
                     Puerta
-                    <input type="text" name="puerta" placeholder="Puerta" required><br>
+                    <input type="text" name="puerta" placeholder="Puerta" required>
                 </label>
+                </p>
+                <p>
                 <label>
                     Ciudad
                     <input type="text" name="ciudad" placeholder="Ciudad" required>
                 </label>
+                <p>
                 <label>
                     Provincia
                     <input type="text" name="provincia" placeholder="Provincia" required>
                 </label>
+                </p>
+                <p>
                 <label>
                     Código Postal
-                    <input type="number" name="cpostal" placeholder="Cod.Postal" required><br>
+                    <input type="number" name="cpostal" placeholder="Cod.Postal" required>
                 </label>
+                </p>
             </fieldset>
+            <p>
             <label>
                 Color de portada
-                <input type="color" name="favcolor"><br>
+                <input type="color" name="favcolor">
             </label>
+            </p>
+            <p>
             <label>
                 Número de copias
-                <input type="number" name="copias" min="1" value="1" required>*<br>
+                <input type="number" name="copias" min="1" value="1" required>*
             </label>
+            </p>
+            <p>
             <label>
                 Resolución de fotos
-                <input type="number" name="resfoto" min="150" max="900" step="150" value="150"><br>
+                <input type="number" name="resfoto" min="150" max="900" step="150" value="150">
             </label>
+            </p>
+            <p>
             <label>
                 Álbum a escoger
                 <select name="Álbumes">
@@ -122,16 +148,20 @@ require("includes/controlAcceso.php");
                     <option value="2">Álbum X</option>
                     <option value="3">Álmbum Y</option>
                 </select>
-            </label>*<br>
+            </label>*
+            </p>
+            <p>
             <label>
-                Fecha de recepción:<br>
-                <input type="date" name="fecentrega"><br>
+                Fecha de recepción:
+                <input type="date" name="fecentrega">
             </label>
-
+            </p>
+            <p>
             <label>
-                <input type="checkbox" name="your-group" value="unit-in-group" />Impresión a color<br><br>
+                <input type="checkbox" name="your-group" value="unit-in-group" />Impresión a color
             </label>
-            <input type="submit" value="Enviar"><br><br><br><br><br>
+            </p>
+            <input type="submit" value="Enviar">
         </form>
     </main>
 
