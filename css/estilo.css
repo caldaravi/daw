@@ -62,10 +62,6 @@ body{
     margin-bottom: 70px;
 
   }
-
-  .album{
-      width: 50%;
-  }
   
 
 .center{
@@ -115,9 +111,6 @@ footer {
 #formregLiLogged{
     visibility: hidden;
 }
-
-
-
 
 .galeria {
     list-style-type: none;
@@ -174,6 +167,21 @@ header ul li > form[action="usuarioReg.php"]{
 .iconosCabecera {
     margin-bottom: 10px;
 }
+
+#infofoto{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+    background-color: #d8d7af;
+    padding: 20px;
+    width: 50%;
+    box-sizing: border-box;
+    margin: 25px auto;
+    margin-bottom: 70px;
+}
+
 input{
     height: 15px;
     font-size: xx-small;

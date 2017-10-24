@@ -13,10 +13,10 @@ require("includes/controlAcceso.php");
 <!-- FIN CABECERA -->     
 
     <main class="center">   
-        <div class="card">
+        <div id="infofoto">
         
             <h2>Buenas vistas</h2>
-                <img src="images/mountain.jpg" alt="Imagen">
+                <img src="images/mountain.jpg" alt="Imagen" style="margin-bottom: 10px;">
             <table>
                 <tr>
                     <td>Fecha</td>
