@@ -146,6 +146,9 @@ header ul li > form[action="usuarioReg.php"]{
     margin: 0;
     padding: 0;
 }
+.iconosCabecera {
+    margin-bottom: 10px;
+}
 input{
     height: 15px;
     font-size: xx-small;
@@ -240,6 +243,10 @@ main{
 }
 #regLiLogged {
     visibility: hidden;
+}
+#userIcon {
+    width: 20px;
+    height: 20px;
 }
 
 

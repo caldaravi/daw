@@ -1,5 +1,15 @@
-﻿<!-- CABECERA -->
-    <?php require("includes/headerLogged.html"); ?>
+﻿<!-- CONTROL ACCESO -->
+<?php 
+session_start();
+require("includes/controlAcceso.php");
+	if (isset($_SESSION['login'])) {
+		require("includes/headerLogged.php");
+	} else {
+		require("includes/header.php");
+	}
+?>
+<!-- CABECERA -->
+    
 <!-- FIN CABECERA -->    
 
 <main>

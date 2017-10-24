@@ -38,6 +38,11 @@
                         <input type="Submit" value="Buscar">
                     </form>
                 </li>
+
+                
+                    <a href="UsuarioReg.php" class="iconosCabecera"> <img id="userIcon" src="images/user.png" width="40px" > </a>
+                    <a href="?logout=true" class="iconosCabecera"> <img id="logoutIcon" src="images/logout.png" width="40px" > </a>
+                
         
                 <li class="b" id="formregLiLogged">
                     <form  action="usuarioReg.php">
@@ -59,3 +64,11 @@
                 </li>
             </ul>
         </header>
+<!--USER LOGOUT-->
+<?php 
+if(isset($_GET['logout']))
+{
+    unset($_SESSION['login']);
+    header("location: index.php");
+}
+?>

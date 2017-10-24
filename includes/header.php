@@ -39,26 +39,8 @@
 				</li>
 	
 				<li class="b" id="formregLi">
-					<form  action="usuarioReg.php">
-						<label>
-							<b>Usuario</b>
-							<input type="text" placeholder="Usuario" name="uname" required>
-						</label>
-						
-						<label>
-							<b>Contraseña</b>
-							<input type="password" placeholder="Contraseña" name="pass" required>
-						</label>
-						<div id="div_infologin">
-							<input id="login" type="submit" value="Login">
-							<label>
-								<input type="checkbox" checked="checked"> Recordar
-							</label>
-							<a id="psw" href="solicitudPass.php">Contraseña olvidada?</a>
-						</div>
 
-						
-					</form>
+					<?php include("includes/login.php");?>
 					
 				</li>
 				<li id="loginicon">
