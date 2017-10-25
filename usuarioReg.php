@@ -17,5 +17,5 @@
 </main>
 
 <!-- PÍE DE PÁGINA -->
-    <?php require("includes/pie.cs"); ?>
+    <?php require("includes/pie.inc"); ?>
 <!-- FIN PÍE -->
