@@ -15,7 +15,7 @@ require("includes/controlAcceso.php");
     <main>   
         <div id="infofoto">
         
-            <h2>Buenas vistas</h2>
+            <h2><?php echo $_GET["titulo"]?></h2>
                 <img src="images/mountain.jpg" alt="Imagen" style="margin-bottom: 10px;">
             <table>
                 <tr>

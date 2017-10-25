@@ -10,26 +10,26 @@ require("includes/controlAcceso.php");
 ?>
 <!-- FIN CABECERA -->     
 
-    <main class="center">
+    <main>
         <div class="card">
         <p>
             Mostrando resultados para
             <?php 
-            if(isset($_GET['titulo'])){ echo ' el título ' . $_GET['titulo'];} 
-            if(isset($_GET['fecha'])){ echo ' con la fecha ' . $_GET['fecha'];}
-            if(isset($_GET['pais'])){ echo ' y el país ' . $_GET['pais'];} 
+            if(isset($_GET['titulo'])){ $titulo=$_GET['titulo']; echo ' el título ' . $titulo ;} 
+            if(isset($_GET['fecha'])){ $fecha=$_GET['fecha']; echo ' con la fecha ' . $fecha;}
+            if(isset($_GET['pais'])){ $pais=$_GET['pais']; echo ' y el país ' . $pais;} 
             ?>
         </p>
 
         <h2>Título Imagen 1</h2>
-        <a href="infIMG.php">
+        <?php echo '<a href="infIMG.php?titulo='.$titulo.'&pais='.$pais.'&fecha='.$fecha.'&album=1&usuario=pepe">' ?>
             <img src="images/mountain.jpg" alt="Imagen">
         </a>
         <p>
-            Fecha
+            Fecha: <?php echo $fecha?>
         </p>
         <p>
-            País
+            País: <?php echo $pais?>
         </p>
     </div>
     </main>
