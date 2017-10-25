@@ -1,17 +1,9 @@
 ﻿<!-- CABECERA -->
 <?php
-
-session_start();
-require("includes/controlAcceso.php");
-	if (isset($_SESSION['login'])) {
-		require("includes/headerLogged.php");
-	} else {
-		require("includes/header.php");
-    }
+    require('includes/controlAcceso.php');
     $precio = 0;
-    
 ?>
-<!-- FIN CABECERA -->   
+<!-- FIN CABECERA  ?> -->
     <main>
         <div class="card">
             <form>
@@ -19,7 +11,7 @@ require("includes/controlAcceso.php");
                 <p>Nombre: <?php echo $_POST['nombre']; ?></p>
                 <p>Título del álbum: <?php echo $_POST['album']; ?></p>
                 <p>Texto adicional: <?php echo $_POST['textadic']; ?></p>
-                <p>Color de portada: <?php echo $_POST['favcolor']; ?></p>
+                <p >Color de portada: <?php echo "<pre style='width: 15px; height: 15px; background-color:".$_POST['favcolor']."'> </pre>"; ?></p>
                 <p>Número de copias: <?php echo $_POST['copias']; ?></p>
                 <p>Total: <?php echo calculaTotal($precio); ?> € </p>
             </form>
@@ -28,7 +20,7 @@ require("includes/controlAcceso.php");
     </main>
 
 <!-- PÍE DE PÁGINA -->
-    <?php require("includes/footer.html"); ?>
+    <?php require("includes/pie.inc"); ?>
 <!-- FIN PÍE -->
 
 <!-- PRECIO TOTAL -->

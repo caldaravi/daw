@@ -1,14 +1,8 @@
 <!-- CABECERA -->
-<?php 
-session_start();
-require("includes/controlAcceso.php");
-	if (isset($_SESSION['login'])) {
-		require("includes/headerLogged.php");
-	} else {
-		require("includes/header.php");
-	}
+<?php
+	require('includes/controlAcceso.php');
 ?>
-<!-- FIN CABECERA  ?> -->   
+<!-- FIN CABECERA  ?> -->
 <form class="card" method="post">
     <p><label>Título
         <input type="text" name="titulo" required>
@@ -24,3 +18,6 @@ require("includes/controlAcceso.php");
     </label>
     <p><input type="submit" value="Crear" /></p>
 </form>
+<!-- PÍE DE PÁGINA -->
+<?php require("includes/pie.inc"); ?>
+<!-- FIN PÍE -->

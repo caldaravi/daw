@@ -1,16 +1,8 @@
-﻿<!-- CONTROL ACCESO -->
-<?php 
-session_start();
-require("includes/controlAcceso.php");
-	if (isset($_SESSION['login'])) {
-		require("includes/headerLogged.php");
-	} else {
-		require("includes/header.php");
-	}
+﻿<!-- CABECERA -->
+<?php
+	require('includes/controlAcceso.php');
 ?>
-<!-- CABECERA -->
-    
-<!-- FIN CABECERA -->    
+<!-- FIN CABECERA  ?> -->  
 
 <main>
     <div class="card">
@@ -25,5 +17,5 @@ require("includes/controlAcceso.php");
 </main>
 
 <!-- PÍE DE PÁGINA -->
-    <?php require("includes/footer.html"); ?>
+    <?php require("includes/pie.cs"); ?>
 <!-- FIN PÍE -->

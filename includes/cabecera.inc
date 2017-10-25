@@ -40,7 +40,7 @@
 	
 				<li class="b" id="formregLi">
 
-					<?php include("includes/acceso.inc");?>
+					<?php include("includes/login.php");?>
 					
 				</li>
 				<li id="loginicon">

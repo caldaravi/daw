@@ -1,7 +1,8 @@
 <!-- CABECERA -->
-<?php require("includes/header.html"); ?>
-<!-- FIN CABECERA -->   
-
+<?php
+require('includes/controlAcceso.php');
+?>
+<!-- FIN CABECERA  ?> -->
 <main>
     <?php 
         if( isset($_POST["contrasena"]) && isset($_POST["contrasena2"]) && isset($_POST["usuario"]) && isset($_POST["email"]) && isset($_POST["sexo"]) && isset($_POST["ciudad"]) ){
@@ -43,6 +44,6 @@
     
 </main>
 <!-- PÍE DE PÁGINA -->
-<?php require("includes/footer.html"); ?>
+<?php require("includes/pie.inc"); ?>
 <!-- FIN PÍE -->
 

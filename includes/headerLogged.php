@@ -29,7 +29,7 @@
                 <li class="b" id="regLiLogged">
                     <a id="botonRegId" href="nuevoReg.php">Regístrate</a>
                 </li>
-        
+            
                 <li class="b" id="buscarLi">
                     <form action="formBusqueda.php" method="get">
                         <label>
@@ -38,29 +38,15 @@
                         <input type="Submit" value="Buscar">
                     </form>
                 </li>
-
-                <a href="?logout=true" class="iconosCabecera"> <img id="logoutIcon" src="images/logout.png" width="40px" style="float:right"> </a>
-                    <a href="UsuarioReg.php" class="iconosCabecera"> <img id="userIcon" src="images/user.png" style="width: 40px; height: 40px;float: right;"> </a>
-                 
                 
+                Bienvenido 
+                    <?php echo $_SESSION['username'] ?> 
+                
+                    <a href="?logout=true" class="iconosCabecera"> <img id="logoutIcon" src="images/logout.png" width="40px" style="float:right"> </a>
+                    <a href="usuarioReg.php" class="iconosCabecera"> <img id="userIcon" src="images/user.png" style="width: 40px; height: 40px;float: right;"> </a>
         
                 <li class="b" id="formregLiLogged">
-                    <form  action="usuarioReg.php">
-                        <label>
-                            <b>Usuario</b>
-                            <input type="text" placeholder="Usuario" name="uname" required>
-                        </label>
-                        
-                        <label>
-                            <b>Contraseña</b>
-                            <input type="password" placeholder="Contraseña" name="pass" required>
-                        </label><br>
-                        <input id="btnLogin" type="submit" value="Login">
-                        <label>
-                            <input id="recordar" type="checkbox" checked="checked"> Recordar
-                        </label>
-                        <a id="psw" class="exception" href="solicitudPass.php">Contraseña olvidada?</a>
-                    </form>
+                <?php include("includes/acceso.inc");?>
                 </li>
             </ul>
         </header>
@@ -69,23 +55,8 @@
 
 if(isset($_GET['logout']))
 {
+    session_destroy();
     unset($_SESSION['login']);
     header("location: index.php");
-}
-/*<!--USER LOGIN-->*/
-if (isset($_POST['btnLogin']))
-{
-	if (($_POST['username'] == $username1 || $_POST['username'] == $username2 || $_POST['username'] == $username1) && 
-    $_POST['password'] == $password){
-		//IF USERNAME AND PASSWORD ARE CORRECT SET THE LOGIN SESSION
-		$_SESSION["login"] = $hash;
-		header("Location: $_SERVER[PHP_SELF]");
-	}
-	else
-	{
-		// DISPLAY FORM WITH ERROR
-		display_login_form();
-		display_error_msg();
-	}
 }
 ?>

@@ -1,12 +1,6 @@
 ﻿<!-- CABECERA -->
-<?php 
-session_start();
-require("includes/controlAcceso.php");
-	if (isset($_SESSION['login'])) {
-		require("includes/headerLogged.php");
-	} else {
-		require("includes/header.php");
-	}
+<?php
+	require('includes/controlAcceso.php');
 ?>
 <!-- FIN CABECERA  ?> -->   
     			
@@ -100,7 +94,7 @@ require("includes/controlAcceso.php");
 				
 				echo '<h2>' . $titulo5 . '</h2>
 				<a href="infIMG.php?fecha='.$fecha5.'&pais='.$pais5.'&titulo='.$titulo5.'&usuario='.$usuario5.'">
-					<img src="images/kite.jpg" alt="Imagen">
+					<img src="images/surf.jpg" alt="Imagen">
 				</a>
 				<p>
 					'. $fecha5 .'
@@ -117,5 +111,5 @@ require("includes/controlAcceso.php");
 	</main>
 	
 <!-- PÍE DE PÁGINA -->
-	<?php require("includes/footer.html"); ?>
+	<?php require("includes/pie.inc"); ?>
 <!-- FIN PÍE -->
