@@ -33,13 +33,13 @@
             <p>Ciudad: <b>" . $ciudad . "</b></p>
             <h3>¿Están todos los datos correctos?</h3>
             <a class='btn' href='index.php'>Validar</a>
-            <a class='btn' href='registro/nuevoReg.php'>Atrás</a>
+            <a class='btn' href='nuevoReg.php'>Atrás</a>
         </div>";
         }
         function error(){
             echo '<div class="card">
                 <p>Error: contraseñas no coinciden.</p>
-                <a class="btn" href="registro/nuevoReg.php">Atrás</a>
+                <a class="btn" href="nuevoReg.php">Atrás</a>
             </div>';
         }
     ?>

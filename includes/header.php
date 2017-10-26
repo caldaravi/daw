@@ -10,11 +10,11 @@
 		</li>
 
 		<li class="b" id="regLi">
-			<a id="botonRegId" href="registro/nuevoReg.php">Regístrate</a>
+			<a id="botonRegId" href="nuevoReg.php">Regístrate</a>
 		</li>
 
 		<li class="b" id="buscarLi">
-			<form action="busqueda/formBusqueda.php" method="get">
+			<form action="formBusqueda.php" method="get">
 				<label>
 					<input type="text" placeholder="Busca fotos">
 				</label>

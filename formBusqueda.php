@@ -1,7 +1,7 @@
 ﻿<!-- CABECERA -->
 <?php
-    require('../includes/cabecera.inc');
-	require('../includes/controlAcceso.php');
+    require('includes/cabecera.inc');
+	require('includes/controlAcceso.php');
 ?>
 <!-- FIN CABECERA  ?> -->
 
@@ -27,5 +27,5 @@
     </main>
     
 <!-- PÍE DE PÁGINA -->
-    <?php require("../includes/pie.inc"); ?>
+    <?php require("includes/pie.inc"); ?>
 <!-- FIN PÍE -->

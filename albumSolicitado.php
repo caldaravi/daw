@@ -16,7 +16,7 @@
                 <p>Número de copias: <?php echo $_POST['copias']; ?></p>
                 <p>Total: <?php echo calculaTotal($precio); ?> € </p>
             </form>
-            <p><a href="zonaPrivada/usuarioReg.php">Volver al perfil</a></p>
+            <p><a href="usuarioReg.php">Volver al perfil</a></p>
         </div>
     </main>
 

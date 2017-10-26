@@ -10,7 +10,7 @@
             ($_POST['username'] == $usuario3 && $_POST['password'] == $pw3)){
             $_SESSION['username'] = $_POST['username'];
             include('includes/headerLogged.php');
-            header("location: zonaPrivada/usuarioReg.php");
+            header("location: usuarioReg.php");
         }
         else{
             include('includes/header.php');

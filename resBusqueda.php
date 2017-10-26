@@ -1,7 +1,7 @@
 ﻿<!-- CABECERA -->
 <?php
-    require('../includes/cabecera.inc');
-	require('../includes/controlAcceso.php');
+    require('includes/cabecera.inc');
+	require('includes/controlAcceso.php');
 ?>
 <!-- FIN CABECERA  ?> -->
 
@@ -17,8 +17,8 @@
         </p>
 
         <h2>Título Imagen 1</h2>
-        <?php echo '<a href="../infIMG.php?titulo='.$titulo.'&pais='.$pais.'&fecha='.$fecha.'&album=1&usuario=pepe">' ?>
-            <img src="../images/mountain.jpg" alt="Imagen">
+        <?php echo '<a href="infIMG.php?titulo='.$titulo.'&pais='.$pais.'&fecha='.$fecha.'&album=1&usuario=pepe">' ?>
+            <img src="images/mountain.jpg" alt="Imagen">
         </a>
         <p>
             Fecha: <?php echo $fecha?>
@@ -30,5 +30,5 @@
     </main>
 
 <!-- PÍE DE PÁGINA -->
-    <?php require("../includes/pie.inc"); ?>
+    <?php require("includes/pie.inc"); ?>
 <!-- FIN PÍE -->

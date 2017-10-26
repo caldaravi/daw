@@ -2,6 +2,7 @@
 <?php
 	require('includes/cabecera.inc');
 	require('includes/controlAcceso.php');
+	echo($_SERVER['SCRIPT_URI']);
 ?>
 <!-- FIN CABECERA  ?> -->   
     			
