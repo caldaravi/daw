@@ -1,13 +1,14 @@
 ﻿<!-- CABECERA -->
 <?php
-require('includes/controlAcceso.php');
+    require('includes/cabecera.inc');
+    require('includes/controlAcceso.php');
 ?>
 <!-- FIN CABECERA  ?> -->
 
     <main>   
         <div id="infofoto">
-        
-            <h2><?php echo $_GET["titulo"]?></h2>
+         <h2>Titulo<?php echo $_GET["titulo"]?></h2>
+           
                 <img src="images/mountain.jpg" alt="Imagen" style="margin-bottom: 10px;">
             <table>
                 <tr>

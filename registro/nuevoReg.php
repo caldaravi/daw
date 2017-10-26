@@ -1,11 +1,12 @@
 ﻿<!-- CABECERA -->
 <?php
+    require('includes/cabecera.inc');
 	require('includes/controlAcceso.php');
 ?>
 <!-- FIN CABECERA  ?> -->  
 
     <main>
-        <form class="card" action="respuestaNuevoReg.php" method="POST">
+        <form class="card" action="registro/respuestaNuevoReg.php" method="POST">
                 <p>* Campos obligatorios</p>
                 <!--nombre de usuario-->
                 <p><label>Usuario
@@ -66,9 +67,10 @@
                     <p><img id="menu_image" alt="Imagen de perfil" src="/" />
                     <input type="submit" value="Upload" /></p>
                 </div>
-                <p>
                 </fieldset>
-                <input type="submit" value="Enviar"></p>
+                <p>
+                    <input type="submit" value="Enviar">
+                </p>
         </form>
     </main>
 

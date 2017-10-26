@@ -1,12 +1,14 @@
 <!-- CABECERA -->
 <?php
+	require('includes/cabecera.inc');
 	require('includes/controlAcceso.php');
 ?>
 <!-- FIN CABECERA  ?> -->  
 					
 	<main>
 		<p class="card">
-			Somos un grupo haciéndo las prácticas correspondientes de HTML, CSS Y PHP que pertenecen a la asignatura DAW.
+			Somos un grupo de la universidad de Alicante haciéndo las prácticas correspondientes a la asignatura
+			de Desarrollo de Aplicaciones Web con el contenido de HTML, CSS Y PHP.
 		</p>
 	</main>
 	

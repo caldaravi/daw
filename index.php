@@ -1,5 +1,6 @@
 ﻿<!-- CABECERA -->
 <?php
+	require('includes/cabecera.inc');
 	require('includes/controlAcceso.php');
 ?>
 <!-- FIN CABECERA  ?> -->   
@@ -9,7 +10,7 @@
 		<ul class="galeria">
 			<li class="foto">
 				<?php 
-				$titulo1="Buenas vistas";
+				$titulo1="Buenas&nbsp;vistas";
 				$fecha1="29/09/2017";
 				$pais1="Afganistan";
 				$usuario1="Pepe";
@@ -28,7 +29,7 @@
 			</li>
 			<li class="foto">
 			<?php 
-				$titulo2="Kite for life";
+				$titulo2="Kite&nbsp;for&nbsp;life";
 				$fecha2="17/06/2017";
 				$pais2="España";
 				$usuario2="Alberto";
@@ -67,9 +68,9 @@
 			<li class="foto">
 
 			<?php 
-				$titulo4="Good views";
+				$titulo4="Good&nbsp;views";
 				$fecha4="12/02/2017";
-				$pais4="Rio Janeiro";
+				$pais4="Rio%20Janeiro";
 				$usuario4="Alberto";
 				
 				echo '<h2>' . $titulo4 . '</h2>
@@ -87,7 +88,7 @@
 			<li class="foto">
 
 			<?php 
-				$titulo5="Life style";
+				$titulo5="Life&nbsp;style";
 				$fecha5="03/01/2017";
 				$pais5="Bali";
 				$usuario5="Andres";

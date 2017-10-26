@@ -13,6 +13,6 @@
             <label>
                 <input type="checkbox" checked="checked"> Recordar
             </label>
-            <a id="psw" href="solicitudPass.php">Contraseña olvidada?</a>
+            <a id="psw" href="registro/solicitudPass.php">Contraseña olvidada?</a>
         </div>
 </form>

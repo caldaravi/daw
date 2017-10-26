@@ -1,5 +1,6 @@
 <!-- CABECERA -->
 <?php
+	require('includes/cabecera.inc');
 	require('includes/controlAcceso.php');
 ?>
 <!-- FIN CABECERA  ?> -->  

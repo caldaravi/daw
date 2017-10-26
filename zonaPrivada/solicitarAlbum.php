@@ -1,11 +1,12 @@
 ﻿<!-- CABECERA -->
 <?php
+    require('includes/cabecera.inc');
 	require('includes/controlAcceso.php');
 ?>
 <!-- FIN CABECERA  ?> -->      
 
     <main>
-        <form class="card" action="albumSolicitado.php" method="POST">
+        <form class="card" action="zonaPrivada/albumSolicitado.php" method="POST">
             Descripción: 
             <p class="anuncio"> 
                 Este texto describe el funcionamiento de cómo se debe solicitar un álbum. En primer lugar,
