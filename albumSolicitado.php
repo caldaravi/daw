@@ -1,7 +1,7 @@
 ﻿<!-- CABECERA -->
 <?php
-    require('includes/cabecera.inc');
-    require('includes/controlAcceso.php');
+    require_once('includes/cabecera.inc');
+    require_once('includes/controlAcceso.php');
     $precio = 0;
 ?>
 <!-- FIN CABECERA  ?> -->
@@ -21,7 +21,7 @@
     </main>
 
 <!-- PÍE DE PÁGINA -->
-    <?php require("includes/pie.inc"); ?>
+    <?php include_once("includes/pie.inc"); ?>
 <!-- FIN PÍE -->
 
 <!-- PRECIO TOTAL -->

@@ -9,19 +9,19 @@
             ($_POST['username'] == $usuario2 && $_POST['password'] == $pw2) ||
             ($_POST['username'] == $usuario3 && $_POST['password'] == $pw3)){
             $_SESSION['username'] = $_POST['username'];
-            include('includes/headerLogged.php');
+            include_once('includes/headerLogged.php');
             header("location: usuarioReg.php");
         }
         else{
-            include('includes/header.php');
+            include_once('includes/header.php');
             ?> <p style="float: right;"> Usuario o contraseña incorrecta </p> <?php
         }
     } else {
         if(isset($_SESSION['username'])){
-            include('includes/headerLogged.php');
+            include_once('includes/headerLogged.php');
         }
         else {
-            include('includes/header.php');
+            include_once('includes/header.php');
         }
     }
 ?>
