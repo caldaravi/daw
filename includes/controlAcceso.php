@@ -4,12 +4,10 @@
     $usuario2 = 'marcos';   $pw2 = 'marcos';
     $usuario3 = 'admin';    $pw3 = 'admin';
 
-    if(isset($_SESSION['contador'])) 
-    { 
+    if(isset($_SESSION['contador'])) { 
       $_SESSION['contador'] = $_SESSION['contador'] + 1; 
     } 
-    else 
-    { 
+    else { 
       $_SESSION['contador'] = 1; 
     } 
 
@@ -22,6 +20,7 @@
             ($_POST['username'] == $usuario2 && $_POST['password'] == $pw2) ||
             ($_POST['username'] == $usuario3 && $_POST['password'] == $pw3)){
             $_SESSION['username'] = $_POST['username'];
+            $_SESSION['autentificado'] = true;
             if(!empty($_POST['recordar'])){
                 require_once('setCookies.php');
             }

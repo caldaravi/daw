@@ -27,15 +27,10 @@
             $_POST['username'] = $_COOKIE['username'];
             $_POST['password'] = $_COOKIE['password'];
             
-            if(($_POST['username'] == $usuario1 && $_POST['password'] == $pw1) || 
-            ($_POST['username'] == $usuario2 && $_POST['password'] == $pw2) ||
-            ($_POST['username'] == $usuario3 && $_POST['password'] == $pw3)){
+
                 $_SESSION['username'] = $_POST['username'];
                 header('location: /daw/usuarioReg.php');
-            }
-            else{
-                header('location: /daw/index.php');
-            }
+
         }
 ?>
 

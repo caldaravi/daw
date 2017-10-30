@@ -41,10 +41,13 @@
 <?php  
     if(isset($_GET['logout'])){
         $_SESSION = array(); 
-        setcookie('username', null, -1);
-        setcookie('password', null, -1);
-        setcookie("hour", null, -1);
-        setcookie("day", null, -1);
+        //if(!empty($_POST['recordar'])){
+            setcookie('username', null, -1);
+            setcookie('password', null, -1);
+            setcookie("hour", null, -1);
+            setcookie("day", null, -1);
+            $_SESSION['autentificado'] = false;
+        //}
         session_destroy();
         header('location: index.php');
     }
