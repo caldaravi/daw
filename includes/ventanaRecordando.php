@@ -26,6 +26,7 @@
         if(isset($_GET['login'])){
             $_POST['username'] = $_COOKIE['username'];
             $_POST['password'] = $_COOKIE['password'];
+            $_SESSION['username'] = $_POST['username'];
             header('location: /daw/usuarioReg.php');
         }
 ?>
