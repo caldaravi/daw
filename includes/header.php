@@ -27,7 +27,7 @@
 		</li>
 
 		<li class="b" id="formregLi">
-			<?php include_once("includes/acceso.inc");?>
+			<?php include_once("includes/acceso.inc.php");?>
 		</li>
 		
 		<li id="loginicon">

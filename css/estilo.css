@@ -41,6 +41,11 @@ body{
     background-color: #c1bea8;
 }
 
+.vBtn {
+    background-color: #05b42b;
+    border: 1px solid #000000;
+}
+
 #buscarLi{
     margin-left: 35%;
     overflow: hidden;
@@ -256,6 +261,11 @@ main{
     list-style-type: none;
    
 }
+
+.pCentrado {
+    text-align: center;
+}
+
 #psw {
     background-color: transparent;
     border: 0px;

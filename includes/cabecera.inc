@@ -9,10 +9,10 @@
 
 	<title>PI - Pictures & Images</title>
 
-	
-	<!--<link rel = "stylesheet" type = "text/css" href = "css/adapter.css" title="Estilo accesible" media="screen"/> -->
-	<link rel = "stylesheet" type = "text/css" href = "css/impresion.css" media="print"/> 
-	<!--<link rel = "stylesheet" type = "text/css" href = "css/responsive.css" media="screen">-->
 	<link rel = "stylesheet" type = "text/css" href = "/daw/css/estilo.css" media="screen" />
+	<link rel = "stylesheet" type = "text/css" href = "css/impresion.css" media="print"/> 
+	<!--<link rel = "stylesheet" type = "text/css" href = "css/adapter.css" title="Estilo accesible" media="screen"/> -->
+	<!--<link rel = "stylesheet" type = "text/css" href = "css/responsive.css" media="screen">-->
+	
 
 </head>

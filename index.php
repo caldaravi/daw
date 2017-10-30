@@ -1,9 +1,7 @@
 ﻿<!-- CABECERA -->
 <?php
 	session_start(); 
-	if(isset($_COOKIE['username'])){
-		echo $_COOKIE['username'];
-	}
+	
 	require_once('includes/controlAcceso.php');
 ?>
 <!-- FIN CABECERA  ?> -->   

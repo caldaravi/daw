@@ -34,7 +34,7 @@
                     <a href="usuarioReg.php" class="iconosCabecera"> <img id="userIcon" src="images/user.png" style="width: 40px; height: 40px;float: right;"> </a>
                 
                 <li class="b" id="formregLiLogged">
-                <?php require_once("includes/acceso.inc");?>
+                <?php require_once("includes/acceso.inc.php");?>
                 </li>
             </ul>
         </header>
@@ -42,9 +42,11 @@
     <!--LOGOUT-->
 <?php  
     if(isset($_GET['logout'])){
-        unset($_COOKIE['username']);
-        unset($_SESSION['username']);
+        $_SESSION = array(); 
         setcookie('username', null, -1);
+        setcookie('password', null, -1);
+        setcookie("hour", null, -1);
+        setcookie("day", null, -1);
         session_destroy();
         header('location: index.php');
     }
