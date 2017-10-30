@@ -41,9 +41,10 @@ body{
     background-color: #c1bea8;
 }
 
-.vBtn {
-    background-color: #05b42b;
-    border: 1px solid #000000;
+
+
+#Bienvenido{
+    margin-top: 2%;
 }
 
 #buscarLi{
@@ -53,6 +54,13 @@ body{
     width: 20%;
     
 }
+
+#botones{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
 #botonRegId {
     height: 23px;
     width: 45%;
@@ -292,6 +300,12 @@ main{
     height: 20px;
 }
 
+.vBtn {
+    margin-left: 2px;
+    background-color: #05b42b;
+    border: 1px solid #000000;
+}
+
 
 @media screen and (max-width: 1030px) {
     
@@ -335,7 +349,7 @@ main{
 
 }
 
-@media screen and (max-width: 770px){
+@media screen and (max-width: 875px){
     #formregLi{
         visibility: hidden;
         display:none;

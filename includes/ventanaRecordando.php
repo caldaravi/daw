@@ -9,8 +9,10 @@
         echo "Hola " . $_COOKIE['username'] . ", su última visita fue el " . $_COOKIE['day'] . " a las " . $_COOKIE['hour'];
         ?>
         </p>
-        <a class="vBtn" href="?login=true">Acceder</a>
-        <a class="vBtn" href="?logout=true">Salir</a>
+        <div id="botones">
+            <a class="vBtn" href="?login=true">Acceder</a>
+            <a class="vBtn" href="?logout=true">Salir</a>
+        </div>
         </div>
         <?php
     }

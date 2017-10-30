@@ -23,12 +23,10 @@
                         </label>
                         <input type="Submit" value="Buscar">
                     </form>
+                    <p id="Bienvenido">Bienvenido  <?php echo $_SESSION['username'] ?> </p>
                 </li>
                 
-                Bienvenido 
-            
                 
-                    <?php echo $_SESSION['username'] ?> 
                 
                     <a href="?logout=true" class="iconosCabecera"> <img id="logoutIcon" src="images/logout.png" width="40px" style="float:right"> </a>
                     <a href="usuarioReg.php" class="iconosCabecera"> <img id="userIcon" src="images/user.png" style="width: 40px; height: 40px;float: right;"> </a>
