@@ -30,7 +30,7 @@
                 
                     <?php echo $_SESSION['username'] ?> 
                 
-                    <a href="sesion/salir.php" class="iconosCabecera"> <img id="logoutIcon" src="images/logout.png" width="40px" style="float:right"> </a>
+                    <a href="?logout=true" class="iconosCabecera"> <img id="logoutIcon" src="images/logout.png" width="40px" style="float:right"> </a>
                     <a href="usuarioReg.php" class="iconosCabecera"> <img id="userIcon" src="images/user.png" style="width: 40px; height: 40px;float: right;"> </a>
                 
                 <li class="b" id="formregLiLogged">
@@ -38,3 +38,14 @@
                 </li>
             </ul>
         </header>
+
+    <!--LOGOUT-->
+<?php  
+    if(isset($_GET['logout'])){
+        unset($_COOKIE['username']);
+        unset($_SESSION['username']);
+        setcookie('username', null, -1);
+        session_destroy();
+        header('location: index.php');
+    }
+?>
