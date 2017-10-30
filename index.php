@@ -1,5 +1,6 @@
 ﻿<!-- CABECERA -->
 <?php
+	session_start(); 
 	if(isset($_COOKIE['username'])){
 		echo $_COOKIE['username'];
 	}

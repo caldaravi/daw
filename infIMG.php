@@ -1,5 +1,6 @@
 ﻿<!-- CABECERA -->
 <?php
+    require_once('sesion/sesion.php');
     require_once('includes/controlAcceso.php');
 ?>
 <!-- FIN CABECERA  ?> -->

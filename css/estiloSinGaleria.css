@@ -1,0 +1,360 @@
+/* CSS Ordenador por abecedario */
+
+a {
+    text-decoration: none;
+}
+
+.alignCenter {
+    margin: 0px;
+    margin-left: 35%;
+}
+
+.alignLeft {
+    float: left;
+}
+
+.alignRight {
+    float: right;
+}
+
+a.btn {
+    align-content: center;
+    background: #98be22;
+    border: 1px solid #000000;
+    color: #000000;
+    padding: 0 8px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+a.btn:hover{
+    align-content: center;
+    background: #2e813c;
+    border: 1px solid #000000;
+    color: #000000;
+    padding: 0 8px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+body{
+    background-color: #c1bea8;
+}
+
+#buscarLi{
+    margin-left: 35%;
+    overflow: hidden;
+    position: absolute;
+    width: 20%;
+    
+}
+#botonRegId {
+    height: 23px;
+    width: 45%;
+}
+
+.card{
+    background-color: #d8d7af;
+    padding: 20px;
+    width: 50%;
+    box-sizing: border-box;
+    margin: 25px auto;
+    margin-bottom: 70px;
+
+  }
+  
+
+.center{
+      display: flex;
+      align-content: center;
+      justify-content: center;
+  }
+footer {
+    background-color: #efefef;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    position: absolute;
+    position: fixed;
+    right: 0;
+    text-align: center;
+  }
+
+ .foto{
+    align-content: center;
+    align-items: center;
+    background-color: #d8d7af;
+    border: 20px solid white;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    list-style-position:inside;
+    margin: 5px;
+    width: 360px;
+ }
+
+.foto a img {
+    width:304px;
+    height:228px;
+}
+
+.foto:last-child{
+    margin-bottom: 80px;
+}
+
+#formregLi{
+    float:right;
+    margin-left: 5%;
+    margin-top: -1%;
+    width: 40%;
+}
+#formregLiLogged{
+    visibility: hidden;
+}
+
+.galeria {
+    display: none;
+    list-style-type: none;
+    margin-top: 30px;
+    height: 100%;
+ }
+header{
+    background-color: #98aa00;
+    height: 75px;
+    margin-right: 2%;
+    width: 100%;
+}
+
+header ul{
+    padding: 2%;
+}
+header ul li + li a {
+    align-content: center;
+    background: #98be22;
+    border: 1px solid #000000;
+    color: #000000;
+    padding: 0 8px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+header ul li + li a:hover {
+    align-content: center;
+    background: #2e813c;
+    border: 1px solid #000000;
+    color: #000000;
+    padding: 0 8px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+header ul li{
+    float: left;
+    width: 30%;
+}
+
+header ul li > form[action="usuarioReg.php"]{
+    margin-top: -4px;
+}
+
+.horizontal a:hover, .horizontal a:active {
+    background-color: #7a991A;
+}
+
+.horizontal li {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+.iconosCabecera {
+    margin-bottom: 10px;
+}
+
+#infofoto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+
+    background-color: #d8d7af;
+    padding: 20px;
+    width: 50%;
+    box-sizing: border-box;
+    margin: 25px auto;
+    margin-bottom: 70px;
+}
+
+input{
+    height: 15px;
+    font-size: xx-small;
+    outline: none;
+}
+input[type="submit"]{
+    background: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    color: #757575;
+    cursor: default;
+    height:23px;
+    width: 90px;
+    padding: 0 16px;
+}
+input[type="submit"]:hover{
+    background: #f8f8f8;
+    border: 1px solid #c6c6c6;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    color: #222;
+}
+
+input:hover{
+    border-color: #a0a0a0 #b9b9b9 #b9b9b9 #b9b9b9;
+}
+input:focus{
+    border-color:#4d90fe;
+}
+
+input[value="Enviar"]{
+    margin-top: 10px;
+}
+
+#div_infologin{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#btnLogin {
+    margin-left: 4px;
+    margin-top: 2.5%;
+}
+
+#logo{ /* el tamaño del logo al 5% va bastante bien pero el menu se descuadra*/
+    background-color: #98bf21;
+    height: 70px;
+    margin-left: 10px;
+    width: 70px;
+}
+#logoLi {
+    width: 10%;
+}
+
+#loginicon{
+    visibility: hidden;
+    display: none;
+}
+
+main{
+    list-style: none;
+    margin: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: initial;
+    justify-content: center;
+    padding: 0;
+}
+.no-style {
+    list-style-type: none;
+   
+}
+#psw {
+    background-color: transparent;
+    border: 0px;
+    color: #4b2b89;
+    font-size: x-small;
+    text-decoration: underline;
+}
+
+#recordar {
+    font-size: x-small;
+    margin-left: 6%;
+    width: 1.5%;
+}
+
+#regLi {
+    height: 23px;
+    width: 135px;
+}
+#regLiLogged {
+    visibility: hidden;
+}
+#userIcon {
+    width: 20px;
+    height: 20px;
+}
+
+
+@media screen and (max-width: 1030px) {
+    
+    #buscarLi{
+        position: absolute;
+        overflow: hidden;
+        width: 300px;
+        margin-left: 30%;
+    }
+
+    form[action="usuarioReg.php"]{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+
+    #formRegLi{
+        width: 300px;
+    }
+    .galeria{
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+
+    header{
+        height: 100px;
+    }
+
+    input[name="uname"]{
+        margin-left: 25px;
+    }
+
+    #loginicon{
+        visibility: hidden;
+        display: none;
+    }
+
+    #regLi{
+        margin-left: 5%;
+    }
+
+}
+
+@media screen and (max-width: 770px){
+    #formregLi{
+        visibility: hidden;
+        display:none;
+
+    }
+    .galeria{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #loginicon{
+        display: block;
+        margin-left: 80%;
+        visibility: visible;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+    }
+    #loginimg{
+        visibility: visible;
+        width: 40px;
+        height: 40px;
+    }
+    
+    #loginicon a{
+        border: none;
+        background-color: transparent;
+    }
+
+    
+}

@@ -1,4 +1,4 @@
-<?php session_start(); 
+<?php 
 
     $usuario1 = 'carlos';   $pw1 = 'carlos';
     $usuario2 = 'marcos';   $pw2 = 'marcos';

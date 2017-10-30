@@ -1,9 +1,12 @@
 <?php  
-    require_once('includes/config.inc.php');
     session_start();
-
-    if(!$_SESSION['autentificado']){
-        header('location: index.php');
-        exit();
+    if(!isset($_SESSION['username'])){
+        require_once('includes/cabeceraEstilo2.inc');
+        require_once('includes/header.php');
+        ?>
+        <p class="card">Debes iniciar sesión para acceder a este contenido</br></br>
+        <a class"card" href="index.php">Volver a inicio</a></p>
+        <?php
+        die();
     }
 ?>
