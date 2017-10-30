@@ -1,3 +1,7 @@
+<?php
+    require_once('cabecera.inc');
+?>
+
 <body>
 <header class="b">
 	<ul class="no-style b">

@@ -11,7 +11,7 @@
         <div id="div_infologin">
             <input id="login" type="submit" value="Login">
             <label>
-                <input type="checkbox" checked="checked"> Recordar
+                <input type="checkbox" checked="checked" name="recordar" > Recordar
             </label>
             <a id="psw" href="solicitudPass.php">Contraseña olvidada?</a>
         </div>

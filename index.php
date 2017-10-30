@@ -1,6 +1,8 @@
 ﻿<!-- CABECERA -->
 <?php
-	require_once('includes/cabecera.inc');
+	if(isset($_COOKIE['username'])){
+		echo $_COOKIE['username'];
+	}
 	require_once('includes/controlAcceso.php');
 ?>
 <!-- FIN CABECERA  ?> -->   
