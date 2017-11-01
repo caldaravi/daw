@@ -17,9 +17,13 @@ array(5,"Life&nbsp;style","03/01/2017","Bali","Andres", "Album de mi vida"),
 ?>
     <main>   
         <div id="infofoto">
-         <h2>Titulo: <?php echo $fotos[$_GET["id"]][1]?></h2>
-           
-                <img src="images/mountain.jpg" alt="Imagen" style="margin-bottom: 10px;">
+         <h2>Titulo: <?php echo $fotos[$_GET["id"]][1].' (id='.$_GET["id"].')'?></h2>
+                <?php if( $_GET["id"]%2==0 ){
+                    echo '<img src="images/mountain.jpg" alt="Imagen" style="margin-bottom: 10px;">';}
+                    else{
+                    echo '<img src="images/surf.jpg" alt="Imagen" style="margin-bottom: 10px;">';}
+                    ?>
+                
             <table>
                 <tr>
                     <td>Fecha <?php echo $fotos[$_GET["id"]][2]?></td>
