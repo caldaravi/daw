@@ -9,7 +9,7 @@
 	/* ---- Base de datos temporal ---- */ 
 	$fotos = array
 	(
-	array(1,"Buenas&nbspvistas","29/09/2017","Afganistan", "Pepe"),
+	array(1,"Buenas&nbsp;vistas","29/09/2017","Afganistan", "Pepe"),
 	array(2,"Kite&nbsp;for&nbsp;life","17/06/2017","España", "Alberto"),
 	array(3,"BOOM","08/04/2017","Perú","Paco"),
 	array(4,"Good&nbsp;views","12/02/2017","Rio%20Janeiro","Alberto"),

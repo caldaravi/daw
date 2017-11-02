@@ -2,11 +2,9 @@
 <?php 
     session_start();
     
-    $_SESSION = array(); 
-    setcookie('username', null, -1);
-    setcookie('password', null, -1);
-    setcookie("hour", null, -1);
-    setcookie("day", null, -1);
+    setcookie('username', null, -1, "/daw");
+    setcookie("hour", null, -1, "/daw");
+    setcookie("day", null, -1, "/daw");
     session_destroy();
     header('location: /daw/index.php');
 ?>
