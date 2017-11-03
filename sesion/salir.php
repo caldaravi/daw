@@ -1,4 +1,3 @@
-<!-- ESTO NO VA, EL MISMO CÓDIGO EN HEADERLOGGED SI QUE VA -->
 <?php 
     session_start();
     

@@ -26,8 +26,6 @@
                     <p id="Bienvenido">Bienvenido  <?php echo $_SESSION['username'] ?> </p>
                 </li>
                 
-                
-                
                     <a href="?logout=true" class="iconosCabecera"> <img id="logoutIcon" src="images/logout.png" alt="logout" width="40px" style="float:right"> </a>
                     <a href="usuarioReg.php" class="iconosCabecera"> <img id="userIcon" src="images/user.png" alt="perfil" style="width: 40px; height: 40px;float: right;"> </a>
                 

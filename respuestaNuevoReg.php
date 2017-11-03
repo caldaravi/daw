@@ -6,6 +6,7 @@
 <!-- FIN CABECERA  ?> -->
 <main>
     <?php 
+    echo "estoy aqui";
         if( isset($_POST["contrasena"]) && isset($_POST["contrasena2"]) && isset($_POST["usuario"]) && isset($_POST["email"]) && isset($_POST["sexo"]) && isset($_POST["ciudad"]) ){
             $pass1 = $_POST["contrasena"];
             $pass2 = $_POST["contrasena2"];
@@ -32,7 +33,7 @@
             </p>
             <p>Ciudad: <b>" . $ciudad . "</b></p>
             <h3>¿Están todos los datos correctos?</h3>
-            <a class='btn' href='index.php'>Validar</a>
+            <a class='btn' href='?reg=true'>Validar</a>
             <a class='btn' href='nuevoReg.php'>Atrás</a>
         </div>";
         }
@@ -48,4 +49,9 @@
 <!-- PÍE DE PÁGINA -->
 <?php include_once("includes/pie.inc"); ?>
 <!-- FIN PÍE -->
+<?php
+if(isset($_GET['reg'])){
+    header('location: /daw/db/registro.php');
+}
+?>
 

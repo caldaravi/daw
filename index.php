@@ -1,7 +1,7 @@
 ﻿<!-- CABECERA -->
 <?php
 	session_start(); 
-	
+	require_once('db/connect.php');
 	require_once('includes/controlAcceso.php');
 ?>
 <!-- FIN CABECERA  ?> -->   

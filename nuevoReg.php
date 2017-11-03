@@ -1,7 +1,8 @@
 ﻿<!-- CABECERA -->
 <?php
     session_start(); 
-	require_once('includes/controlAcceso.php');
+    require_once('db/connect.php');
+    require_once('includes/controlAcceso.php');
 ?>
 <!-- FIN CABECERA  ?> -->  
 
@@ -54,11 +55,9 @@
                 </label>
                 </p>
                 <!--país de residencia-->
-                <p>
-                <label>País de residencia
-                        <input type="text" name="paisresi">
-                </label>
-                </p>
+                
+                <?php require_once('db/paises.php'); ?>
+
                 <!--foto-->
                 <fieldset>
                 <legend>Foto</legend>
@@ -69,7 +68,7 @@
                 </div>
                 </fieldset>
                 <p>
-                    <input type="submit" value="Enviar">
+                    <input type="submit" name="doDB" value="Enviar">
                 </p>
         </form>
     </main>
