@@ -1,7 +1,10 @@
 <!-- CABECERA -->
 <?php
+    session_start();
+
+    $zonaPrivada = true;
+
     require_once('sesion/sesion.php');
-	require_once('includes/controlAcceso.php');
 ?>
 <!-- FIN CABECERA  ?> -->
 <form class="card" method="post">

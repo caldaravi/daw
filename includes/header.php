@@ -1,4 +1,5 @@
 <?php
+	require_once('controlAcceso.php');
     require_once('cabecera.inc');
 ?>
 

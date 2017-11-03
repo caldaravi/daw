@@ -1,7 +1,10 @@
 <!-- CABECERA -->
 <?php
-    session_start(); 
-    require_once('includes/controlAcceso.php');
+    session_start();
+
+    $zonaPrivada = true;
+    
+    require_once('sesion/sesion.php');
 ?>
 <!-- FIN CABECERA  ?> -->
 <main>

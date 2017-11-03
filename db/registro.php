@@ -1,7 +1,8 @@
 <?php
 $user = parse_ini_file('config.ini');
- require_once('connect.php');
- include_once('../respuestaNuevoReg.php');
+        
+        require_once('connect.php');
+        include_once('../respuestaNuevoReg.php');
 
 /*
  if(isset($_POST['contrasena'])){
