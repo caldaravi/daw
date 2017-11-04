@@ -1,7 +1,10 @@
 ﻿<!-- CABECERA -->
 <?php
+    session_start();
+    
+    $zonaPrivada = true;
+
     require_once('sesion/sesion.php');
-    require_once('includes/controlAcceso.php');
 ?>
 <!-- FIN CABECERA  ?> -->
 <?php 
@@ -17,6 +20,7 @@ array(5,"Life&nbsp;style","03/01/2017","Bali","Andres", "Album de mi vida"),
 ?>
     <main>   
         <div id="infofoto">
+<<<<<<< HEAD
          <h2>Titulo: <?php echo $fotos[$_GET["id"]][1].' (id='.$_GET["id"].')'?></h2>
                 <?php if( $_GET["id"]%2==0 ){
                     echo '<img src="images/mountain.jpg" alt="Imagen" style="margin-bottom: 10px;">';}
@@ -24,14 +28,19 @@ array(5,"Life&nbsp;style","03/01/2017","Bali","Andres", "Album de mi vida"),
                     echo '<img src="images/surf.jpg" alt="Imagen" style="margin-bottom: 10px;">';}
                     ?>
                 
+=======
+         <h2>Titulo: <?php echo $fotos[0][1]?></h2>
+           
+                <img src="images/mountain.jpg" alt="Imagen" style="margin-bottom: 10px;">
+>>>>>>> 1a2bbe378d6eb39a0076a4c21bc316725d986508
             <table>
                 <tr>
-                    <td>Fecha <?php echo $fotos[$_GET["id"]][2]?></td>
-                    <td>País <?php echo $fotos[$_GET["id"]][3]?></td>
+                    <td>Fecha <?php echo $fotos[0][2]?></td>
+                    <td>País <?php echo $fotos[0][3]?></td>
                 </tr>
                 <tr>
-                    <td>Álbum <?php echo $fotos[$_GET["id"]][5]?></td>
-                    <td>Usuario <?php echo $fotos[$_GET["id"]][4]?></td>
+                    <td>Álbum <?php echo $fotos[0][5]?></td>
+                    <td>Usuario <?php echo $fotos[0][4]?></td>
                 </tr>
             </table>
         </div>

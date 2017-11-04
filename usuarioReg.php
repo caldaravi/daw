@@ -1,7 +1,10 @@
 ﻿<!-- CABECERA -->
 <?php
+    session_start();
+    
+    $zonaPrivada = false;
+
     require_once('sesion/sesion.php');
-	require_once('includes/controlAcceso.php');
 ?>
 <!-- FIN CABECERA  ?> -->  
 
@@ -21,14 +24,7 @@
     <?php include_once("includes/pie.inc");
 //<!-- FIN PÍE -->
 
-if(isset($_GET['salir']))
-{
-    $_SESSION = array(); 
-    setcookie('username', null, -1);
-    setcookie('password', null, -1);
-    setcookie("hour", null, -1);
-    setcookie("day", null, -1);
-    session_destroy();
-    header('location: index.php');
+if(isset($_GET['salir'])){
+    header('location: sesion/salir.php');
 }
 ?>

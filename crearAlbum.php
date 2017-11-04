@@ -1,7 +1,10 @@
 <!-- CABECERA -->
 <?php
+    session_start();
+
+    $zonaPrivada = true;
+
     require_once('sesion/sesion.php');
-	require_once('includes/controlAcceso.php');
 ?>
 <!-- FIN CABECERA  ?> -->
 <form class="card" method="post">
@@ -14,10 +17,8 @@
     <p><label>Fecha
         <input type="date" name="fecha" required>
     </label>
-    <p><label>País
-        <input type="text" name="pais" required>
-    </label>
-    <p><input type="submit" value="Crear" /></p>
+    <?php require_once('db/paises.php'); ?>
+    <input type="submit" value="Crear" /></p>
 </form>
 <!-- PÍE DE PÁGINA -->
 <?php include_once("includes/pie.inc"); ?>

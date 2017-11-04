@@ -1,5 +1,4 @@
 <?php 
-    session_start();
     if(isset($_COOKIE['username'])){
         require_once('cabecera.inc');
         ?>
@@ -19,18 +18,12 @@
     // LOGOUT
 
         if(isset($_GET['logout'])){
-            setcookie('username', null, -1);
-            header('location: /daw/index.php');
+            header("location: /daw/sesion/salir.php");
         }
 
         if(isset($_GET['login'])){
-            $_POST['username'] = $_COOKIE['username'];
-            $_POST['password'] = $_COOKIE['password'];
-            
-
-                $_SESSION['username'] = $_POST['username'];
-                header('location: /daw/usuarioReg.php');
-
+            $_SESSION['username'] = $_COOKIE['username'];
+            header('location: /daw/usuarioReg.php');
         }
 ?>
 

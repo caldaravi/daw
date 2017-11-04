@@ -1,27 +1,28 @@
 ﻿<!-- CABECERA -->
 <?php
-    session_start(); 
-	require_once('includes/controlAcceso.php');
+    session_start();
+
+    $zonaPrivada = false;
+    
+	require_once('sesion/sesion.php');
 ?>
 <!-- FIN CABECERA  ?> -->
 
     <main>
         <form class="card" action="resBusqueda.php" method="get">
-            
+            <p>
             <label>Título:<br>
                 <input type="text" name="titulo">
             </label>
-            <br> 
-            
+            </p> 
+            <p>
             <label>Fecha:<br>
                 <input type="text" name="fecha">
             </label>
-            <br>
+            </p>
             
-            <label>País:<br>
-                <input type="text" name="pais">
-            </label>
-            <br>
+            <?php require_once('db/paises.php'); ?>
+
             <input type="submit" value="Buscar">
         </form>
     </main>
