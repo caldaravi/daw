@@ -3,8 +3,9 @@
     session_start();
 
     $zonaPrivada = true;
+    $urlLocal = "../";
 
-    require_once('sesion/sesion.php');
+    require_once($urlLocal . 'sesion/sesion.php');
 ?>
 <!-- FIN CABECERA  ?> -->
 <form class="card" method="post">
@@ -17,9 +18,9 @@
     <p><label>Fecha
         <input type="date" name="fecha" required>
     </label>
-    <?php require_once('db/paises.php'); ?>
+    <?php require_once($urlLocal . 'db/paises.php'); ?>
     <input type="submit" value="Crear" /></p>
 </form>
 <!-- PÍE DE PÁGINA -->
-<?php include_once("includes/pie.inc"); ?>
+<?php include_once($urlLocal . "includes/pie.php"); ?>
 <!-- FIN PÍE -->

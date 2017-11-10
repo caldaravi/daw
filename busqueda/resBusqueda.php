@@ -3,8 +3,18 @@
     session_start();
     
     $zonaPrivada = false;
+    $urlLocal = "../";
 
-	require_once('sesion/sesion.php');
+	require_once($urlLocal . 'sesion/sesion.php');
+    
+    $fotos = array
+    (
+    array(1,"Buenas&nbspvistas","29/09/2017","Afganistan", "Pepe", "Album de vacaciones"),
+    array(2,"Kite&nbsp;for&nbsp;life","17/06/2017","España", "Alberto", "Album de deportes"),
+    array(3,"BOOM","08/04/2017","Perú","Paco", "Album de Perú"),
+    array(4,"Good&nbsp;views","12/02/2017","Rio%20Janeiro","Alberto", "Mi album"),
+    array(5,"Life&nbsp;style","03/01/2017","Bali","Andres", "Album de mi vida"),
+    );
 ?>
 <!-- FIN CABECERA  ?> -->
 
@@ -20,7 +30,7 @@
         </p>
 
         <h2>Título Imagen 1</h2>
-        <?php echo '<a href="infIMG.php?titulo='.$titulo.'&pais='.$pais.'&fecha='.$fecha.'&album=1&usuario=pepe">' ?>
+        <?php echo '<a href="' . $urlLocal . 'zonaPrivada/infIMG.php?titulo='.$titulo.'&pais='.$pais.'&fecha='.$fecha.'&album=1&usuario=pepe">' ?>
             <img src="images/mountain.jpg" alt="Imagen">
         </a>
         <p>
@@ -33,5 +43,5 @@
     </main>
 
 <!-- PÍE DE PÁGINA -->
-    <?php include_once("includes/pie.inc"); ?>
+    <?php include_once($urlLocal . "includes/pie.php"); ?>
 <!-- FIN PÍE -->

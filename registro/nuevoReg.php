@@ -3,9 +3,10 @@
     session_start();
     
     $zonaPrivada = false;
+    $urlLocal = "../";
     
-    require_once('db/connect.php');
-    require_once('sesion/sesion.php');
+    require_once($urlLocal . 'db/connect.php');
+    require_once($urlLocal . 'sesion/sesion.php');
 ?>
 <!-- FIN CABECERA  ?> -->  
 
@@ -59,13 +60,13 @@
                 </p>
                 <!--país de residencia-->
                 
-                <?php require_once('db/paises.php'); ?>
+                <?php require_once($urlLocal . 'db/paises.php'); ?>
 
                 <!--foto-->
                 <fieldset>
                 <legend>Foto</legend>
                 <div>
-                    <input name="image3" type="file" accept="image/*" id="menu_images" />
+                    <input name="image" type="file" accept="image/*" id="menu_images" />
                     <p><img id="menu_image" alt="Imagen de perfil" src="/" />
                     <input type="submit" value="Upload" /></p>
                 </div>
@@ -77,5 +78,5 @@
     </main>
 
 <!-- PÍE DE PÁGINA -->
-    <?php include_once("includes/pie.inc"); ?>
+    <?php include_once($urlLocal . "includes/pie.php"); ?>
 <!-- FIN PÍE -->

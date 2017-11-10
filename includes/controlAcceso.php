@@ -1,5 +1,4 @@
 <?php 
-
     $usuario1 = 'carlos';   $pw1 = 'carlos';
     $usuario2 = 'marcos';   $pw2 = 'marcos';
     $usuario3 = 'admin';    $pw3 = 'admin';
@@ -13,11 +12,11 @@
             if(!empty($_POST['recordar'])){
                 require_once('setCookies.php');
             }
-            require_once('includes/headerLogged.php');
-            header("location: usuarioReg.php");
+            require_once($urlLocal . 'includes/headerLogged.php');
+            header("location: ' . $urlLocal . 'zonaPrivada/usuarioReg.php");
         }
         else{
-            require_once('includes/header.php');
+            require_once($urlLocal . 'includes/header.php');
             ?> <p style="float: right;"> Usuario o contraseña incorrecta </p> <?php
         }
     }

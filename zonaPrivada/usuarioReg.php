@@ -2,9 +2,10 @@
 <?php
     session_start();
     
-    $zonaPrivada = false;
+    $zonaPrivada = true;
+    $urlLocal = "../";
 
-    require_once('sesion/sesion.php');
+    require_once($urlLocal . 'sesion/sesion.php');
 ?>
 <!-- FIN CABECERA  ?> -->  
 
@@ -16,15 +17,10 @@
         <p>Mis álbumes</p>
         <p><a href="crearAlbum.php">Crear álbum</a></p>
         <p><a href="solicitarAlbum.php">Solicitar álbum</a></p>
-        <p><a href="?salir=true"> Salir</a></p>
+        <p><a href=<?php echo $urlLocal . 'sesion/salir.php'?>> Salir</a></p>
     </div>
 </main>
 
 <!-- PÍE DE PÁGINA -->
-    <?php include_once("includes/pie.inc");
-//<!-- FIN PÍE -->
-
-if(isset($_GET['salir'])){
-    header('location: sesion/salir.php');
-}
-?>
+    <?php include_once($urlLocal . "includes/pie.php");?>
+<!-- FIN PÍE -->

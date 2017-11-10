@@ -1,10 +1,11 @@
 ﻿<!-- CABECERA -->
 <?php
     session_start();
-    
-    $zonaPrivada = true;
 
-    require_once('sesion/sesion.php');
+    $zonaPrivada = true;
+    $urlLocal = "../";
+
+    require_once($urlLocal . "sesion/sesion.php");
 ?>
 <!-- FIN CABECERA  ?> -->
 <?php 
@@ -37,5 +38,5 @@ array(5,"Life&nbsp;style","03/01/2017","Bali","Andres", "Album de mi vida"),
     </main>
 
 <!-- PÍE DE PÁGINA -->
-    <?php include_once("includes/pie.inc"); ?>
+    <?php include_once($urlLocal . "includes/pie.php"); ?>
 <!-- FIN PÍE -->

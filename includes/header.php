@@ -9,17 +9,17 @@
 
 		<li class="b" id="logoLi">
 			<!-- / #logo-header -->
-			<a href="index.php">
-				<img id="logo" src="images/logo.png" alt="logo">
+			<a href=<?php echo $urlLocal.'index.php'?>>
+				<img id="logo" src=<?php echo $urlLocal . "images/logo.png"?> alt="logo">
 			</a>
 		</li>
 
 		<li class="b" id="regLi">
-			<a id="botonRegId" href="nuevoReg.php">Regístrate</a>
+			<a id="botonRegId" href=<?php echo $urlLocal.'registro/nuevoReg.php'?>>Regístrate</a>
 		</li>
 
 		<li class="b" id="buscarLi">
-			<form action="formBusqueda.php" method="get">
+			<form action=<?php echo $urlLocal . "busqueda/formBusqueda.php"?> method="get">
 				<label>
 					<input type="text" placeholder="Busca fotos">
 				</label>
@@ -28,7 +28,7 @@
 		</li>
 
 		<li class="b" id="formregLi">
-			<?php include_once("includes/acceso.inc.php");?>
+			<?php include_once($urlLocal . "includes/acceso.php");?>
 		</li>
 		
 		<li id="loginicon">

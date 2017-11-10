@@ -3,7 +3,8 @@
 	session_start();
 	
 	$zonaPrivada = false;
-	
+	$urlLocal ="";
+
 	require_once('sesion/sesion.php');
 	require_once('db/connect.php');
 ?>
@@ -25,7 +26,7 @@
 			<li class="foto">
 				
 				<h2> <?php echo $fotos[0][1] ?> </h2>
-				<a href="infIMG.php?id=1">
+				<a href="zonaPrivada/infIMG.php?id=1">
 					<img src="images/mountain.jpg" alt="Imagen">
 				</a>
 				<p>
@@ -97,5 +98,5 @@
 	</main>
 	
 <!-- PÍE DE PÁGINA -->
-	<?php include_once("includes/pie.inc"); ?>
+	<?php include_once("includes/pie.php"); ?>
 <!-- FIN PÍE -->

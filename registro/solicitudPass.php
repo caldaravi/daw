@@ -3,8 +3,9 @@
 	session_start();
 	
 	$zonaPrivada = false;
+	$urlLocal = "../";
 	
-	require_once('sesion/sesion.php');
+	require_once($urlLocal . 'sesion/sesion.php');
 ?>
 <!-- FIN CABECERA  ?> -->  
 		
@@ -20,5 +21,5 @@
 	</main>
 
 <!-- PÍE DE PÁGINA -->
-	<?php include_once("includes/pie.inc"); ?>
+	<?php include_once($urlLocal . "includes/pie.php"); ?>
 <!-- FIN PÍE -->

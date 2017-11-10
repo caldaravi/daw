@@ -114,7 +114,9 @@ footer {
 .foto:last-child{
     margin-bottom: 80px;
 }
-
+#formOculto{
+    visibility: hidden;
+}
 #formregLi{
     float:right;
     margin-left: 5%;

@@ -3,8 +3,9 @@
     session_start();
 
     $zonaPrivada = false;
+    $urlLocal = "../";
     
-	require_once('sesion/sesion.php');
+	require_once($urlLocal . 'sesion/sesion.php');
 ?>
 <!-- FIN CABECERA  ?> -->
 
@@ -21,12 +22,12 @@
             </label>
             </p>
             
-            <?php require_once('db/paises.php'); ?>
+            <?php require_once($urlLocal . 'db/paises.php'); ?>
 
             <input type="submit" value="Buscar">
         </form>
     </main>
     
 <!-- PÍE DE PÁGINA -->
-    <?php include_once("includes/pie.inc"); ?>
+    <?php include_once($urlLocal . "includes/pie.php"); ?>
 <!-- FIN PÍE -->

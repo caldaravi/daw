@@ -1,4 +1,5 @@
 <?php  
+
     if(isset($_SESSION['contador'])) { 
         $_SESSION['contador'] = $_SESSION['contador'] + 1; 
     } else { 
@@ -6,23 +7,26 @@
     } 
   
     if(isset($_COOKIE['username']) && $_SESSION['contador'] == 1){
-          header('location: includes/ventanaRecordando.php');
+          header('location: ' . $urlLocal . 'includes/ventanaRecordando.php');
     }
 
     if(!isset($_SESSION['username'])){
-        require_once('includes/header.php');
+        require_once($urlLocal . 'includes/header.php');
         
-        if($zonaPrivada == true){
+        if($zonaPrivada == true){ 
         ?>
         
         <p class="card">Debes iniciar sesión para acceder a este contenido<br><br>
-        <a class="card" href="index.php">Volver a inicio</a></p>
-    
+
+        <a class="card" href=<?php echo $urlLocal.'index.php'?>>Volver a inicio</a></p>
+    <!-- PÍE DE PÁGINA -->
+        <?php include_once($urlLocal . "includes/pie.php"); ?>
+    <!-- FIN PÍE -->
         <?php
         die();
         }
            
     } else {
-        require_once('includes/headerLogged.php');
+        require_once($urlLocal . 'includes/headerLogged.php');
     }
 ?>
