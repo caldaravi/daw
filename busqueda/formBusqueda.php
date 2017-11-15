@@ -10,7 +10,7 @@
 <!-- FIN CABECERA  ?> -->
 
     <main>
-        <form class="card" action="resBusqueda.php" method="get">
+        <form class="card" action="resBusqueda.php" method="post">
             <p>
             <label>Título:<br>
                 <input type="text" name="titulo">

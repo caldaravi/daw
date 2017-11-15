@@ -21,24 +21,35 @@ array(5,"Life&nbsp;style","03/01/2017","Bali","Andres", "Album de mi vida"),
 ?>
     <main>   
         <div id="infofoto">
-         <h2>Titulo: <?php echo $fotos[$_GET["id"]][1].' (id='.$_GET["id"].')'?></h2>
-         <?php if( $_GET["id"]%2==0 ){
-             echo '<img src="images/mountain.jpg" alt="Imagen" style="margin-bottom: 10px;">';}
-             else{
-             echo '<img src="images/surf.jpg" alt="Imagen" style="margin-bottom: 10px;">';}
-             ?>            <table>
-                <tr>
-                    <td>Fecha <?php echo $fotos[0][2]?></td>
-                    <td>País <?php echo $fotos[0][3]?></td>
-                </tr>
-                <tr>
-                    <td>Álbum <?php echo $fotos[0][5]?></td>
-                    <td>Usuario <?php echo $fotos[0][4]?></td>
-                </tr>
-            </table>
+        <?php
+            while($fila = mysqli_fetch_assoc($result)) { 
+                echo $fila['Titulo'];
+            }
+            ?>
         </div>
     </main>
 
 <!-- PÍE DE PÁGINA -->
     <?php include_once($urlLocal . "includes/pie.php"); ?>
 <!-- FIN PÍE -->
+<!--?php/*
+<main>   
+        <div id="infofoto">
+         <h2>Titulo: <php echo $fotos[$_GET["id"]][1].' (id='.$_GET["id"].')'?></h2>
+         <php if( $_GET["id"]%2==0 ){
+             echo '<img src="images/mountain.jpg" alt="Imagen" style="margin-bottom: 10px;">';}
+             else{
+             echo '<img src="images/surf.jpg" alt="Imagen" style="margin-bottom: 10px;">';}
+             ?>            <table>
+                <tr>
+                    <td>Fecha <php echo $fotos[0][2]?></td>
+                    <td>País <php echo $fotos[0][3]?></td>
+                </tr>
+                <tr>
+                    <td>Álbum <php echo $fotos[0][5]?></td>
+                    <td>Usuario <php echo $fotos[0][4]?></td>
+                </tr>
+            </table>
+        </div>
+    </main>*/
+?>

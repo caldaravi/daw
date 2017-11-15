@@ -11,10 +11,10 @@
 <form class="card" method="post">
     <p><label>Título
         <input type="text" name="titulo" required>
-    </label>
+    </label></p>
     <p><label>Descripción
         <textarea rows="3" cols="30" name="textadic" maxlength="4000" placeholder="Enter your text here"></textarea>
-    </label>
+    </label></p>
     <p><label>Fecha
         <input type="date" name="fecha" required>
     </label>

@@ -6,15 +6,57 @@
     $urlLocal = "../";
 
 	require_once($urlLocal . 'sesion/sesion.php');
+    require_once($urlLocal . 'db/connect.php');
+
+    $query = "SELECT * FROM Fotos WHERE ";
     
-    $fotos = array
-    (
-    array(1,"Buenas&nbspvistas","29/09/2017","Afganistan", "Pepe", "Album de vacaciones"),
-    array(2,"Kite&nbsp;for&nbsp;life","17/06/2017","España", "Alberto", "Album de deportes"),
-    array(3,"BOOM","08/04/2017","Perú","Paco", "Album de Perú"),
-    array(4,"Good&nbsp;views","12/02/2017","Rio%20Janeiro","Alberto", "Mi album"),
-    array(5,"Life&nbsp;style","03/01/2017","Bali","Andres", "Album de mi vida"),
-    );
+    if($_POST['titulo'] != ""){
+        $query .= "Titulo = '" . mysqli_real_escape_string($connectDB, $_POST['titulo']) ."'";  
+        if($_POST['fecha'] != ""){
+            $query .= " AND Fecha = '" . mysqli_real_escape_string($connectDB, $_POST['fecha']) ."'";  
+            if($_POST['paises'] != ""){
+                $query .= " AND Pais = '" . mysqli_real_escape_string($connectDB, $_POST['paises']) ."'";  
+            }
+        }
+        else{
+            if($_POST['paises'] != ""){
+                $query .= " AND Pais = '" . mysqli_real_escape_string($connectDB, $_POST['paises']) ."'";  
+            }
+        }
+    }
+        else{
+            if($_POST['fecha'] != ""){
+                $query .= " Fecha = '" . mysqli_real_escape_string($connectDB, $_POST['fecha']) ."'";  
+                if($_POST['paises'] != ""){
+                    $query .= " AND Pais = '" . mysqli_real_escape_string($connectDB, $_POST['paises']) ."'";  
+                }
+            }
+            else{
+                if($_POST['paises'] != ""){
+                    $query .= " Pais = '" . mysqli_real_escape_string($connectDB, $_POST['paises']) ."'";  
+                }
+        }
+    }
+    $result = mysqli_query($connectDB, $query);
+    echo $query;
+    if (!$result) {
+        die(mysqli_error($connectDB));
+    }
+    else{
+        $row_cnt = mysqli_num_rows($result);
+    }
+    if ($row_cnt >= 1) {
+    //success
+    
+        header("Location: " . $urlLocal . "zonaPrivada/infIMG.php");
+
+    } else {
+    //Fail
+        echo '<div class="card" ><p> No se han encontrado fotos con estos criterios de búsqueda. </p></div>';     
+        die();   
+    }
+    mysqli_close($connectDB);
+    
 ?>
 <!-- FIN CABECERA  ?> -->
 

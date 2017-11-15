@@ -139,16 +139,9 @@
                 <input type="number" name="resfoto" min="150" max="900" step="150" value="150">
             </label>
             </p>
-            <p>
-            <label>
-                Álbum a escoger
-                <select name="Álbumes">
-                    <option value="1">Mis álbumes</option>
-                    <option value="2">Álbum X</option>
-                    <option value="3">Álmbum Y</option>
-                </select>
-            </label>*
-            </p>
+
+                <?php require_once($urlLocal . 'db/albumesOption.php'); ?>
+  
             <p>
             <label>
                 Fecha de recepción:

@@ -1,23 +1,31 @@
 <?php 
-    $usuario1 = 'carlos';   $pw1 = 'carlos';
-    $usuario2 = 'marcos';   $pw2 = 'marcos';
-    $usuario3 = 'admin';    $pw3 = 'admin';
+    require_once($urlLocal . 'db/connect.php');
+    
 
     if(isset($_POST['username'])){
-        if(($_POST['username'] == $usuario1 && $_POST['password'] == $pw1) || 
-            ($_POST['username'] == $usuario2 && $_POST['password'] == $pw2) ||
-            ($_POST['username'] == $usuario3 && $_POST['password'] == $pw3)){
+        $query = "SELECT * FROM usuarios WHERE userName = '" . mysqli_real_escape_string($connectDB, $_POST['username']) ."' 
+                        AND userPass = '" . mysqli_real_escape_string($connectDB, $_POST['password']) ."'" ;
+        $result = mysqli_query($connectDB, $query);
+        if (!$result) {
+            die(mysqli_error($connectDB));
+        }
+        else{
+            $row_cnt = mysqli_num_rows($result);
+        }
+        if ($row_cnt == 1) {
+        //Pass
             $_SESSION['username'] = $_POST['username'];
             $_SESSION['autentificado'] = true;
             if(!empty($_POST['recordar'])){
                 require_once('setCookies.php');
             }
             require_once($urlLocal . 'includes/headerLogged.php');
-            header("location: ' . $urlLocal . 'zonaPrivada/usuarioReg.php");
+            header("location: " . $urlLocal . "zonaPrivada/usuarioReg.php");
+        } else {
+        //Fail
+            echo '<p style="float: right;"> El usuario o contraseña es incorrecto. </p>';
+            //header("location: " . $urlLocal . "index.php");        
         }
-        else{
-            require_once($urlLocal . 'includes/header.php');
-            ?> <p style="float: right;"> Usuario o contraseña incorrecta </p> <?php
-        }
+        mysqli_close($connectDB);
     }
 ?>
