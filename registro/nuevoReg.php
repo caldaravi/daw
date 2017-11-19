@@ -4,6 +4,16 @@
     
     $zonaPrivada = false;
     $urlLocal = "../";
+        //BORRAR cookies utilizadas para registro
+
+    setcookie("usuario", "", time() - 3600, "/daw");
+    setcookie("contrasena", "", time() - 3600, "/daw");
+    setcookie("email", "", time() - 3600, "/daw");
+    setcookie("sexo", "",time() - 3600, "/daw");
+    setcookie("ciudad","", time() - 3600, "/daw");
+    setcookie("FNacimiento","", time() - 3600, "/daw");
+    setcookie("Foto","", time() - 3600, "/daw");
+    setcookie("Pais","", time() - 3600, "/daw");
     
     require_once($urlLocal . 'db/connect.php');
     require_once($urlLocal . 'sesion/sesion.php');

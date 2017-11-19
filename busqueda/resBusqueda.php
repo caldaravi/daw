@@ -35,8 +35,9 @@
                 if($_POST['paises'] != ""){
                     $query .= " Pais = '" . mysqli_real_escape_string($connectDB, $_POST['paises']) ."'";  
                 }
+            }
         }
-    }
+    
     $result = mysqli_query($connectDB, $query);
     echo $query;
     if (!$result) {
@@ -47,42 +48,53 @@
     }
     if ($row_cnt >= 1) {
     //success
-    
-        header("Location: " . $urlLocal . "zonaPrivada/infIMG.php");
 
+        while($id = mysqli_fetch_assoc($result)) { 
+            
+                        $queryId = "SELECT NomPais FROM Paises where IdPais = '" . $id['Pais'] . "'";
+                        $final = mysqli_query($connectDB, $queryId);
+            
+                        if(!$final){
+                            die(mysqli_error($connectDB));
+                        }
+                        else{
+                            $row = mysqli_num_rows($final);
+                        }
+                        if($row>=1){
+                            //success x2
+                            echo '<div class="card">';
+                            while($fila = mysqli_fetch_assoc($final)){
+                              
+                                echo " <p>  
+                                <h2>" . $id['Titulo'] . "</h2>
+                                            <a href='" . $urlLocal . "zonaPrivada/infIMG.php'> 
+                                            <img src='" . $urlLocal . $id['Fichero'] . "' /> 
+                                        </a>
+                                        <p>
+                                            Fecha: " . $id['Fecha'] . "
+                                        </p>
+                                        <p>
+                                            País: " . $fila['NomPais'] . "
+                                        </p>
+                                    </p>
+                                ";
+                            
+                            }
+                            echo "</div> ";
+                        }
+                    }
     } else {
     //Fail
         echo '<div class="card" ><p> No se han encontrado fotos con estos criterios de búsqueda. </p></div>';     
         die();   
     }
     mysqli_close($connectDB);
+
     
 ?>
 <!-- FIN CABECERA  ?> -->
 
-    <main>
-        <div class="card">
-        <p>
-            Mostrando resultados para
-            <?php 
-            if(isset($_GET['titulo'])){ $titulo=$_GET['titulo']; echo ' el título ' . $titulo ;} 
-            if(isset($_GET['fecha'])){ $fecha=$_GET['fecha']; echo ' con la fecha ' . $fecha;}
-            if(isset($_GET['pais'])){ $pais=$_GET['pais']; echo ' y el país ' . $pais;} 
-            ?>
-        </p>
 
-        <h2>Título Imagen 1</h2>
-        <?php echo '<a href="' . $urlLocal . 'zonaPrivada/infIMG.php?titulo='.$titulo.'&pais='.$pais.'&fecha='.$fecha.'&album=1&usuario=pepe">' ?>
-            <img src="images/mountain.jpg" alt="Imagen">
-        </a>
-        <p>
-            Fecha: <?php echo $fecha?>
-        </p>
-        <p>
-            País: <?php echo $pais?>
-        </p>
-    </div>
-    </main>
 
 <!-- PÍE DE PÁGINA -->
     <?php include_once($urlLocal . "includes/pie.php"); ?>

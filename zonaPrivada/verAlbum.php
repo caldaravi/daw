@@ -11,7 +11,7 @@
 
 <main>
         <div id="card">
-        
+            <?php require_once($urlLocal . 'db/fotosAlbum.php'); ?>
         </div>
 </main>
 

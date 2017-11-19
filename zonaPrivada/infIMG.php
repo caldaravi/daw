@@ -6,50 +6,73 @@
     $urlLocal = "../";
 
     require_once($urlLocal . "sesion/sesion.php");
+
+    require_once($urlLocal . 'db/connect.php');
+
 ?>
 <!-- FIN CABECERA  ?> -->
-<?php 
-/* ---- Base de datos temporal ---- */ 
-$fotos = array
-(
-array(1,"Buenas&nbspvistas","29/09/2017","Afganistan", "Pepe", "Album de vacaciones"),
-array(2,"Kite&nbsp;for&nbsp;life","17/06/2017","España", "Alberto", "Album de deportes"),
-array(3,"BOOM","08/04/2017","Perú","Paco", "Album de Perú"),
-array(4,"Good&nbsp;views","12/02/2017","Rio%20Janeiro","Alberto", "Mi album"),
-array(5,"Life&nbsp;style","03/01/2017","Bali","Andres", "Album de mi vida"),
-);
-?>
+
     <main>   
-        <div id="infofoto">
+        
         <?php
-            while($fila = mysqli_fetch_assoc($result)) { 
-                echo $fila['Titulo'];
-            }
-            ?>
-        </div>
+ 
+ if($connectDB){
+    $id = $_GET['id'];
+    $query = "SELECT Fotos.Titulo a, Albumes.Titulo b, Fichero, IdFoto, NomPais, Fotos.Fecha, IdPais, userName 
+    FROM Fotos, Paises, Albumes, Usuarios u
+    WHERE Albumes.Usuario = u.IdUsuario AND Fotos.Album = Albumes.IdAlbum AND Fotos.IdFoto=$id AND Paises.IdPais=Fotos.Pais";
+    
+    mysqli_query($connectDB,"SET CHARACTER SET 'utf8'");
+    mysqli_query($connectDB,"SET SESSION collation_connection ='utf8_bin'");
+
+    $result = mysqli_query($connectDB, $query);
+   
+    if (!$result) {
+        die(mysqli_error($connectDB));
+    }
+    else{
+        $row_cnt = mysqli_num_rows($result);
+    }
+    if ($row_cnt >= 1) {
+    //success
+        while($fila = mysqli_fetch_assoc($result)) { 
+            echo '
+                <div class="card">
+                
+                <h2>' . $fila["a"] . ' </h2>
+                <a href="' . $urlLocal . 'zonaPrivada/infIMG.php?id=' . $fila["IdFoto"] . '">
+                    <img src="' . $urlLocal . $fila["Fichero"] . '" alt="Imagen"/>
+                </a>
+                <p>
+                    Fecha: ' . $fila["Fecha"] . '
+                </p>
+                <p>
+                    Páis: ' . $fila["NomPais"] . '
+                </p>
+                <p>
+                    Usuario: ' . $fila["userName"] . '
+                  
+                 </p>
+                 <p>
+                   Álbum: ' . $fila["b"] . '
+                </p>
+                
+                </div>
+            ';
+            
+        }
+    } else {
+    //Fail
+        echo '<div class="card" ><p> No se ha encontrado la información. </p></div>';     
+        die();   
+    }
+    mysqli_close($connectDB);
+}
+
+        ?>
+        
     </main>
 
 <!-- PÍE DE PÁGINA -->
     <?php include_once($urlLocal . "includes/pie.php"); ?>
 <!-- FIN PÍE -->
-<!--?php/*
-<main>   
-        <div id="infofoto">
-         <h2>Titulo: <php echo $fotos[$_GET["id"]][1].' (id='.$_GET["id"].')'?></h2>
-         <php if( $_GET["id"]%2==0 ){
-             echo '<img src="images/mountain.jpg" alt="Imagen" style="margin-bottom: 10px;">';}
-             else{
-             echo '<img src="images/surf.jpg" alt="Imagen" style="margin-bottom: 10px;">';}
-             ?>            <table>
-                <tr>
-                    <td>Fecha <php echo $fotos[0][2]?></td>
-                    <td>País <php echo $fotos[0][3]?></td>
-                </tr>
-                <tr>
-                    <td>Álbum <php echo $fotos[0][5]?></td>
-                    <td>Usuario <php echo $fotos[0][4]?></td>
-                </tr>
-            </table>
-        </div>
-    </main>*/
-?>

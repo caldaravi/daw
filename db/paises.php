@@ -2,10 +2,11 @@
     require_once('connect.php');
 
 if($connectDB){
-    $sentencia = 'SELECT * FROM Paises order by NomPais asc limit 10';
+    $sentencia = 'SELECT IdPais, NomPais FROM Paises order by NomPais asc limit 10';
+    mysqli_query($connectDB,"SET CHARACTER SET 'utf8'");
+    mysqli_query($connectDB,"SET SESSION collation_connection ='utf8_bin'");
     if(!($resultado = @mysqli_query($connectDB, $sentencia))) { 
-        echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($connectDB); 
-        echo '</p>'; 
+        echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . mysqli_error($connectDB) . "</p>";
         exit; 
     } 
 }

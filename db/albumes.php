@@ -6,6 +6,10 @@ require_once('connect.php');
 
 if($connectDB){
     $queryUsuario = "SELECT IdUsuario FROM usuarios WHERE userName = '" . mysqli_real_escape_string($connectDB, $_SESSION['username']) ."'";
+    
+    mysqli_query($connectDB,"SET CHARACTER SET 'utf8'");
+    mysqli_query($connectDB,"SET SESSION collation_connection ='utf8_bin'");
+
     $queryid = mysqli_query($connectDB, $queryUsuario);
    
     if (!$queryid) {
