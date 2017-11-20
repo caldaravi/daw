@@ -6,7 +6,6 @@
     $urlLocal = "../";
 
     require_once($urlLocal . "sesion/sesion.php");
-
     require_once($urlLocal . 'db/connect.php');
 
 ?>

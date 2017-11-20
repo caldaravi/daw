@@ -67,7 +67,7 @@
             <?php echo "Te has registrado correctamente, inicia sesión para acceder al contenido privado.";?>
         </p>
         <div id="botones">
-            <a class="vBtn" href=<?php echo $urlLocal . "index.php"?>>Inicio</a>
+            <a class="vBtn" href=<?php echo $urlLocal . "index.php"?>Inicio</a>
         </div>
     </div>
 <?php

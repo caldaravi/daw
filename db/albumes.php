@@ -5,44 +5,40 @@
 require_once('connect.php');
 
 if($connectDB){
-    $queryUsuario = "SELECT IdUsuario FROM usuarios WHERE userName = '" . mysqli_real_escape_string($connectDB, $_SESSION['username']) ."'";
-    
+    $query = 
+    "SELECT IdUsuario, Titulo, IdAlbum 
+    FROM usuarios u, Albumes a
+    WHERE userName = '" . mysqli_real_escape_string($connectDB, $_SESSION['username']) ."' 
+    AND a.Usuario = u.IdUsuario";
+
     mysqli_query($connectDB,"SET CHARACTER SET 'utf8'");
     mysqli_query($connectDB,"SET SESSION collation_connection ='utf8_bin'");
-
-    $queryid = mysqli_query($connectDB, $queryUsuario);
-   
-    if (!$queryid) {
-        die(mysqli_error($connectDB));
-    }
-    else{
-        $row_cnt = mysqli_num_rows($queryid);
-    }
-    if ($row_cnt >= 1) {
-    //success
-        while($id = mysqli_fetch_assoc($queryid)) { 
-
-            $query = "SELECT Titulo FROM Albumes where Usuario = '" . $id['IdUsuario'] . "'";
-            $result = mysqli_query($connectDB, $query);
-
-            if(!$result){
-                die(mysqli_error($connectDB));
-            }
-            else{
-                $row = mysqli_num_rows($result);
-            }
-            if($row>=1){
-                //success x2
-                while($res = mysqli_fetch_assoc($result)){
-                    echo "<div class='card'> <a href='" . $urlLocal . "zonaPrivada/verAlbum.php'>" . $res['Titulo'] . "</a></div>";
-                }
-            }
-        }
-    } else {
-    //Fail
-        echo '<div class="card" ><p> No se han encontrado albumes. </p></div>';     
-        die();   
-    }
-    mysqli_close($connectDB);
+    if(!($resultado = @mysqli_query($connectDB, $query))) { 
+        echo "<p>Error al ejecutar la sentencia <b>$query</b>: " . mysqli_error($connectDB) . "</p>";
+        exit; 
+    } 
 }
+$result = mysqli_query($connectDB, $query);
+
+ if (!$result) {
+     die(mysqli_error($connectDB));
+ }
+ else{
+     $row_cnt = mysqli_num_rows($result);
+ }
+ echo '<div class="card">';
+ if ($row_cnt >= 1) {
+ //success
+
+while($res = mysqli_fetch_assoc($resultado)){
+    echo '<p> <a href="' . $urlLocal . 'zonaPrivada/verAlbum.php?id=' . $res["IdAlbum"] . '">' . $res['Titulo'] . '</a> </p>'; 
+}
+}else{
+    echo 'No has creado ningún ábum todavía. 
+    <p> <a href="' . $urlLocal . 'zonaPrivada/crearAlbum.php"> Crear álbum </a> </p>';
+}
+echo '</div>';
+
+    mysqli_close($connectDB);
+
 ?>

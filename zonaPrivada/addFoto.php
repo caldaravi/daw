@@ -10,23 +10,22 @@
 <!-- FIN CABECERA  ?> -->  
 
 <main>
-        <form class="card" method="post">
+        <form class="card" method="post" action="addFotoOK.php">
             <p><label>Título
                 <input type="text" name="titulo" required>
             </label></p>
             <p><label>Fecha
                 <input type="date" name="fecha" required>
-            </label>
-            <?php require_once($urlLocal . 'db/paises.php'); ?>
+            </label></p>
+            <?php   require_once($urlLocal . 'db/albumesOption.php'); ?>
+            <?php   require_once($urlLocal . 'db/paises.php'); ?>
             <fieldset style="margin-bottom: 5px;">
             <legend>Foto</legend>
             <div>
-                <input name="image" type="file" accept="image/*" id="menu_images" />
-                <p><img id="menu_image" alt="Imagen de perfil" src="/" />
-                <input type="submit" value="Upload" /></p>
+                <input name="image" type="file" accept="image/*" id="menu_images" required/>
             </div>
             </fieldset>
-            <input type="submit" value="Crear" /></p>
+            <input type="submit" value="Agregar foto" /></p>
         </form>
 </main>
 

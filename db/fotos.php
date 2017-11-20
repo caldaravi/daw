@@ -3,7 +3,10 @@
 require_once('connect.php');
 
 if($connectDB){
-    $query = "SELECT Titulo, Fecha, Pais, Fichero, IdFoto, NomPais FROM Fotos, Paises WHERE Paises.IdPais=Fotos.Pais order by FRegistro desc limit 5";
+    $query = 
+    "   SELECT Titulo, Fecha, Pais, Fichero, IdFoto, NomPais   
+        FROM Fotos, Paises 
+        WHERE Paises.IdPais=Fotos.Pais order by FRegistro desc limit 5";
     
     mysqli_query($connectDB,"SET CHARACTER SET 'utf8'");
     mysqli_query($connectDB,"SET SESSION collation_connection ='utf8_bin'");

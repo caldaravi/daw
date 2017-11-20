@@ -1,45 +1,33 @@
-﻿<!-- CABECERA -->
-<?php
+﻿<?php
     session_start();
-    
+
     $zonaPrivada = false;
     $urlLocal = "../";
 
-	require_once($urlLocal . 'sesion/sesion.php');
+    require_once($urlLocal . 'sesion/sesion.php');
     require_once($urlLocal . 'db/connect.php');
 
-    $query = "SELECT * FROM Fotos WHERE ";
-    
+if($connectDB){
+    $query = 
+        "SELECT f.Titulo, IdFoto, Fichero, f.Fecha, NomPais 
+        FROM Fotos f, Paises p
+        WHERE p.IdPais = f.Pais ";
+
     if($_POST['titulo'] != ""){
-        $query .= "Titulo = '" . mysqli_real_escape_string($connectDB, $_POST['titulo']) ."'";  
-        if($_POST['fecha'] != ""){
-            $query .= " AND Fecha = '" . mysqli_real_escape_string($connectDB, $_POST['fecha']) ."'";  
-            if($_POST['paises'] != ""){
-                $query .= " AND Pais = '" . mysqli_real_escape_string($connectDB, $_POST['paises']) ."'";  
-            }
-        }
-        else{
-            if($_POST['paises'] != ""){
-                $query .= " AND Pais = '" . mysqli_real_escape_string($connectDB, $_POST['paises']) ."'";  
-            }
-        }
+        $query .= "AND f.Titulo LIKE '%" . $_POST['titulo'] . "%' ";
     }
-        else{
-            if($_POST['fecha'] != ""){
-                $query .= " Fecha = '" . mysqli_real_escape_string($connectDB, $_POST['fecha']) ."'";  
-                if($_POST['paises'] != ""){
-                    $query .= " AND Pais = '" . mysqli_real_escape_string($connectDB, $_POST['paises']) ."'";  
-                }
-            }
-            else{
-                if($_POST['paises'] != ""){
-                    $query .= " Pais = '" . mysqli_real_escape_string($connectDB, $_POST['paises']) ."'";  
-                }
-            }
-        }
-    
+    if($_POST['fecha'] != ""){
+        $query .= "AND f.Fecha = '" . $_POST['fecha'] . "'"; 
+    }
+    if($_POST['paises'] != ""){
+        $query .= "AND f.Pais = '" . $_POST['paises'] . "'"; 
+    }
+
+    mysqli_query($connectDB,"SET CHARACTER SET 'utf8'");
+    mysqli_query($connectDB,"SET SESSION collation_connection ='utf8_bin'");
+
     $result = mysqli_query($connectDB, $query);
-    echo $query;
+   
     if (!$result) {
         die(mysqli_error($connectDB));
     }
@@ -48,54 +36,31 @@
     }
     if ($row_cnt >= 1) {
     //success
-
-        while($id = mysqli_fetch_assoc($result)) { 
+        echo "Se han encontrado " . $row_cnt . " resultados con estos criterios de búsqueda.";
+        while($fila = mysqli_fetch_assoc($result)) { 
+            echo '
+                <li class="foto">
+                
+                <h2>' . $fila["Titulo"] . ' </h2>
+                <a href="' . $urlLocal . 'zonaPrivada/infIMG.php?id=' . $fila["IdFoto"] . '">
+                    <img src="' . $urlLocal . $fila["Fichero"] . '" alt="Imagen"/>
+                </a>
+                <p>
+                   ' . $fila["Fecha"] . '
+                </p>
+                <p>
+                   ' . $fila["NomPais"] . '
+                </p>
+                
+                </li>
+            ';
             
-                        $queryId = "SELECT NomPais FROM Paises where IdPais = '" . $id['Pais'] . "'";
-                        $final = mysqli_query($connectDB, $queryId);
-            
-                        if(!$final){
-                            die(mysqli_error($connectDB));
-                        }
-                        else{
-                            $row = mysqli_num_rows($final);
-                        }
-                        if($row>=1){
-                            //success x2
-                            echo '<div class="card">';
-                            while($fila = mysqli_fetch_assoc($final)){
-                              
-                                echo " <p>  
-                                <h2>" . $id['Titulo'] . "</h2>
-                                            <a href='" . $urlLocal . "zonaPrivada/infIMG.php'> 
-                                            <img src='" . $urlLocal . $id['Fichero'] . "' /> 
-                                        </a>
-                                        <p>
-                                            Fecha: " . $id['Fecha'] . "
-                                        </p>
-                                        <p>
-                                            País: " . $fila['NomPais'] . "
-                                        </p>
-                                    </p>
-                                ";
-                            
-                            }
-                            echo "</div> ";
-                        }
-                    }
+        }
     } else {
     //Fail
-        echo '<div class="card" ><p> No se han encontrado fotos con estos criterios de búsqueda. </p></div>';     
+        echo '<div class="card" ><p> No hay fotos con este criterio de búsqueda. </p></div>';     
         die();   
     }
     mysqli_close($connectDB);
-
-    
+}
 ?>
-<!-- FIN CABECERA  ?> -->
-
-
-
-<!-- PÍE DE PÁGINA -->
-    <?php include_once($urlLocal . "includes/pie.php"); ?>
-<!-- FIN PÍE -->

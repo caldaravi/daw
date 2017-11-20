@@ -1,14 +1,15 @@
 <?php
 
 $user = $_SESSION['username'];
+$id = $_GET['id'];
 
 require_once('connect.php');
 
 if($connectDB){
     $query = 
-    "   SELECT Fichero, f.Titulo, f.Fecha, NomPais, IdFoto 
-        FROM Fotos f, usuarios u, Paises p, Albumes a 
-        WHERE u.userName = '$user' AND p.IdPais=f.Pais  AND a.Usuario=u.userName";
+        "SELECT f.Titulo, a.Titulo, IdFoto, Fichero, f.Fecha, NomPais 
+        FROM Fotos f, Albumes a, Paises p
+        WHERE a.IdAlbum = '$id' and f.Album = a.IdAlbum AND p.IdPais = f.Pais";
 
     mysqli_query($connectDB,"SET CHARACTER SET 'utf8'");
     mysqli_query($connectDB,"SET SESSION collation_connection ='utf8_bin'");
