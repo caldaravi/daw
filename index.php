@@ -1,4 +1,4 @@
-﻿<!-- CABECRA -->
+﻿<!-- CABECERA -->
 <?php
 	session_start();
 	

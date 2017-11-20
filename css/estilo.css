@@ -1,5 +1,11 @@
 /* CSS Ordenador por abecedario */
 
+html{
+    font-size: 1em !important;
+    color: #000 !important;
+    font-family: Arial !important;
+}
+
 a {
     text-decoration: none;
 }
@@ -42,9 +48,6 @@ body{
 }
 
 
-#Bienvenido{
-    margin-top: 2%;
-}
 
 #buscarLi{
     margin-left: 35%;
@@ -81,6 +84,14 @@ body{
       align-content: center;
       justify-content: center;
   }
+
+#div_infologin{
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 footer {
     background-color: #efefef;
     bottom: 0;
@@ -131,42 +142,85 @@ footer {
     margin-top: 30px;
     height: 100%;
  }
+
+
 header{
     background-color: #98aa00;
     height: 75px;
     margin-right: 2%;
     width: 100%;
+    display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;  /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;  
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-header ul{
-    padding: 2%;
+#h_logo {
+    padding-top: 30px;
+    flex-grow: 1;
+
+    padding: 20px 0px
 }
-header ul li + li a {
-    align-content: center;
-    background: #98be22;
-    border: 1px solid #000000;
-    color: #000000;
-    padding: 0 8px;
-    padding-bottom: 2px;
-    padding-top: 2px;
+#h_reg{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px 0px
+}
+#h_reg a {
+    
+    background-color: #4CAF50; /* Green */
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 3px;
+    justify-content: center;
+    align-items: center;
+    
+    
+    }
+#h_busq{
+    flex-grow: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px 0px
+}
+#h_busq_logged{
+    flex-grow: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px 0px
+
 }
 
-header ul li + li a:hover {
-    align-content: center;
-    background: #2e813c;
-    border: 1px solid #000000;
-    color: #000000;
-    padding: 0 8px;
-    padding-bottom: 2px;
-    padding-top: 2px;
-}
-header ul li{
-    float: left;
-    width: 30%;
+#h_login{
+    flex-grow: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px 0px
 }
 
-header ul li > form[action="usuarioReg.php"]{
-    margin-top: -4px;
+#h_bienvenido{
+    flex-grow: 1;
+    padding: 5px 0px;
+}
+
+#h_iconos{
+    flex-grow: 1;
+    padding-right: 15px ;
+    padding-top: 15px;
 }
 
 .horizontal a:hover, .horizontal a:active {
@@ -228,12 +282,6 @@ input[value="Enviar"]{
     margin-top: 10px;
 }
 
-#div_infologin{
-    display: flex;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-}
 
 #btnLogin {
     margin-left: 4px;
@@ -246,9 +294,7 @@ input[value="Enviar"]{
     margin-left: 10px;
     width: 70px;
 }
-#logoLi {
-    width: 10%;
-}
+
 
 #loginicon{
     visibility: hidden;
