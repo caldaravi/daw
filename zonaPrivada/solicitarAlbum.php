@@ -6,6 +6,27 @@
     $urlLocal = "../";
     
     require_once($urlLocal . 'sesion/sesion.php');
+    require_once($urlLocal . 'db/connect.php');
+
+    if($connectDB){ 
+        $user = $_SESSION['username'];
+        $query = 
+        "SELECT Titulo
+        FROM Albumes a, usuarios u
+        WHERE u.userName = '$user' AND a.Usuario = u.IdUsuario;
+        ";
+                $result = mysqli_query($connectDB, $query);
+                
+                    if (!$result) {
+                        die(mysqli_error($connectDB));
+                    }
+                    else{
+                        $row_cnt = mysqli_num_rows($result);
+                    }
+                    if ($row_cnt >= 1) {
+                        $numFotos = $row_cnt;
+                    
+    
 ?>
 <!-- FIN CABECERA  ?> -->      
 
@@ -61,12 +82,6 @@
             </p>
             <p>
             <label>
-                Apellidos
-                <input type="text" name="apellidos" maxlength="200" required placeholder="Enter your surname">*
-            </label>
-            </p>
-            <p>
-            <label>
                 Título delálbum
                 <input type="text" name="album" maxlength="200" required placeholder="200 carácteres">*
             </label>
@@ -74,7 +89,7 @@
             <p>
             <label>
                 Texto adicional
-                <textarea rows="3" cols="30" name="textadic" maxlength="4000" placeholder="Enter your text here"></textarea>
+                <textarea rows="3" cols="30" name="textadic" maxlength="4000" required placeholder="Enter your text here"></textarea>*
             </label>
             </p>
             <p>
@@ -156,7 +171,13 @@
             <input type="submit" value="Enviar">
         </form>
     </main>
-
+    <?php
+                    }
+                    else{
+                        echo "<div class='card'> <p>Para poder solicitar un álbum primero debes crear uno.</p></div>";
+                    }
+                }
+?>
 <!-- PÍE DE PÁGINA -->
     <?php include_once($urlLocal . "includes/pie.php"); ?>
 <!-- FIN PÍE -->

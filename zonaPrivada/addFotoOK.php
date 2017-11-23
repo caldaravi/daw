@@ -13,10 +13,13 @@
     $usuario = $_SESSION['username'];
     $album = $_POST['albumes'];
     $fichero = "images/" . $_POST['image'];
+    $idPais;
 
-$queryID = "SELECT idUsuario, IdAlbum 
-FROM usuarios u, Albumes a 
-WHERE u.userName = '$usuario' AND a.Usuario = u.IdUsuario AND a.IdAlbum = '$album'";
+$queryID = "SELECT idUsuario, IdAlbum, NomPais 
+FROM usuarios u, Albumes a, Paises p, Fotos f
+WHERE u.userName = '$usuario' AND a.Usuario = u.IdUsuario AND a.IdAlbum = '$album' AND p.IdPais = '$pais'";
+    mysqli_query($connectDB,"SET CHARACTER SET 'utf8'");
+    mysqli_query($connectDB,"SET SESSION collation_connection ='utf8_bin'");
 $result = mysqli_query($connectDB, $queryID);
 
 if (!$result) 
@@ -30,6 +33,7 @@ global $id;
     $fila = mysqli_fetch_assoc($result);
     
     $id = $fila['IdAlbum'];
+    $idPais = $fila['NomPais'];
 }
 else{
     echo "sin result";
@@ -39,19 +43,23 @@ else{
             VALUES('$titulo', '$fecha', '$pais', '$id', '$fichero')";
 
     if ($connectDB->query($query) === TRUE) {
-?>
+echo '
         <div class="card">
         <p class="pCentrado">
-            Foto agregada con éxito.
+            <h2>Foto agregada con éxito.</h2>
         </p>
+        <p>Título: ' . $titulo . '</p>
+        <p>Fecha: ' . $fecha . '</p>
+        <p>País: ' . $idPais . '</p>
+        
         <div id="botones">
-            <a class="vBtn" href="<?php echo $urlLocal . 'zonaPrivada/verAlbum.php?id=' . $album . '">'?>Ver álbum</a>
+            <a class="vBtn" href=' . $urlLocal . 'zonaPrivada/verAlbum.php?id=' . $album . '>Ver álbum</a>
         </div>
     </div>
-    <?php
+    ';
     }
     else{
-        echo "error al crear album";
+        echo '<div class="card"> <p>Se ha producido un error al agregar la foto al álbum</p></div>';
     }
 
     mysqli_close($connectDB);

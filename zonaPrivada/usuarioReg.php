@@ -19,6 +19,8 @@
         <p><a href="crearAlbum.php">Crear álbum</a></p>
         <p><a href="solicitarAlbum.php">Solicitar álbum</a></p>
         <p><a href=<?php echo $urlLocal . 'sesion/salir.php'?>> Salir</a></p>
+        <br><br>
+        <p><a href=<?php echo $urlLocal . 'db/borrarPerfil.php'?>> Borrar cuenta</a></p>
     </div>
 </main>
 

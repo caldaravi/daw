@@ -14,7 +14,9 @@
     $usuario = $_SESSION['username'];
     
 
-$queryID = "SELECT idUsuario FROM usuarios u WHERE u.userName = '$usuario'";
+$queryID = "SELECT idUsuario, NomPais FROM usuarios u, paises p WHERE u.userName = '$usuario' AND p.IdPais = '$pais' " ;
+mysqli_query($connectDB,"SET CHARACTER SET 'utf8'");
+mysqli_query($connectDB,"SET SESSION collation_connection ='utf8_bin'");
 $result = mysqli_query($connectDB, $queryID);
 
 
@@ -29,6 +31,7 @@ global $id;
     $fila = mysqli_fetch_assoc($result);
     
     $id = $fila['idUsuario'];
+    $idpais = $fila['NomPais'];
 }
 else{
     echo "sin result";
@@ -38,19 +41,22 @@ else{
             VALUES('$titulo', '$descripcion', '$fecha', '$pais', '$id')";
 
     if ($connectDB->query($query) === TRUE) {
-?>
-        <div class="card">
+echo
+        '<div class="card">
         <p class="pCentrado">
-            Álbum creado con éxito.
+            <h2>Álbum creado con éxito.</h2>
+            <p> Titulo: ' . $titulo . '</p>
+            <p> Descripcion: ' . $descripcion . '</p>
+            <p> Fecha: ' . $fecha . '</p>
+            <p> País: ' . $idpais . '</p>
         </p>
         <div id="botones">
-            <a class="vBtn" href=<?php echo $urlLocal . 'zonaPrivada/verAlbum.php'?>>Ver álbum</a>
+            <a class="vBtn" href=' . $urlLocal . 'zonaPrivada/usuarioReg.php>Volver al perfil</a>
         </div>
-    </div>
-    <?php
+    </div>';
     }
     else{
-        echo "error al crear album";
+        echo '<div class="card"> <p>Se ha producido un error al crear álbum</p></div>';
     }
 
     mysqli_close($connectDB);
