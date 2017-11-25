@@ -40,7 +40,7 @@ else{
 }
 
     $query = "INSERT INTO Fotos(Titulo, Fecha, Pais, Album, Fichero) 
-            VALUES('$titulo', '$fecha', '$pais', '$id', '$fichero')";
+            VALUES('$titulo', '$fecha', $pais, $id, '$fichero')";
 
     if ($connectDB->query($query) === TRUE) {
 echo '
