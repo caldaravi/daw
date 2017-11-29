@@ -21,8 +21,6 @@
     FROM Fotos, Paises, Albumes, Usuarios u
     WHERE Albumes.Usuario = u.IdUsuario AND Fotos.Album = Albumes.IdAlbum AND Fotos.IdFoto=$id AND Paises.IdPais=Fotos.Pais";
     
-    mysqli_query($connectDB,"SET CHARACTER SET 'utf8'");
-    mysqli_query($connectDB,"SET SESSION collation_connection ='utf8_bin'");
 
     $result = mysqli_query($connectDB, $query);
    

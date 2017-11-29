@@ -18,8 +18,7 @@
 $queryID = "SELECT idUsuario, IdAlbum, NomPais 
 FROM usuarios u, Albumes a, Paises p, Fotos f
 WHERE u.userName = '$usuario' AND a.Usuario = u.IdUsuario AND a.IdAlbum = '$album' AND p.IdPais = '$pais'";
-    mysqli_query($connectDB,"SET CHARACTER SET 'utf8'");
-    mysqli_query($connectDB,"SET SESSION collation_connection ='utf8_bin'");
+
 $result = mysqli_query($connectDB, $queryID);
 
 if (!$result) 

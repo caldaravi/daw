@@ -8,8 +8,6 @@ if($connectDB){
         FROM Fotos, Paises 
         WHERE Paises.IdPais=Fotos.Pais order by FRegistro desc limit 5";
     
-    mysqli_query($connectDB,"SET CHARACTER SET 'utf8'");
-    mysqli_query($connectDB,"SET SESSION collation_connection ='utf8_bin'");
     
     $result = mysqli_query($connectDB, $query);
    

@@ -21,7 +21,7 @@
 <!-- FIN CABECERA  ?> -->  
 
     <main>
-        <form class="card" action="respuestaNuevoReg.php" method="POST">
+        <form class="card" action= <?php echo $urlLocal . "zonaPrivada/respuestaMisDatos.php" ?> method="POST">
                 <h2>Modificar cuenta</h2>
                 
                 <!--nombre de usuario-->
@@ -68,7 +68,7 @@
                 </fieldset>
                 <p>
                     <input type="submit" name="doDB" value="Guardar">
-                    <a href= <?php echo $urlLocal . "zonaPrivada/usuarioReg.php"?> class='button'>Cancelar</a>
+                    <a href= <?php echo $urlLocal . "zonaPrivada/usuarioReg.php"?> class='button red'>Cancelar</a>
                 </p>
         </form>
     </main>

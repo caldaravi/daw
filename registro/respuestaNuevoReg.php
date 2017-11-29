@@ -8,6 +8,8 @@
     $fecha;
     $ciudad;
     $pais;
+
+    $destinourl = 'registro/nuevoReg.php';
     
     require_once($urlLocal . 'sesion/sesion.php');
     require_once($urlLocal . 'db/connect.php');
@@ -16,130 +18,67 @@
 <main>
     <?php 
     
-    if( isset($_POST["contrasena"]) && isset($_POST["contrasena2"]) && isset($_POST["usuario"]) && isset($_POST["email"])){
-        $pass1 = $_POST["contrasena"];
-        $pass2 = $_POST["contrasena2"];
+    include_once($urlLocal . '/includes/funciones.php');
 
-        
-        if($pass1 == $pass2){
-            $usuario = $_POST['usuario'] ;
-            $email = $_POST["email"];
-            
-            $duplicatesName = "SELECT count(userName) FROM usuarios WHERE userName = '$usuario'";
-            
-            
-            $result = mysqli_query($connectDB, $duplicatesName);
-            
-            if (!$result) {
-                die(mysqli_error($connectDB));
-            }
-            else{
-                $row_cnt = mysqli_num_rows($result);
-            }
-            if ($row_cnt >= 1) {
-                 echo '        
-                    <div class="card">
-                    <p class="pCentrado">
-                         El usuario escogido ya está en uso.
-                    </p>
-                    <div id="botones">
-                        <a class="vBtn" href='. $urlLocal . 'registro/nuevoReg.php> Atrás </a>
-                    </div>
-                    </div>';
-                die();
-            }
-            
+    // Comprobamos usuario, fecha nac y sexo
 
-            $duplicatesEmail = "SELECT count(userEmail) FROM usuarios WHERE userEmail = '$email'";
-            $result2 = mysqli_query($connectDB, $duplicatesEmail);
-            
-            if (!$result2) {//no entra aqui, entra en usuario
-                die(mysqli_error($connectDB));
-            }
-            else{
-                $row_cnt = mysqli_num_rows($result2);
-            }
-            if ($row_cnt >= 1) {
-                 echo '        
-                    <div class="card">
-                    <p class="pCentrado">
-                         El email escogido ya está en uso.
-                    </p>
-                    <div id="botones">
-                        <a class="vBtn" href='. $urlLocal . 'registro/nuevoReg.php> Atrás </a>
-                    </div>
-                    </div>';
-                die();
-            }
-            mysqli_close($connectDB);
-
-            setcookie("usuario", $_POST['usuario']);
-            setcookie("contrasena", $_POST['contrasena']);
-            setcookie("email", $_POST['email']);
-
-            if(isset($_POST["sexo"])){
-                $sexo = $_POST["sexo"];
-                setcookie("sexo", $_POST['sexo']);
-            }
-            if(isset($_POST["ciudad"])){
-                $ciudad = $_POST['ciudad'];
-                setcookie("ciudad", $_POST['ciudad']);
-            }
-            if(isset($_POST["fecnacimiento"])){
-                $fecha = $_POST['fecnacimiento'];
-                setcookie("FNacimiento", $_POST['fecnacimiento']);
-            }
-            if(isset($_POST["paises"])){
-                $pais = $_POST['paises'];
-                setcookie("Pais", $_POST['paises']);
-            }
-            if(isset($_POST["image"])){
-                $image = $_POST['image'];
-                setcookie("Foto", $_POST['image']);
-            }
-            success( $usuario, $email);
+    if( isset($_POST["usuario"])){
+        $usuario = $_POST["usuario"];
+        $duplicatesName = "SELECT userName FROM usuarios WHERE userName = '$usuario'";
+        $result = mysqli_query($connectDB, $duplicatesName);
+        if (!$result){
+            die(mysqli_error($connectDB));
         }
         else{
-            error();
+            $row_cnt = mysqli_num_rows($result);
         }
-    }
+        if ($row_cnt >= 1){
+            error('El usuario escogido ya está en uso', 'registro/nuevoReg.php');
+        }
+         
+        // username: sólo puede contener letras del alfabeto inglés (en mayúsculas y minúsculas) y números; longitud mínima 3 caracteres y máxima 15.
+        if (!preg_match('/[^A-Za-z0-9]/', $usuario) && !comprobarlong($usuario, 3, 15)){
+            error('El nombre de usuario es incorrecto. Debe tener una longitud de entre 3 y 15 caracteres, contener al menos una mayúscula, una minuscula y un numero.', 'registro/nuevoReg.php');
+        }
 
-    function success($usuario, $email){
-        global $sexo;
-        global $ciudad;
-        global $pais;
-        global $fecha;
+            // comprobamos contraseña
+        if( isset($_POST["contrasena"]) && isset($_POST["contrasena2"]) ){
+            $pass1 = $_POST["contrasena"];
+            $pass2 = $_POST["contrasena2"];
         
-        echo "
-        <div class='card'>
-            <h2>Datos del nuevo registro</h2>
-                <p>Usuario: <b>" . $usuario . "</b></p>
-                <p>Email: <b>" . $email . "</b></p>";
+            if($pass1 === $pass2){ 
+                $pass1 = $pass2;
+            }
+            else{
+                error('Contraseñas no coinciden.', 'registro/nuevoReg.php');
+            }
+        }
 
-        if($fecha != null){
-            echo "<p>Fecha de nacimiento: <b>" . $fecha . "</b></p>";
+
+        if( !isset($_POST["sexo"])){
+            error('El sexo no ha sido escogido.', 'registro/nuevoReg.php');
         }
-        if($sexo != null){
-            echo "<p>Sexo: <b>" . $sexo . "</b></p>";
+        else if(isset($_POST["sexo"])){
+            $sexo = $_POST["sexo"];
+            setcookie("sexo", $_POST['sexo']);
         }
-        if($ciudad != null){
-            echo "<p>Ciudad: <b>" . $ciudad . "</b></p>";
+        
+        if (!isset($_POST["fecnacimiento"])){
+            error('La fecha de nacimiento no ha sido escogida.', 'registro/nuevoReg.php');
         }
-        if($pais != null){
-            echo "<p>País: <b>" . $pais . "</b></p>";
+        else if(isset($_POST["fecnacimiento"])){
+            $fecha = $_POST['fecnacimiento'];
+            setcookie("FNacimiento", $_POST['fecnacimiento']);
         }
-        echo "
-            <h3>¿Están todos los datos correctos?</h3>
-                <a class='btn' href='?reg=true'>Validar</a>
-                <a class='btn' href='nuevoReg.php'>Atrás</a>
-        </div>";
+        setcookie("usuario", $_POST['usuario']);
+        // Si usuario no esta cogido, cargamos la validacion del resto de datos (misma validacion para modificar datos excepto para el sexo, fnac y username)
+        include_once($urlLocal . "db/validaciones.php");
+        
+        success($usuario, $email);
+
     }
-    function error(){
-        echo '<div class="card">
-            <p>Error: contraseñas no coinciden.</p>
-            <a class="btn" href="nuevoReg.php">Atrás</a>
-        </div>';
-    }
+
+    
 ?>
 <!-- PÍE DE PÁGINA -->
 <?php include_once($urlLocal . "includes/pie.php"); ?>

@@ -15,8 +15,7 @@
     
 
 $queryID = "SELECT idUsuario, NomPais FROM usuarios u, paises p WHERE u.userName = '$usuario' AND p.IdPais = '$pais' " ;
-mysqli_query($connectDB,"SET CHARACTER SET 'utf8'");
-mysqli_query($connectDB,"SET SESSION collation_connection ='utf8_bin'");
+
 $result = mysqli_query($connectDB, $queryID);
 
 

@@ -23,9 +23,6 @@ if($connectDB){
         $query .= "AND f.Pais = '" . $_POST['paises'] . "'"; 
     }
 
-    mysqli_query($connectDB,"SET CHARACTER SET 'utf8'");
-    mysqli_query($connectDB,"SET SESSION collation_connection ='utf8_bin'");
-
     $result = mysqli_query($connectDB, $query);
    
     if (!$result) {
@@ -54,7 +51,6 @@ if($connectDB){
                 
                 </li>
             ';
-            
         }
     } else {
     //Fail

@@ -7,8 +7,6 @@ if($connectDB){
     FROM usuarios u, Albumes a
     WHERE u.userName = '" . mysqli_real_escape_string($connectDB, $_SESSION['username']) . "' AND a.Usuario = u.IdUsuario";
     
-    mysqli_query($connectDB,"SET CHARACTER SET 'utf8'");
-    mysqli_query($connectDB,"SET SESSION collation_connection ='utf8_bin'");
     if(!($resultado = @mysqli_query($connectDB, $query))) { 
         echo "<p>Error al ejecutar la sentencia <b>$query</b>: " . mysqli_error($connectDB) . "</p>";
         exit; 

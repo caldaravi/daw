@@ -13,8 +13,6 @@ if($connectDB){
         FROM Fotos f, Albumes a, Paises p, usuarios u
         WHERE a.IdAlbum = '$id' and f.Album = a.IdAlbum AND p.IdPais = f.Pais AND u.userName = '$user' AND a.Usuario = u.IdUsuario";
 
-    mysqli_query($connectDB,"SET CHARACTER SET 'utf8'");
-    mysqli_query($connectDB,"SET SESSION collation_connection ='utf8_bin'");
 
     $result = mysqli_query($connectDB, $query);
    
