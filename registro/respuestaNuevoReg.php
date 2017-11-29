@@ -37,7 +37,7 @@
         }
          
         // username: sólo puede contener letras del alfabeto inglés (en mayúsculas y minúsculas) y números; longitud mínima 3 caracteres y máxima 15.
-        if (!preg_match('/[^A-Za-z0-9]/', $usuario) && !comprobarlong($usuario, 3, 15)){
+        if (preg_match('/[^A-Za-z0-9]/', $usuario) && !comprobarlong($usuario, 3, 15)){
             error('El nombre de usuario es incorrecto. Debe tener una longitud de entre 3 y 15 caracteres, contener al menos una mayúscula, una minuscula y un numero.', 'registro/nuevoReg.php');
         }
 
@@ -48,6 +48,7 @@
         
             if($pass1 === $pass2){ 
                 $pass1 = $pass2;
+                setcookie("contrasena", $_POST['contrasena']);
             }
             else{
                 error('Contraseñas no coinciden.', 'registro/nuevoReg.php');

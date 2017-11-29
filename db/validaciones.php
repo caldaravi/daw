@@ -3,25 +3,35 @@
 
     // comprobamos email
     if( isset($_POST["email"]) ){
-        $email = $_POST["email"];
-        setcookie("email", $_POST['email']);
-        $domain = strstr($email, '@');
-        $fulldom = strstr($domain, '.', true); 
-        if(!comprobarlong($fulldom,3,5)){
-            error(' El email es incorrecto. El dominio debe tener una longitud de entre 2 y 4 caracteres.',$destinourl );
-        }
-    
-        $duplicatesEmail = "SELECT userEmail FROM usuarios WHERE userEmail = '$email'";
-        $result2 = mysqli_query($connectDB, $duplicatesEmail);
-        
-        if (!$result2) {//no entra aqui, entra en usuario
-            die(mysqli_error($connectDB));
+        // Necesitamos que lo verifique siempre si se registra, pero no es obligatorio introducirlo si modifica datos:
+        // Si el email esta introducido -->> registro
+        if($_POST['email']==''){
+            if($destinourl=='registro/nuevoReg.php') {
+                error('El email está vacío.',$destinourl );
+                //die dentro del error; si todo OK continua ejecucion
+            } 
         }
         else{
-            $row_cnt = mysqli_num_rows($result2);
-        }
-        if ($row_cnt >= 1) {
-            error('El email escogido ya está en uso.',$destinourl );
+            $email = $_POST["email"];
+            setcookie("email", $_POST['email']);
+            $domain = strstr($email, '@');
+            $fulldom = strstr($domain, '.', true); 
+            if(!comprobarlong($fulldom,3,5)){
+                error(' El email es incorrecto. El dominio debe tener una longitud de entre 2 y 4 caracteres.',$destinourl );
+            }
+        
+            $duplicatesEmail = "SELECT userEmail FROM usuarios WHERE userEmail = '$email'";
+            $result2 = mysqli_query($connectDB, $duplicatesEmail);
+            
+            if (!$result2) {//no entra aqui, entra en usuario
+                die(mysqli_error($connectDB));
+            }
+            else{
+                $row_cnt = mysqli_num_rows($result2);
+            }
+            if ($row_cnt >= 1) {
+                error('El email escogido ya está en uso.',$destinourl );
+            }
         }
     }
 
@@ -44,7 +54,7 @@
         else{
             $row_paises = mysqli_fetch_assoc($resultpaises);
         }
-        mysqli_close($connectDB);
+        
 
         $pais = $row_paises['NomPais'];
 

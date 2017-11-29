@@ -12,9 +12,9 @@
     mysqli_query($connectDB,"SET CHARACTER SET 'utf8'");
     mysqli_query($connectDB,"SET SESSION collation_connection ='utf8_bin'");
     
-if(!$connectDB) { 
-echo "Error al conectar con la base de datos: " . mysqli_connect_error(); 
-exit; 
-}
+    if(!$connectDB) { 
+        echo "Error al conectar con la base de datos: " . mysqli_connect_error(); 
+        exit; 
+    }
 
 ?>
