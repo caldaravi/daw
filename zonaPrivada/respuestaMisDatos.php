@@ -17,14 +17,14 @@
     include_once($urlLocal . '/includes/funciones.php');
     $contrasena='';
     $contrasena2='';
-
+    $email='';
     
 
     // UPDATE `usuarios` SET 
     //`IdUsuario`=[value-1],`userName`=[value-2],`userPass`=[value-3],`userEmail`=[value-4],`sexo`=[value-5],`ciudad`=[value-6],`FNacimiento`=[value-7],`FRegistro`=[value-8],`Foto`=[value-9],`Pais`=[value-10] 
     // WHERE 1
     $query = 'UPDATE usuarios set ';
-
+    $passb = false;
     $datos = '';
     if($_POST['contrasena'] != "" && $_POST['contrasena2'] != ""){
         if(isset($_POST["contrasena"]) && isset($_POST["contrasena2"])){
@@ -37,10 +37,33 @@
                 error('Contraseña no comprendida entre 6 y 15 caracteres.', 'db/modificarPerfil.php');
             }
             else if($contrasena === $contrasena2){
-                setcookie("contrasena", $_POST['contrasena']);
-                setcookie("contrasena2", $_POST['contrasena2']);
-                $query .= 'userPass=' .$contrasena .',';
-                $datos .= 'contrasena: ' . $contrasena . ' ';
+
+                if(comprobarlong($contrasena, 6, 15)){
+                    if( preg_match('/[A-Z]/', $contrasena) ){
+                        if( preg_match('/[a-z]/', $contrasena) ){
+                            if( preg_match('/[0-9]/', $contrasena) ){
+                                echo 'yeeeee';
+                            setcookie("contrasena", $_POST['contrasena']);
+                            setcookie("contrasena2", $_POST['contrasena2']);
+                            $query .= 'userPass="' .$contrasena .'"';
+                            $datos .= 'contrasena: ' . $contrasena . ' ';
+                            $passb = true;
+                            }
+                            else{
+                                error('La contrasena no tiene un numero.', 'registro/nuevoReg.php');
+                            }
+                        }
+                        else{
+                            error('La contrasena no tiene una minuscula.', 'registro/nuevoReg.php');
+                        }
+                    }
+                    else{
+                        error('La contrasena no tiene una mayuscula.', 'registro/nuevoReg.php');
+                    }
+                } 
+                else{
+                    error('Contraseña demasiado corta.', 'registro/nuevoReg.php');
+                }
             }
             else{
                 error('Contraseñas no coinciden.', 'db/modificarPerfil.php');
@@ -52,33 +75,57 @@
     else if($_POST['contrasena'] != "" || $_POST['contrasena2'] != ""){
         error('Contraseñas no coinciden.', 'db/modificarPerfil.php');
     }
-
+echo 'ey';
     include_once($urlLocal . "db/validaciones.php");
-    
+    echo 'ey';
 
-    $email='';
+    
     
 
     if(isset($email)){
         //echo $email;
-        if($email != ''){
-            $query .= ' userEmail="' . $email .'"';
-            $datos .= 'email: ' . $email . ' ';
+        if($passb == true){
+            if($email != ''){
+                $query .= ', userEmail="' . $email .'"';
+                $datos .= 'email: ' . $email . ' ';
+            }
+        }
+        else{
+            if($email != ''){
+                $query .= ' userEmail="' . $email .'"';
+                $datos .= 'email: ' . $email . ' ';
+            }
         }
     }
+    echo 'ey';
     if(isset($ciudad)){
         //echo $ciudad;
-        if($ciudad!=''){
-            if($email != ''){
-                $query .= ', ciudad="' . $ciudad .'"';
-                $datos .= 'ciudad: ' . $ciudad . ' ';
+        if($passb == true ){
+            if($ciudad!=''){
+                if($email != ''){
+                    $query .= ', ciudad="' . $ciudad .'"';
+                    $datos .= 'ciudad: ' . $ciudad . ' ';
+                }
+                else{
+                    $query .= ' ciudad="' . $ciudad .'"';
+                    $datos .= 'ciudad: ' . $ciudad . ' ';
+                }
             }
-            else{
-                $query .= ' ciudad="' . $ciudad .'"';
-                $datos .= 'ciudad: ' . $ciudad . ' ';
+        }
+        else{
+            if($ciudad!=''){
+                if($email != ''){
+                    $query .= ', ciudad="' . $ciudad .'"';
+                    $datos .= 'ciudad: ' . $ciudad . ' ';
+                }
+                else{
+                    $query .= ' ciudad="' . $ciudad .'"';
+                    $datos .= 'ciudad: ' . $ciudad . ' ';
+                }
             }
         }
     }
+    echo 'ey';
     // obtenemos el nombre del pais, pero necesitamos el id
     $paisnombre=$pais;
 
@@ -94,51 +141,73 @@
             } 
             $fila = mysqli_fetch_assoc($resultado);
             $pais = $fila['IdPais'];
-        }
+        }echo 'epais ' . $pais;
         if($pais!=0){
-
+            echo 'entra pais';
             if(isset($pais)){
                 //echo $pais;
-                if($pais != ''){
-                    if($ciudad!=''){
-                        if($email != ''){
-                            $query .= ', Pais="' . $pais .'"';
-                            $datos .= 'pais: ' . $paisnombre . ' ';
+                
+                if($passb == true){
+                    if($pais != ''){
+                        if($ciudad!=''){
+                            if($email != ''){
+                                $query .= ', Pais="' . $pais .'"';
+                                $datos .= 'pais: ' . $paisnombre . ' ';
+                            }
+                            else{
+                                $query .= ' Pais="' . $pais .'"';
+                                $datos .= 'pais: ' . $paisnombre . ' ';
+                            }
                         }
                         else{
                             $query .= ' Pais="' . $pais .'"';
                             $datos .= 'pais: ' . $paisnombre . ' ';
                         }
                     }
-                    else{
-                        $query .= ' Pais="' . $pais .'"';
-                        $datos .= 'pais: ' . $paisnombre . ' ';
-                    }
                 }
+                else{
+                            
+                    if($pais != ''){
+                        if($ciudad!=''){
+                            if($email != ''){
+                                $query .= ', Pais="' . $pais .'"';
+                                $datos .= 'pais: ' . $paisnombre . ' ';
+                            }
+                            else{
+                                $query .= ' Pais="' . $pais .'"';
+                                $datos .= 'pais: ' . $paisnombre . ' ';
+                            }
+                        }
+                        else{
+                            $query .= ' Pais="' . $pais .'"';
+                            $datos .= 'pais: ' . $paisnombre . ' ';
+                        }
+                    }       
+                }
+
             }
         
             // comprobamos todos los campos
             if($_POST['contrasena'] == "" && $_POST['contrasena2'] == "" && $_POST['email'] == "" && $_POST['ciudad'] == "" && (isset($_POST['paises']) && $_POST['paises']==0 )){
                 error('No se ha introducido ningun dato.', 'db/modificarPerfil.php');
             } 
-            
-        
-            $query .= ' WHERE userName="' . $_COOKIE['username'] . '"';
-            
-            $update = mysqli_query($connectDB, $query);
-            
-            //echo $query;
-            if (!$update) {//no entra aqui, entra en usuario
-                
-                error('Ha ocurrido un problema, intentelo de nuevo.','index.php');
-                die(mysqli_error($connectDB));
-            }
-            else{
-                error('Datos actualizados: ' . $datos . '.','db/modificarPerfil.php');
-            }
-        
-        mysqli_close($connectDB);
         }
+        
+        $query .= ' WHERE userName="' . $_COOKIE['username'] . '"';
+        
+        $update = mysqli_query($connectDB, $query);
+        echo $query;
+        //echo $query;
+        if (!$update) {//no entra aqui, entra en usuario
+            
+            error('Ha ocurrido un problema, intentelo de nuevo.','index.php');
+            die(mysqli_error($connectDB));
+        }
+        else{
+            error('Datos actualizados: ' . $datos . '.','db/modificarPerfil.php');
+        }
+    
+    mysqli_close($connectDB);
         
             // comprobamos todos los campos
             if($_POST['contrasena'] == "" && $_POST['contrasena2'] == "" && $_POST['email'] == "" && $_POST['ciudad'] == "" && (isset($_POST['paises']) && $_POST['paises']==0 )){

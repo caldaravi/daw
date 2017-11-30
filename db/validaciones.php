@@ -12,6 +12,7 @@
             } 
         }
         else{
+            echo 'emailll';
             $email = $_POST["email"];
             setcookie("email", $_POST['email']);
             $domain = strstr($email, '@');
@@ -19,8 +20,9 @@
             if(!comprobarlong($fulldom,3,5)){
                 error(' El email es incorrecto. El dominio debe tener una longitud de entre 2 y 4 caracteres.',$destinourl );
             }
-        
-            $duplicatesEmail = "SELECT userEmail FROM usuarios WHERE userEmail = '$email'";
+            
+            $duplicatesEmail = "SELECT userEmail FROM usuarios WHERE userEmail = '".$email."'";
+            echo $duplicatesEmail;
             $result2 = mysqli_query($connectDB, $duplicatesEmail);
             
             if (!$result2) {//no entra aqui, entra en usuario

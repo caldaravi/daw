@@ -37,18 +37,45 @@
         }
          
         // username: sólo puede contener letras del alfabeto inglés (en mayúsculas y minúsculas) y números; longitud mínima 3 caracteres y máxima 15.
-        if (preg_match('/[^A-Za-z0-9]/', $usuario) && !comprobarlong($usuario, 3, 15)){
-            error('El nombre de usuario es incorrecto. Debe tener una longitud de entre 3 y 15 caracteres, contener al menos una mayúscula, una minuscula y un numero.', 'registro/nuevoReg.php');
+        if (preg_match('/[^A-Za-z0-9]/', $usuario) ){
+            error('El nombre de usuario es incorrecto.', 'registro/nuevoReg.php');
+        }
+        if(preg_match('/\\s/', $usuario)){
+            error('No son validos caracteres en blanco.','registro/nuevoReg.php');
+        }
+        if( !comprobarlong($usuario, 3, 15)){
+            error('El nombre de usuario no esta comprendido entre 3 y 15 caracteres.','registro/nuevoReg.php');
         }
 
             // comprobamos contraseña
         if( isset($_POST["contrasena"]) && isset($_POST["contrasena2"]) ){
             $pass1 = $_POST["contrasena"];
             $pass2 = $_POST["contrasena2"];
-        
+            
+
             if($pass1 === $pass2){ 
-                $pass1 = $pass2;
-                setcookie("contrasena", $_POST['contrasena']);
+                if(comprobarlong($pass1, 6, 15)){
+                    if( preg_match('/[A-Z]/', $pass1) ){
+                        if( preg_match('/[a-z]/', $pass1) ){
+                            if( preg_match('/[0-9]/', $pass1) ){
+                                $pass1 = $pass2;
+                                setcookie("contrasena", $_POST['contrasena']);
+                            }
+                            else{
+                                error('La contrasena no tiene un numero.', 'registro/nuevoReg.php');
+                            }
+                        }
+                        else{
+                            error('La contrasena no tiene una minuscula.', 'registro/nuevoReg.php');
+                        }
+                    }
+                    else{
+                        error('La contrasena no tiene una mayuscula.', 'registro/nuevoReg.php');
+                    }
+                } 
+                else{
+                    error('Contraseña demasiado corta.', 'registro/nuevoReg.php');
+                }
             }
             else{
                 error('Contraseñas no coinciden.', 'registro/nuevoReg.php');
