@@ -12,17 +12,20 @@
             } 
         }
         else{
-            echo 'emailll';
             $email = $_POST["email"];
             setcookie("email", $_POST['email']);
             $domain = strstr($email, '@');
-            $fulldom = strstr($domain, '.', true); 
+            $fulldom = strstr($domain, '.', true);
+            $org = strrchr($email, '.');
+            if(!comprobarlong($org,3,4)){
+                error(' El email es incorrecto. El nombre de dominio debe estar comprendido entre 2 y 3 caracteres.',$destinourl );
+                
+            } 
             if(!comprobarlong($fulldom,3,5)){
                 error(' El email es incorrecto. El dominio debe tener una longitud de entre 2 y 4 caracteres.',$destinourl );
             }
             
             $duplicatesEmail = "SELECT userEmail FROM usuarios WHERE userEmail = '".$email."'";
-            echo $duplicatesEmail;
             $result2 = mysqli_query($connectDB, $duplicatesEmail);
             
             if (!$result2) {//no entra aqui, entra en usuario

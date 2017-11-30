@@ -75,13 +75,9 @@
     else if($_POST['contrasena'] != "" || $_POST['contrasena2'] != ""){
         error('Contraseñas no coinciden.', 'db/modificarPerfil.php');
     }
-echo 'ey';
+
     include_once($urlLocal . "db/validaciones.php");
-    echo 'ey';
-
-    
-    
-
+   
     if(isset($email)){
         //echo $email;
         if($passb == true){
@@ -97,7 +93,7 @@ echo 'ey';
             }
         }
     }
-    echo 'ey';
+    
     if(isset($ciudad)){
         //echo $ciudad;
         if($passb == true ){
@@ -125,7 +121,6 @@ echo 'ey';
             }
         }
     }
-    echo 'ey';
     // obtenemos el nombre del pais, pero necesitamos el id
     $paisnombre=$pais;
 
@@ -141,9 +136,9 @@ echo 'ey';
             } 
             $fila = mysqli_fetch_assoc($resultado);
             $pais = $fila['IdPais'];
-        }echo 'epais ' . $pais;
+        }
         if($pais!=0){
-            echo 'entra pais';
+            
             if(isset($pais)){
                 //echo $pais;
                 
@@ -196,7 +191,7 @@ echo 'ey';
         $query .= ' WHERE userName="' . $_COOKIE['username'] . '"';
         
         $update = mysqli_query($connectDB, $query);
-        echo $query;
+       
         //echo $query;
         if (!$update) {//no entra aqui, entra en usuario
             
