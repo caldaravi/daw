@@ -1,10 +1,6 @@
 /* CSS Ordenador por abecedario */
 
-html{
-    font-size: 1em !important;
-    color: #000 !important;
-    font-family: Arial !important;
-}
+
 
 a {
     text-decoration: none;
@@ -23,8 +19,6 @@ a {
     float: right;
 }
 
-
-
 body{
     background-color: #c1bea8;
 }
@@ -34,6 +28,10 @@ body {
 	font-size: 13px;
 }
 
+#btnLogin {
+    margin-left: 4px;
+    margin-top: 2.5%;
+}
 
 .button {
 	background: #f2f2f2;
@@ -69,14 +67,6 @@ body {
     color: white;
 }
 
-
-
-
-
-
-
-
-
 #buscarLi{
     margin-left: 35%;
     overflow: hidden;
@@ -104,8 +94,7 @@ body {
     margin: 25px auto;
     margin-bottom: 70px;
 
-  }
-  
+}
 
 .center{
       display: flex;
@@ -129,9 +118,9 @@ footer {
     position: fixed;
     right: 0;
     text-align: center;
-  }
+}
 
- .foto{
+.foto{
     align-content: center;
     align-items: center;
     background-color: #d8d7af;
@@ -142,7 +131,7 @@ footer {
     list-style-position:inside;
     margin: 5px;
     width: 360px;
- }
+}
 
 .foto a img {
     width:304px;
@@ -169,21 +158,13 @@ footer {
     list-style-type: none;
     margin-top: 30px;
     height: 100%;
- }
+}
 
-
-header{
-    background-color: #98aa00;
-    height: 75px;
-    margin-right: 2%;
-    width: 100%;
-    display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-    display: -ms-flexbox;  /* TWEENER - IE 10 */
-    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
-    display: flex;  
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
+#h_bienvenido{
+    flex-grow: 1;
+    padding: 5px 0px;
+    text-align: center;
+    font-size: 1.3EM;
 }
 
 #h_logo {
@@ -192,14 +173,7 @@ header{
 
     padding: 20px 0px
 }
-#h_reg{
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-    padding: 20px 0px
-}
 #h_busq{
     flex-grow: 1;
     display: flex;
@@ -218,6 +192,15 @@ header{
 
 }
 
+#h_iconos{
+    flex-grow: 1;
+    padding-right: 15px ;
+    padding-top: 15px;
+
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
 #h_login{
     flex-grow: 2;
     display: flex;
@@ -227,22 +210,27 @@ header{
 
     padding: 20px 0px
 }
-
-#h_bienvenido{
+#h_reg{
     flex-grow: 1;
-    padding: 5px 0px;
-    text-align: center;
-    font-size: 1.3EM;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px 0px
 }
 
-#h_iconos{
-    flex-grow: 1;
-    padding-right: 15px ;
-    padding-top: 15px;
-
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
+header{
+    background-color: #98aa00;
+    height: 75px;
+    margin-right: 2%;
+    width: 100%;
+    display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;  /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;  
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .horizontal a:hover, .horizontal a:active {
@@ -253,6 +241,11 @@ header{
     float: left;
     margin: 0;
     padding: 0;
+}
+html{
+    font-size: 1em !important;
+    color: #000 !important;
+    font-family: Arial !important;
 }
 
 #infofoto{
@@ -274,6 +267,9 @@ input{
     font-size: xx-small;
     outline: none;
 }
+input[value="Enviar"]{
+    margin-top: 10px;
+}
 input[type="submit"]{
     background: #f2f2f2;
     border: 1px solid #f2f2f2;
@@ -290,21 +286,16 @@ input[type="submit"]:hover{
     color: #222;
 }
 
-input:hover{
-    border-color: #a0a0a0 #b9b9b9 #b9b9b9 #b9b9b9;
-}
 input:focus{
     border-color:#4d90fe;
 }
-
-input[value="Enviar"]{
-    margin-top: 10px;
+input:hover{
+    border-color: #a0a0a0 #b9b9b9 #b9b9b9 #b9b9b9;
 }
 
-
-#btnLogin {
-    margin-left: 4px;
-    margin-top: 2.5%;
+#loginicon{
+    visibility: hidden;
+    display: none;
 }
 
 #logo{ /* el tamaño del logo al 5% va bastante bien pero el menu se descuadra*/
@@ -312,12 +303,6 @@ input[value="Enviar"]{
     height: 70px;
     margin-left: 10px;
     width: 70px;
-}
-
-
-#loginicon{
-    visibility: hidden;
-    display: none;
 }
 
 main{

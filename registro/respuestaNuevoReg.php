@@ -13,13 +13,11 @@
     
     require_once($urlLocal . 'sesion/sesion.php');
     require_once($urlLocal . 'db/connect.php');
+    include_once($urlLocal . '/includes/funciones.php');
 ?>
 <!-- FIN CABECERA  ?> -->
 <main>
     <?php 
-    
-    include_once($urlLocal . '/includes/funciones.php');
-
     // Comprobamos usuario, fecha nac y sexo
 
     if( isset($_POST["usuario"])){
@@ -74,7 +72,7 @@
                     }
                 } 
                 else{
-                    error('Contraseña demasiado corta.', 'registro/nuevoReg.php');
+                    error('La contraseña debe tener un mínimo 6 carácteres y un máximo 15.', 'registro/nuevoReg.php');
                 }
             }
             else{

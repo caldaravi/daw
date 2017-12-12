@@ -4,7 +4,8 @@
     
     $zonaPrivada = false;
     $urlLocal = "../";
-        //BORRAR cookies utilizadas para registro
+ 
+    //BORRAR cookies utilizadas para registro
 
     setcookie("usuario", "", time() - 3600, "/daw");
     setcookie("contrasena", "", time() - 3600, "/daw");
@@ -14,7 +15,7 @@
     setcookie("FNacimiento","", time() - 3600, "/daw");
     setcookie("Foto","", time() - 3600, "/daw");
     setcookie("Pais","", time() - 3600, "/daw");
-    
+
     require_once($urlLocal . 'db/connect.php');
     require_once($urlLocal . 'sesion/sesion.php');
 ?>
@@ -50,7 +51,7 @@
                 <!--ciudad-->
                 <p>
                 <label>Ciudad
-                    <input type="text" name="ciudad" placeholder="Nueva ciudad">
+                    <input type="text" name="ciudad" value=" <?php echo  $_COOKIE['ciudad']  ?>">
                 </label>
                 </p>
                 <!--país de residencia-->
@@ -76,3 +77,4 @@
 <!-- PÍE DE PÁGINA -->
     <?php include_once($urlLocal . "includes/pie.php"); ?>
 <!-- FIN PÍE -->
+<?php

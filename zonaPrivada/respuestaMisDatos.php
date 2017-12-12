@@ -9,20 +9,15 @@
 
     require_once($urlLocal . 'sesion/sesion.php');
     require_once($urlLocal . 'db/connect.php');
+    include_once($urlLocal . '/includes/funciones.php');
 ?>
 <!-- FIN CABECERA  ?> -->
 <main>
     <?php 
-    
-    include_once($urlLocal . '/includes/funciones.php');
     $contrasena='';
     $contrasena2='';
     $email='';
     
-
-    // UPDATE `usuarios` SET 
-    //`IdUsuario`=[value-1],`userName`=[value-2],`userPass`=[value-3],`userEmail`=[value-4],`sexo`=[value-5],`ciudad`=[value-6],`FNacimiento`=[value-7],`FRegistro`=[value-8],`Foto`=[value-9],`Pais`=[value-10] 
-    // WHERE 1
     $query = 'UPDATE usuarios set ';
     $passb = false;
     $datos = '';
@@ -42,27 +37,26 @@
                     if( preg_match('/[A-Z]/', $contrasena) ){
                         if( preg_match('/[a-z]/', $contrasena) ){
                             if( preg_match('/[0-9]/', $contrasena) ){
-                                echo 'yeeeee';
-                            setcookie("contrasena", $_POST['contrasena']);
-                            setcookie("contrasena2", $_POST['contrasena2']);
-                            $query .= 'userPass="' .$contrasena .'"';
-                            $datos .= 'contrasena: ' . $contrasena . ' ';
-                            $passb = true;
+                                setcookie("contrasena", $_POST['contrasena']);
+                                setcookie("contrasena2", $_POST['contrasena2']);
+                                $query .= 'userPass="' .$contrasena .'"';
+                                $datos .= 'Guardada la nueva contraseña';
+                                $passb = true;
                             }
                             else{
-                                error('La contrasena no tiene un numero.', 'registro/nuevoReg.php');
+                                error('La contrasena no tiene un numero.', 'db/modificarPerfil.php');
                             }
                         }
                         else{
-                            error('La contrasena no tiene una minuscula.', 'registro/nuevoReg.php');
+                            error('La contrasena no tiene una minuscula.', 'db/modificarPerfil.php');
                         }
                     }
                     else{
-                        error('La contrasena no tiene una mayuscula.', 'registro/nuevoReg.php');
+                        error('La contrasena no tiene una mayuscula.', 'db/modificarPerfil.php');
                     }
                 } 
                 else{
-                    error('Contraseña demasiado corta.', 'registro/nuevoReg.php');
+                    error('Contraseña demasiado corta.', 'db/modificarPerfil.php');
                 }
             }
             else{
@@ -199,7 +193,7 @@
             die(mysqli_error($connectDB));
         }
         else{
-            error('Datos actualizados: ' . $datos . '.','db/modificarPerfil.php');
+            error('Datos actualizados','zonaPrivada/usuarioReg.php');
         }
     
     mysqli_close($connectDB);

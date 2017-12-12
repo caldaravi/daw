@@ -1,7 +1,4 @@
 <?php
-
-    
-
     function comprobarlong($text, $min, $max){
         $len = strlen($text);
         if($len<$min){
