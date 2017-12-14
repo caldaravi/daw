@@ -24,14 +24,11 @@
         $fecha = $_COOKIE['FNacimiento'];
     }
     if(isset($_COOKIE['Foto'])){
-        $Foto = $_COOKIE['Foto'];
+        $foto = $_COOKIE['Foto'];
     }
 ?>
 <!-- FIN CABECERA  ?> -->
 <?php
-
-
-
     
     $query = "INSERT INTO usuarios(userName, userPass, userEmail, sexo, ciudad, FNacimiento, Foto, Pais) 
                     VALUES('$usuario', '$contrasena', '$email'";
@@ -64,7 +61,8 @@
 ?>
         <div class="card">
         <p class="pCentrado">
-            <?php echo "Te has registrado correctamente, inicia sesión para acceder al contenido privado.";?>
+            <?php 
+            echo "Te has registrado correctamente, inicia sesión para acceder al contenido privado.";?>
         </p>
         <div id="botones">
             <a class="button" href=<?php echo $urlLocal . "index.php"?>>Inicio</a>

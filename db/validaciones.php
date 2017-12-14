@@ -65,10 +65,6 @@
 
         setcookie("Pais", $pais);
     }
-    if(isset($_POST["image"])){
-        $image = $_POST['image'];
-        setcookie("Foto", $_POST['image']);
-    }   
     
     function success($usuario, $email){
         global $sexo;
@@ -102,7 +98,6 @@
                 $pais = $_COOKIE['Pais'];
             }
         }
-        
         echo "
             <h3>¿Están todos los datos correctos?</h3>
                 <a class='button' href='?reg=true'>Validar</a>

@@ -6,12 +6,32 @@
     $urlLocal = "../";
 
     require_once($urlLocal . 'sesion/sesion.php');
+    require_once($urlLocal . 'db/connect.php');
 ?>
 <!-- FIN CABECERA  ?> -->  
+
+<?php 
+
+    $queryfoto = "SELECT Foto FROM usuarios WHERE username = '" . $_SESSION['username'] . "'";
+    $result = mysqli_query($connectDB, $queryfoto);
+
+    if (!$result) { // si error
+        die(mysqli_error($connectDB));
+    }
+    else{
+        $row_foto = mysqli_fetch_assoc($result);
+    }
+    
+
+    $fotodb = $row_foto['Foto'];
+
+    mysqli_close($connectDB);
+?>
 
 <main>
     <div class="card" style="display: flex; flex-direction: column; align-items: center;">
         <h1>Perfil</h1>
+        <img style="height: 35%; width: 35%;" src= <?php echo "'". $urlLocal . "images/Perfiles/" . $fotodb . "'"?> >
         <p>Nombre: <?php echo $_SESSION['username']; ?> </p>
         <p>Apellidos: Pepito García</p>
         <p><a href=<?php echo $urlLocal . 'db/modificarPerfil.php'?> class="button">Modificar mis datos</a></p>

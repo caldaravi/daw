@@ -96,6 +96,7 @@ body {
 
 }
 
+
 .center{
       display: flex;
       align-content: center;
@@ -130,17 +131,39 @@ footer {
     float: left;
     list-style-position:inside;
     margin: 5px;
-    width: 360px;
+    width: 220px;
+    height: 280px;
+    overflow: hidden;
+}
+
+.foto a{
+    width: 90%;
 }
 
 .foto a img {
-    width:304px;
-    height:228px;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    margin: 0 auto;
 }
 
 .foto:last-child{
     margin-bottom: 80px;
 }
+
+
+.fotodetail{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 80%;
+    background-color: #d8d7af;
+    margin: 0 auto;
+    margin-top: 35px;
+}
+
+
 #formOculto{
     visibility: hidden;
 }
@@ -316,6 +339,33 @@ main{
     justify-content: center;
     padding: 0;
 }
+
+nav{
+    background-color: #75911a;
+    padding-top: 30px;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+nav img {
+    float: left;
+    max-width:30%;
+    
+}
+
+#navinfo{
+    padding-left: 20px;
+    overflow: hidden;
+}
+
+
+#navseleccionadas{
+    width: 70%;
+    height:200px;
+    margin: 0 auto;
+}
+
 .no-style {
     list-style-type: none;
    
@@ -339,6 +389,7 @@ main{
     width: 1.5%;
 }
 
+
 #regLi {
     height: 23px;
     width: 135px;
@@ -346,6 +397,7 @@ main{
 #regLiLogged {
     visibility: hidden;
 }
+
 #userIcon {
     width: 20px;
     height: 20px;
@@ -398,6 +450,10 @@ main{
         margin-left: 5%;
     }
 
+    nav{
+        height:100px;
+        padding-top: 8px;
+    }
 }
 
 @media screen and (max-width: 875px){

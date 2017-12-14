@@ -25,12 +25,12 @@ if($connectDB){
                 
                 <h2>' . $fila["Titulo"] . ' </h2>
                 <a href="' . $urlLocal . 'zonaPrivada/infIMG.php?id=' . $fila["IdFoto"] . '">
-                    <img src="' . $urlLocal . $fila["Fichero"] . '" alt="Imagen"/>
+                    <img src="' . $urlLocal . "images/Albumes/" . $fila["Fichero"] . '" alt="Imagen"/>
                 </a>
                 <p>
                    ' . $fila["Fecha"] . '
                 </p>
-                <p>
+                <p">
                    ' . $fila["NomPais"] . '
                 </p>
                 

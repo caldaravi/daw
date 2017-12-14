@@ -9,7 +9,7 @@ require_once('connect.php');
 
 if($connectDB){
     $query = 
-        "SELECT f.Titulo, a.Titulo, IdFoto, Fichero, f.Fecha, NomPais, u.userName 
+        "SELECT f.Titulo as fTitulo, a.Titulo as aTitulo, IdFoto, Fichero, f.Fecha, NomPais, u.userName 
         FROM Fotos f, Albumes a, Paises p, usuarios u
         WHERE a.IdAlbum = '$id' and f.Album = a.IdAlbum AND p.IdPais = f.Pais AND u.userName = '$user' AND a.Usuario = u.IdUsuario";
 
@@ -25,6 +25,7 @@ if($connectDB){
     if ($row_cnt >= 1) {
     //success
     $fila = mysqli_fetch_assoc($result);
+        echo "<div class='card' style='text-align: center;'> <b>Álbum:</b> " . $fila['aTitulo'] . "</div>";
         if($fila['userName'] == $user){
             do {
                 if($fila['userName'] != $user)
@@ -32,9 +33,9 @@ if($connectDB){
                 echo '
                     <li class="foto">
                     
-                    <h2>' . $fila["Titulo"] . ' </h2>
+                    <h2>' . $fila["fTitulo"] . ' </h2>
                     <a href="' . $urlLocal . 'zonaPrivada/infIMG.php?id=' . $fila["IdFoto"] . '">
-                        <img src="' . $urlLocal . $fila["Fichero"] . '" alt="Imagen"/>
+                        <img src="' . $urlLocal . "images/Albumes/" . $fila["Fichero"] . '" alt="Imagen"/>
                     </a>
                     <p>
                     ' . $fila["Fecha"] . '
@@ -48,7 +49,7 @@ if($connectDB){
                 
             }while($fila = mysqli_fetch_assoc($result));
         } else {
-            echo 'No puedes acceder al contenido de otro usuario';
+            echo 'No puedes acceder al contenido de otro usuario.';
         }
     } else {
     //Fail

@@ -6,6 +6,7 @@
 
     require_once($urlLocal . 'sesion/sesion.php');
     require_once($urlLocal . 'db/connect.php');
+    require_once($urlLocal . 'includes/funciones.php');
 
     $titulo = $_POST['titulo'];
     $descripcion = $_POST['textadic'];
@@ -13,6 +14,14 @@
     $pais = $_POST['paises'];
     $usuario = $_SESSION['username'];
     
+    if(isset($titulo)){
+        if (!preg_match('/[aA-zZ]*[0-9]/', $titulo) ){
+            error('El título del álbum contiene caracteres no permitidos.', 'zonaPrivada/crearAlbum.php');
+        }
+    }
+    else{
+        error("Por favor introduzca un titulo. ", "zonaPrivada/crearAlbum.php");
+    }
 
 $queryID = "SELECT idUsuario, NomPais FROM usuarios u, paises p WHERE u.userName = '$usuario' AND p.IdPais = '$pais' " ;
 
@@ -50,7 +59,7 @@ echo
             <p> País: ' . $idpais . '</p>
         </p>
         <div id="botones">
-            <a class="vBtn" href=' . $urlLocal . 'zonaPrivada/usuarioReg.php>Volver al perfil</a>
+            <a class="button" href=' . $urlLocal . 'zonaPrivada/usuarioReg.php>Volver al perfil</a>
         </div>
     </div>';
     }

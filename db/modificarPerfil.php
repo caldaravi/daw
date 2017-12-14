@@ -22,7 +22,7 @@
 <!-- FIN CABECERA  ?> -->  
 
     <main>
-        <form class="card" action= <?php echo $urlLocal . "zonaPrivada/respuestaMisDatos.php" ?> method="POST">
+        <form class="card" action= <?php echo $urlLocal . "zonaPrivada/respuestaMisDatos.php" ?> method="POST" enctype="multipart/form-data">
                 <h2>Modificar cuenta</h2>
                 
                 <!--nombre de usuario-->
@@ -51,7 +51,7 @@
                 <!--ciudad-->
                 <p>
                 <label>Ciudad
-                    <input type="text" name="ciudad" value=" <?php echo  $_COOKIE['ciudad']  ?>">
+                    <input type="text" name="ciudad" placeholder="Ciudad">
                 </label>
                 </p>
                 <!--país de residencia-->
@@ -64,7 +64,7 @@
                 <div>
                     <input name="image" type="file" accept="image/*" id="menu_images" />
                     <p><img id="menu_image" alt="Imagen de perfil" src="/" />
-                    <input type="submit" value="Upload" /></p>
+                    <!--<input type="submit" value="Upload" />--></p>
                 </div>
                 </fieldset>
                 <p>

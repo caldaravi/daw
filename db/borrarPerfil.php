@@ -15,8 +15,8 @@
         <h1>Eliminación de cuenta</h1>
         <p>¿Estás seguro de que deseas eliminar tú cuenta? Esta acción es irreversible</p>
         <div id="botones">
-            <a class="vBtn" href="?enter=true">Borrar</a>
-            <a class="vBtn" href=<?php echo $urlLocal . 'zonaPrivada/usuarioReg.php'?>>Cancelar</a>
+            <a class="button" href="?enter=true">Borrar</a>
+            <a class="button red" href=<?php echo $urlLocal . 'zonaPrivada/usuarioReg.php'?>>Cancelar</a>
         </div>
     </div>
 </main>

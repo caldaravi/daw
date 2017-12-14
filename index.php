@@ -8,16 +8,18 @@
 	require_once('sesion/sesion.php');
 	require_once('db/connect.php');
 ?>
-<!-- FIN CABECERA  ?> -->   
+<!-- FIN CABECERA  -->   
 		
 	<main>
-	<!-- GALERIA DE IMAGENES -->
+
+		<!-- Fotos seleccionadas-->
+			<?php  require_once($urlLocal . "db/seleccion.php"); ?>
+
+		<!-- GALERIA DE IMAGENES -->
 		<ul class="galeria">
-			<?php
-				require_once($urlLocal . "db/fotos.php");
-			?>
+			<?php require_once($urlLocal . "db/fotos.php"); ?>
 		</ul>
-		<!-- FIN GALERIA -->
+		
 	</main>
 	
 <!-- PÍE DE PÁGINA -->

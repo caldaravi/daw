@@ -21,7 +21,7 @@
 <!-- FIN CABECERA  ?> -->  
 
     <main>
-        <form class="card" action="respuestaNuevoReg.php" method="POST">
+        <form class="card" action="respuestaNuevoReg.php" method="POST" enctype="multipart/form-data">
                 <p>* Campos obligatorios</p>
                 <!--nombre de usuario-->
                 <p><label>Usuario
@@ -78,7 +78,7 @@
                 <div>
                     <input name="image" type="file" accept="image/*" id="menu_images" />
                     <p><img id="menu_image" alt="Imagen de perfil" src="/" />
-                    <input type="submit" value="Upload" /></p>
+                    <!--<input type="submit" value="Upload" /></p>-->
                 </div>
                 </fieldset>
                 <p>

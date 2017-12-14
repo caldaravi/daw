@@ -10,7 +10,7 @@
 <!-- FIN CABECERA  ?> -->  
 
 <main>
-        <form class="card" method="post" action="addFotoOK.php">
+        <form class="card" method="post" action="addFotoOK.php" enctype="multipart/form-data">
             <p><label>Título
                 <input type="text" name="titulo" required>
             </label></p>

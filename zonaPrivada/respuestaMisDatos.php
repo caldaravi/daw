@@ -17,7 +17,7 @@
     $contrasena='';
     $contrasena2='';
     $email='';
-    
+    $ficherosubido = false;
     $query = 'UPDATE usuarios set ';
     $passb = false;
     $datos = '';
@@ -72,6 +72,61 @@
 
     include_once($urlLocal . "db/validaciones.php");
    
+    // Comprobamos foto resubida
+
+    $msgError = array(0 => "No hay error, el fichero se subió con éxito", 
+    1 => "El tamaño del fichero supera la directiva 
+    upload_max_filesize el php.ini", 
+    2 => "El tamaño del fichero supera la directiva 
+    MAX_FILE_SIZE especificada en el formulario HTML", 
+    3 => "El fichero fue parcialmente subido", 
+    4 => "No se ha subido un fichero", 
+    6 => "No existe un directorio temporal", 
+    7 => "Fallo al escribir el fichero al disco", 
+    8 => "La subida del fichero fue detenida por la extensión"); 
+
+  
+
+    if($_FILES["image"]["error"] > 0 && $_FILES["image"]["error"] != 4) 
+    { 
+        echo "Error: " . $msgError[$_FILES["image"]["error"]] . "<br />"; 
+        die();
+    } 
+    else if($_FILES["image"]["error"] != 4)
+    { 
+            // -- nombre del archivo:
+            $path = $_FILES['image']['name'];
+            $extension = pathinfo($path, PATHINFO_EXTENSION);
+            $filename = $_SESSION['username'] . '.' . $extension;
+            // -- ruta del archivo:
+            $ruta = $urlLocal . "images/Perfiles/";
+            // Si el usuario ya tenia foto, la borra y sube la nueva
+        if(file_exists( $ruta . $_FILES["image"]["name"] ) )
+        { 
+            unlink($ruta . $_FILES["image"]["name"]);
+
+            $destino = $ruta . $filename;
+            move_uploaded_file($_FILES["image"]["tmp_name"], $destino);
+        } 
+        else 
+        { 
+            $destino = $ruta . $filename;
+
+            move_uploaded_file($_FILES["image"]["tmp_name"], $destino);
+        
+        //echo "Almacenado en: " . $destino;
+
+        setcookie("Foto", $filename);
+        } 
+    }
+    else if($_FILES["image"]["error"] == 4){
+        $ficherosubido = false;
+    }
+
+    if($ficherosubido!=false){
+        $query .= ', Foto="' . $filename . '"';
+    }
+
     if(isset($email)){
         //echo $email;
         if($passb == true){
@@ -115,6 +170,7 @@
             }
         }
     }
+
     // obtenemos el nombre del pais, pero necesitamos el id
     $paisnombre=$pais;
 

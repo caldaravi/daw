@@ -34,23 +34,23 @@
     //success
         while($fila = mysqli_fetch_assoc($result)) { 
             echo '
-                <div class="card">
+                <div class="fotodetail">
                 
-                <h2>' . $fila["a"] . ' </h2>
-                <a href="' . $urlLocal . 'zonaPrivada/infIMG.php?id=' . $fila["IdFoto"] . '">
-                    <img src="' . $urlLocal . $fila["Fichero"] . '" alt="Imagen"/>
+                <h2 style="text-align: center;">' . $fila["a"] . ' </h2>
+                <a style="margin: 0 auto;width: 50%;overflow: hidden; " href="' . $urlLocal . 'zonaPrivada/infIMG.php?id=' . $fila["IdFoto"] . '">
+                    <img style="overflow: hidden;width: 100%;" src="' . $urlLocal . "images/Albumes/" . $fila["Fichero"] . '" alt="Imagen"/>
                 </a>
-                <p>
+                <p class="pCentrado">
                     Fecha: ' . $fila["Fecha"] . '
                 </p>
-                <p>
-                    Páis: ' . $fila["NomPais"] . '
+                <p class="pCentrado">
+                    País: ' . $fila["NomPais"] . '
                 </p>
-                <p>
+                <p class="pCentrado">
                     Usuario: ' . $fila["userName"] . '
                   
                  </p>
-                 <p>
+                 <p class="pCentrado">
                    Álbum: ' . $fila["b"] . '
                 </p>
                 

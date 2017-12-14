@@ -12,7 +12,6 @@
     $pais = $_POST['paises'];
     $usuario = $_SESSION['username'];
     $album = $_POST['albumes'];
-    $fichero = "images/" . $_POST['image'];
     $idPais;
 
 $queryID = "SELECT idUsuario, IdAlbum, NomPais 
@@ -35,11 +34,64 @@ global $id;
     $idPais = $fila['NomPais'];
 }
 else{
-    echo "sin result";
-}
+    echo "Sin resultados.";
+}   
+    $path = $_FILES['image']['name'];
+    $extension = pathinfo($path, PATHINFO_EXTENSION);
+    // -- ruta del archivo:
+    $ruta = $urlLocal . "images/Albumes/";
+
+    $filename = $_SESSION['username'] . "_" . $id . "_" . $titulo . "." . $extension;
+
+    // Comprobamos la foto de perfil
+    $msgError = array(0 => "No hay error, el fichero se subió con éxito", 
+    1 => "El tamaño del fichero supera la directiva 
+    upload_max_filesize el php.ini", 
+    2 => "El tamaño del fichero supera la directiva 
+    MAX_FILE_SIZE especificada en el formulario HTML", 
+    3 => "El fichero fue parcialmente subido", 
+    4 => "No se ha subido un fichero", 
+    6 => "No existe un directorio temporal", 
+    7 => "Fallo al escribir el fichero al disco", 
+    8 => "La subida del fichero fue detenida por la extensión"); 
+    
+    if($_FILES["image"]["error"] > 0) 
+    { 
+        echo "Error: " . $msgError[$_FILES["image"]["error"]] . "<br />"; 
+        die();
+    } 
+    else 
+    { 
+        if(file_exists( $ruta . $filename ) )
+        { 
+            echo $filename . " ya existe";
+            die();
+        } 
+        else 
+        { 
+            $destino = $ruta . $filename;
+
+            move_uploaded_file($_FILES["image"]["tmp_name"], $destino);
+        
+        //echo "Almacenado en: " . $destino;
+
+        setcookie("Foto", $filename);
+        } 
+    }
+
+    // Comprobamos datos del titulo de la foto
+    if(isset($titulo)){
+        if (!preg_match('/[aA-zZ]*[0-9]/', $titulo) ){
+            error('El título de la foto contiene caracteres no permitidos.', 'zonaPrivada/addFoto.php');
+        }
+    }
+    else{
+        error("Por favor introduzca un titulo de foto. ", "zonaPrivada/crearAlbum.php");
+    }
+
 
     $query = "INSERT INTO Fotos(Titulo, Fecha, Pais, Album, Fichero) 
-            VALUES('$titulo', '$fecha', $pais, $id, '$fichero')";
+            VALUES('$titulo', '$fecha', $pais, $id, '". $filename ."')";
 
     if ($connectDB->query($query) === TRUE) {
 echo '
@@ -52,7 +104,7 @@ echo '
         <p>País: ' . $idPais . '</p>
         
         <div id="botones">
-            <a class="vBtn" href=' . $urlLocal . 'zonaPrivada/verAlbum.php?id=' . $album . '>Ver álbum</a>
+            <a class="button" href=' . $urlLocal . 'zonaPrivada/verAlbum.php?id=' . $album . '>Ver álbum</a>
         </div>
     </div>
     ';

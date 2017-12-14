@@ -18,6 +18,7 @@
 <!-- FIN CABECERA  ?> -->
 <main>
     <?php 
+    
     // Comprobamos usuario, fecha nac y sexo
 
     if( isset($_POST["usuario"])){
@@ -45,7 +46,7 @@
             error('El nombre de usuario no esta comprendido entre 3 y 15 caracteres.','registro/nuevoReg.php');
         }
 
-            // comprobamos contraseña
+        // comprobamos contraseña
         if( isset($_POST["contrasena"]) && isset($_POST["contrasena2"]) ){
             $pass1 = $_POST["contrasena"];
             $pass2 = $_POST["contrasena2"];
@@ -100,8 +101,54 @@
         // Si usuario no esta cogido, cargamos la validacion del resto de datos (misma validacion para modificar datos excepto para el sexo, fnac y username)
         include_once($urlLocal . "db/validaciones.php");
         
-        success($usuario, $email);
 
+        // Si usuario validado correctamente al completo, procesamos su foto:
+        
+
+        // Guardamos variables que vienen del formulario, directamente
+        // -- nombre del archivo:
+
+        $path = $_FILES['image']['name'];
+        $extension = pathinfo($path, PATHINFO_EXTENSION);
+        $filename = $usuario . '.' . $extension;
+        // -- ruta del archivo:
+        $ruta = $urlLocal . "images/Perfiles/";
+
+        // Comprobamos la foto de perfil
+        $msgError = array(0 => "No hay error, el fichero se subió con éxito", 
+        1 => "El tamaño del fichero supera la directiva 
+        upload_max_filesize el php.ini", 
+        2 => "El tamaño del fichero supera la directiva 
+        MAX_FILE_SIZE especificada en el formulario HTML", 
+        3 => "El fichero fue parcialmente subido", 
+        4 => "No se ha subido un fichero", 
+        6 => "No existe un directorio temporal", 
+        7 => "Fallo al escribir el fichero al disco", 
+        8 => "La subida del fichero fue detenida por la extensión"); 
+        
+        if($_FILES["image"]["error"] > 0) 
+        { 
+            echo "Error: " . $msgError[$_FILES["image"]["error"]] . "<br />"; 
+            die();
+        } 
+        else 
+        { 
+            if(file_exists( $ruta . $filename ) )
+            { 
+                echo $filename . " ya existe";
+            } 
+            else 
+            { 
+                $destino = $ruta . $filename;
+
+                move_uploaded_file($_FILES["image"]["tmp_name"], $destino);
+            
+            //echo "Almacenado en: " . $destino;
+
+            setcookie("Foto", $filename);
+            } 
+        }
+        success($usuario, $email);
     }
 
     
