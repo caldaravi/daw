@@ -6,6 +6,7 @@
 
     require_once($urlLocal . 'sesion/sesion.php');
     require_once($urlLocal . 'db/connect.php');
+    require_once($urlLocal . 'includes/funciones.php');
 
     $titulo = $_POST['titulo'];
     $fecha = $_POST['fecha'];
@@ -40,8 +41,8 @@ else{
     $extension = pathinfo($path, PATHINFO_EXTENSION);
     // -- ruta del archivo:
     $ruta = $urlLocal . "images/Albumes/";
-
-    $filename = $_SESSION['username'] . "_" . $id . "_" . $titulo . "." . $extension;
+    $titulo_ = str_replace(' ', '_', $titulo);
+    $filename = $_SESSION['username'] . "_" . $id . "_" . $titulo_ . "." . $extension;
 
     // Comprobamos la foto de perfil
     $msgError = array(0 => "No hay error, el fichero se subió con éxito", 
@@ -79,9 +80,9 @@ else{
         } 
     }
 
-    // Comprobamos datos del titulo de la foto
+    // Comprobamos datos del titulo de la fotoecho $titulo;
     if(isset($titulo)){
-        if (!preg_match('/[aA-zZ]*[0-9]/', $titulo) ){
+        if (!preg_match('/[aA-zZ]*[0-9]*/', $titulo) ){
             error('El título de la foto contiene caracteres no permitidos.', 'zonaPrivada/addFoto.php');
         }
     }

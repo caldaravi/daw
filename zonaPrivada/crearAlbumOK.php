@@ -15,9 +15,9 @@
     $usuario = $_SESSION['username'];
     
     if(isset($titulo)){
-        if (!preg_match('/[aA-zZ]*[0-9]/', $titulo) ){
+        /*if (!preg_match('/[aA-zZ]*[0-9]/', $titulo) ){
             error('El título del álbum contiene caracteres no permitidos.', 'zonaPrivada/crearAlbum.php');
-        }
+        }*/
     }
     else{
         error("Por favor introduzca un titulo. ", "zonaPrivada/crearAlbum.php");

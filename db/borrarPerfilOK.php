@@ -14,7 +14,7 @@
         <h1>Cuenta eliminada</h1>
         <p>Su cuenta se ha eliminado correctamente, le esperamos de vuelta pronto.</p>
         <div id="botones">
-            <a class="vBtn" href=<?php echo $urlLocal . 'index.php'?>>Página principal</a>
+            <a class="button" href=<?php echo $urlLocal . 'index.php'?>>Página principal</a>
         </div>
     </div>
 </main>

@@ -101,19 +101,23 @@
             // -- ruta del archivo:
             $ruta = $urlLocal . "images/Perfiles/";
             // Si el usuario ya tenia foto, la borra y sube la nueva
-        if(file_exists( $ruta . $_FILES["image"]["name"] ) )
+            //echo $filename . '<br>';
+            //echo $_FILES['image']['name'];
+        if(file_exists( $ruta . $filename ) )
         { 
-            unlink($ruta . $_FILES["image"]["name"]);
+            unlink($ruta . $filename);
 
             $destino = $ruta . $filename;
             move_uploaded_file($_FILES["image"]["tmp_name"], $destino);
+
+            $ficherosubido = true;
         } 
         else 
         { 
             $destino = $ruta . $filename;
 
             move_uploaded_file($_FILES["image"]["tmp_name"], $destino);
-        
+            $ficherosubido = true;
         //echo "Almacenado en: " . $destino;
 
         setcookie("Foto", $filename);
@@ -124,9 +128,10 @@
     }
 
     if($ficherosubido!=false){
-        $query .= ', Foto="' . $filename . '"';
+        $query .= ' Foto="' . $filename . '"';
     }
 
+    //echo "ghhjghgjghkjghjjhgj ". $ficherosubido;
     if(isset($email)){
         //echo $email;
         if($passb == true){

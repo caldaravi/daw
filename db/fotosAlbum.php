@@ -53,7 +53,8 @@ if($connectDB){
         }
     } else {
     //Fail
-        echo '<div class="card" ><p> No hay fotos en este álbum. </p></div>';     
+        echo '<div class="card" ><p> No hay fotos en este álbum. </p><a href=" ' . $urlLocal .'zonaPrivada/misAlbumes.php" class="button">Atrás</a></div>';
+        echo "";     
         die();   
     }
     mysqli_close($connectDB);

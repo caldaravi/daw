@@ -10,7 +10,7 @@
                 <img id="logo" src=<?php echo $urlLocal . "images/logo.png"?> alt="logo">
             </a>
         </div>
-        <p id="h_bienvenido">Bienvenido <b><?php echo $_SESSION['username'] ?> </b></p>
+        <p id="h_bienvenido"><a style='text-color: black;' href='<?php echo $urlLocal . "zonaPrivada/usuarioReg.php" ?> '>Bienvenido <b><?php echo $_SESSION['username'] ?> </b></a></p>
 
         <div id="h_iconos">
             <a href=<?php echo $urlLocal . 'sesion/salir.php'?> class="iconosCabecera" style="margin-right: 10px;"> <img id="logoutIcon" src=<?php echo $urlLocal ."images/logout.png"?> alt="logout" width="40px" style="float:right"> </a>

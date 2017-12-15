@@ -25,7 +25,7 @@ if($connectDB){
                 
                 <h2>' . $fila["Titulo"] . ' </h2>
                 <a href="' . $urlLocal . 'zonaPrivada/infIMG.php?id=' . $fila["IdFoto"] . '">
-                    <img src="' . $urlLocal . "images/Albumes/" . $fila["Fichero"] . '" alt="Imagen"/>
+                    <img style="max-height: 150px;" src="' . $urlLocal . "images/Albumes/" . $fila["Fichero"] . '" alt="Imagen"/>
                 </a>
                 <p>
                    ' . $fila["Fecha"] . '
