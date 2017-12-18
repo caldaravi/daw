@@ -13,8 +13,9 @@
 	<main>
 
 		<!-- Fotos seleccionadas-->
-			<?php  require_once($urlLocal . "db/seleccion.php"); ?>
-
+			<?php require_once($urlLocal . "db/seleccion.php"); ?>
+			<?php require_once($urlLocal . "db/navstats.php"); ?>
+		</nav>
 		<!-- GALERIA DE IMAGENES -->
 		<ul class="galeria">
 			<?php require_once($urlLocal . "db/fotos.php"); ?>

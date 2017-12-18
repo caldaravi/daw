@@ -14,9 +14,9 @@
     $usuario = $_SESSION['username'];
     $album = $_POST['albumes'];
     $idPais;
-
-$queryID = "SELECT idUsuario, IdAlbum, NomPais 
-FROM usuarios u, Albumes a, Paises p, Fotos f
+    $id;
+$queryID = "SELECT IdUsuario, IdAlbum, NomPais 
+FROM usuarios u, Albumes a, Paises p
 WHERE u.userName = '$usuario' AND a.Usuario = u.IdUsuario AND a.IdAlbum = '$album' AND p.IdPais = '$pais'";
 
 $result = mysqli_query($connectDB, $queryID);
@@ -25,10 +25,8 @@ if (!$result)
     die(mysqli_error($connectDB));
 else
     $row_cnt = mysqli_num_rows($result);
-
 if ($row_cnt >= 1) {
 //success
-global $id;
     $fila = mysqli_fetch_assoc($result);
     
     $id = $fila['IdAlbum'];
@@ -37,12 +35,18 @@ global $id;
 else{
     echo "Sin resultados.";
 }   
+
+    $date = date('Y-m-d H:i:s');
+
+    $date = new DateTime($date);
+    $datestr = date_timestamp_get($date);
+
     $path = $_FILES['image']['name'];
     $extension = pathinfo($path, PATHINFO_EXTENSION);
     // -- ruta del archivo:
     $ruta = $urlLocal . "images/Albumes/";
-    $titulo_ = str_replace(' ', '_', $titulo);
-    $filename = $_SESSION['username'] . "_" . $id . "_" . $titulo_ . "." . $extension;
+    //$titulo_ = str_replace(' ', '_', $titulo);
+    $filename = $_SESSION['username'] . "_" . $id . "_" . $datestr . "." . $extension;
 
     // Comprobamos la foto de perfil
     $msgError = array(0 => "No hay error, el fichero se subió con éxito", 

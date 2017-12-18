@@ -42,7 +42,7 @@ if($connectDB){
     echo "
     <nav>
         <div id='navseleccionadas'>
-            <img src='" . $urlLocal . "images/Albumes/" . $seleccionadas[$aleatorio][0] ."'>
+            <img style='float:left;max-width:50%; max-height: 90%;' src='" . $urlLocal . "images/Albumes/" . $seleccionadas[$aleatorio][0] ."'>
             <div id='navinfo'> <p>Crítico: " . $seleccionadas[$aleatorio][1] ."</br>
                     Opinión: " . $seleccionadas[$aleatorio][2] . "<br>
                     Título: " . $row['fTitulo'] . "  </br>
@@ -52,8 +52,7 @@ if($connectDB){
                     Usuario: " . $row['userName'] . "</br>
                     </p>
             </div>
-        </div>
-    </nav>";
+        </div>";
 }
 
 // !!!!!!!!!!!!!!!!!

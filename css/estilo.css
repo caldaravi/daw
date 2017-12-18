@@ -348,13 +348,6 @@ nav{
     overflow: hidden;
 }
 
-nav img {
-    float: left;
-    max-width:30%;
-    max-height: 90%;
-    
-    
-}
 
 #navinfo{
     padding-left: 20px;
@@ -363,9 +356,16 @@ nav img {
 
 
 #navseleccionadas{
-    width: 70%;
     height:200px;
-    margin: 0 auto;
+    float: left;
+    padding-left: 2%;
+    padding-top: 5px;
+    width: 50%;
+}
+
+#navstats{
+    float: left;
+  width: 40%;
 }
 
 .no-style {

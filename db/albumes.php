@@ -2,6 +2,7 @@
 
  $urlLocal = "../";
 
+include_once($urlLocal . 'includes/funciones.php');
 require_once('connect.php');
 
 if($connectDB){
@@ -29,8 +30,18 @@ $result = mysqli_query($connectDB, $query);
  //success
 
 while($res = mysqli_fetch_assoc($resultado)){
-    echo '<p> <a href="' . $urlLocal . 'zonaPrivada/verAlbum.php?id=' . $res["IdAlbum"] . '">' . $res['Titulo'] . '</a> </p>'; 
-}
+    $query2 = 'SELECT Fichero, FRegistro FROM Fotos WHERE Album = "' . $res['IdAlbum'] . '" ORDER BY FRegistro LIMIT 1';
+    $response = $connectDB -> query($query2);
+    if($response->num_rows>=1){
+        $row = $response->fetch_array();
+        getthumb($row['Fichero'],$urlLocal."images/Albumes");
+        $thumbsource = $urlLocal."images/Thumbs/_thumb" . $row['Fichero']; 
+        echo '<a href="' . $urlLocal . 'zonaPrivada/verAlbum.php?id=' . $res["IdAlbum"] . '"><img src="'.$thumbsource.'"></a>';
+        
+    }
+    echo '<p> <a href="' . $urlLocal . 'zonaPrivada/verAlbum.php?id=' . $res["IdAlbum"] . '">' . $res['Titulo'] . '</a></p><br>'; 
+
+    }
 }else{
     echo 'No has creado ningún ábum todavía. 
     <p> <a href="' . $urlLocal . 'zonaPrivada/crearAlbum.php"> Crear álbum </a> </p>';
