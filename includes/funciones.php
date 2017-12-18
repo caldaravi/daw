@@ -54,11 +54,6 @@
             $calc_width = intval($x_origen * $calc_height / $y_origen);
         }
 
-        //echo " <br> new width: " .$new_width;
-        //echo " <br> new h: " .$new_height;
-        //echo " <br> calc w: " .$calc_width;
-        //echo " <br> calc h: " .$calc_height;
-
         $dest_x = intval(($new_width - $calc_width) / 2);
         $dest_y = intval(($new_height - $calc_height) / 2);
         // Creamos thumbnail y copiamos la imagen
