@@ -13,6 +13,6 @@
 	<link rel = "stylesheet" type = "text/css" href = "/daw/css/impresion.css" media="print"/> 
 	<!--<link rel = "stylesheet" type = "text/css" href = "/daw/css/adapter.css" title="Estilo accesible" media="screen"/> -->
 	<!--<link rel = "stylesheet" type = "text/css" href = "/daw/css/responsive.css" media="screen">-->
-	
+	<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="http://localhost/daw/db/feed.php" />
 
 </head>
